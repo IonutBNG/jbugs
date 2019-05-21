@@ -5,7 +5,7 @@
     <file type="ejb" url="file://$PROJECT_DIR$/jbugs-business" />
     <file type="ejb" url="file://$PROJECT_DIR$/jbugs-persistence" />
     <file type="javaeeApplication" url="file://$PROJECT_DIR$/jbugs-ear" />
-    <file type="web" url="file://$PROJECT_DIR$/jbugs-client" />
+    <file type="web" url="file://$PROJECT_DIR$/jbugs-view" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

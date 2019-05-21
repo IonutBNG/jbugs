@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="jbugs-business" />
         <module name="jbugs-ear" />
-        <module name="jbugs-client" />
         <module name="jbugs-persistence" />
+        <module name="jbugs-view" />
       </profile>
     </annotationProcessing>
   </component>
