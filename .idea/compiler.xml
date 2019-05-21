@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jbugs-business" />
+        <module name="jbugs-client" />
         <module name="jbugs-ear" />
         <module name="jbugs-persistence" />
         <module name="jbugs-view" />
