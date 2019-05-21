@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>msg.jbugs</groupId>
-            <artifactId>jbugs-client</artifactId>
+            <artifactId>jbugs-view</artifactId>
             <type>war</type>
             <version>${project.version}</version>
         </dependency>
@@ -33,7 +33,7 @@
                     <modules>
                         <webModule>
                             <groupId>msg.jbugs</groupId>
-                            <artifactId>jbugs-client</artifactId>
+                            <artifactId>jbugs-view</artifactId>
                             <contextRoot>jbugs</contextRoot>
                         </webModule>
                     </modules>

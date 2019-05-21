@@ -12,7 +12,7 @@
     <modules>
         <module>jbugs-persistence</module>
         <module>jbugs-business</module>
-        <module>jbugs-client</module>
+        <module>jbugs-view</module>
         <module>jbugs-ear</module>
     </modules>
 
