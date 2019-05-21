@@ -1,9 +1,38 @@
-<form>
+<!--background-image: linear-gradient(to right top, #02afbc, #5dc2b5, #92d2b2, #c2e1b7, #ecf0c7) !important;-->
 
-  <div class="form-group">
-    <label >First name: </label>
-    <input class="form-control" type="text" id="firstName" name="firstName"
-           required #firstName ngModel>
+<div class="container" id="containerDiv">
+
+  <div class="card">
+
+      <div class="card-header">
+        <h3>Sign in</h3>
+      </div>
+
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label> Username: </label>
+            <input class="form-control" type="text" id="userName" name="userName"
+                   required #userName="ngModel" ngModel>
+            <div class="alert alert-danger" *ngIf="userName.touched && userName.invalid">
+              <div *ngIf="userName.errors.required"> User name is required !</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label> Password: </label>
+            <input class="form-control" type="text" id="password" name="password"
+                    required #password="ngModel" ngModel>
+            <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+              <div *ngIf="password.errors.required"> Password is required !</div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary">
+            Log In
+          </button>
+
+        </form>
+      </div>
   </div>
-
-</form>
+</div>
