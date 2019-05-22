@@ -28,27 +28,30 @@ public class UserDao {
                 .setParameter(UserEntity.USERNAME, username).getSingleResult();
     }
 
+    /**
+     * Merges the new userEntity with the old one from the database
+     * @param userEntity merged
+     */
+    public void setCounter(UserEntity userEntity){
+        this.entityManager.merge(userEntity);
+    }
+
     public boolean checkIfEmailExists(String email) {
-        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
+        return entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
                 .setParameter(UserEntity.EMAIL, email)
-                .getFirstResult() == 0) {
-            return false;
-        }
-        return true;
+                .getFirstResult() != 0;
     }
 
     public boolean checkIfUsernameExists(String username) {
-        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
+        return entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
                 .setParameter(UserEntity.USERNAME, username)
-                .getFirstResult() == 0) {
-            return false;
-        }
+                .getFirstResult() != 0;
 
-        return true;
     }
 
 
     public void createUser(UserEntity newUserEntity) {
         entityManager.persist(newUserEntity);
     }
+
 }
