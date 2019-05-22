@@ -8,6 +8,10 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
 
+import {MatButtonModule, MatTableModule} from "@angular/material";
+import { MatPaginatorModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +22,11 @@ import {UserTableComponent} from "./user-table/user-table.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

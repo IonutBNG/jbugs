@@ -14,7 +14,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "user-list",
+    path: "usertable",
     component: UserTableComponent
   }
 ];
