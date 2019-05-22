@@ -1,9 +1,9 @@
-package user.control.NewUserService;
+package user.validator;
 
 import exeptions.BusinessException;
 import exeptions.ExceptionMessageCatalog;
-import user.dto.NewUserDto;
 import user.validation.ValidationMessageCatalog;
+import utils.BaseDto;
 
 import javax.ejb.Stateless;
 import javax.validation.ConstraintViolation;
@@ -13,25 +13,19 @@ import javax.validation.ValidatorFactory;
 import java.util.Set;
 
 /**
- * Document me.
- *
- * @author msg systems AG; User Name.
+ * @author Bungardean Tudor-Ionut
  * @since 19.1.2
  */
-
 @Stateless
-public class NewUserService {
+public class UserValidator {
+
     //for validation
     private ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     private Validator validator = factory.getValidator();
 
-    public void addNewUser(NewUserDto newUserDto) throws BusinessException {
-
-    }
-
-    private void validateBean(NewUserDto newUserDto) throws BusinessException {
-        Set<ConstraintViolation<NewUserDto>> violations = validator.validate(newUserDto);
-        for (ConstraintViolation<NewUserDto> v : violations) {
+    public void validateBean(BaseDto baseDto) throws BusinessException {
+        Set<ConstraintViolation<BaseDto>> violations = validator.validate(baseDto);
+        for (ConstraintViolation<BaseDto> v : violations) {
             String constraintErrorMessage = v.getMessage();
             switch (constraintErrorMessage) {
 
@@ -45,13 +39,5 @@ public class NewUserService {
             }
         }
 
-    }
-
-    private void validateEmail(NewUserDto newUserDto) throws BusinessException {
-        //TODO create a named query in user to check if the email is not already in use
-    }
-
-    private void validateUserTriesCounter(NewUserDto newUserDto) throws BusinessException {
-        //TODO create a named query in user to check if the counter is not 0
     }
 }

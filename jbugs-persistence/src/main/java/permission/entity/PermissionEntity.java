@@ -8,9 +8,7 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 /**
- * Document me.
- *
- * @author msg systems AG; User Name.
+ * @author Bungardean Tudor-Ionut
  * @since 19.1.2
  */
 @Entity

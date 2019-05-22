@@ -3,17 +3,16 @@ package user.dto;
 import user.validation.Email;
 import user.validation.Name;
 import user.validation.MobileNumber;
+import utils.BaseDto;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
- * Document me.
- *
- * @author msg systems AG; User Name.
+ * @author Bungardean Tudor-Ionut
  * @since 19.1.2
  */
-public class NewUserDto {
+public class NewUserDto implements BaseDto {
 
     @Name
     @NotNull
