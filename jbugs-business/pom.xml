@@ -12,6 +12,7 @@
     <artifactId>jbugs-business</artifactId>
     <name>JBugs Business Layer</name>
     <packaging>ejb</packaging>
+
     <dependencies>
         <dependency>
             <groupId>msg.jbugs</groupId>

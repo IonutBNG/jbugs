@@ -2,6 +2,8 @@ package user.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Document me.
@@ -16,14 +18,18 @@ public class UsernameValidator implements ConstraintValidator<Username, String> 
    public boolean isValid(String username, ConstraintValidatorContext context) {
 
       //validates if a username contains only letters
-      char[] chars = username.toCharArray();
 
-      for (char c : chars) {
-         if(!Character.isLetter(c)) {
-            return false;
-         }
-      }
+//      char[] chars = username.toCharArray();
+//      for (char c : chars) {
+//         if(!Character.isLetter(c)) {
+//            return false;
+//         }
+//      }
 
-      return true;
+      Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+      Matcher m = p.matcher(username);
+      boolean check = m.find();
+
+      return !check;
    }
 }
