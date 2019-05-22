@@ -1,5 +1,6 @@
 package user.control.authenticationUserService;
 
+import com.google.common.hash.Hashing;
 import exeptions.BusinessException;
 import exeptions.ExceptionMessage;
 import exeptions.ExceptionMessageCatalog;
@@ -10,6 +11,7 @@ import user.validator.UserValidator;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -25,27 +27,46 @@ public class UserAuthenticationService {
     @EJB
     private UserValidator userValidator;
 
+
+    /**
+     * Validates UserLoginDto
+     * @param userLoginDto -> validated & checked
+     * @return binary response
+     */
     public boolean authenticateUser(UserLoginDto userLoginDto){
+
+        this.userValidator.validateBean(userLoginDto);
+
+        return checkCredentials(userLoginDto);
+
+    }
+
+    /**
+     * Checks the credentials or throws an appropriate exception
+     * @param userLoginDto -> checked
+     * @return binary value
+     */
+    private boolean checkCredentials(UserLoginDto userLoginDto){
+
         UserEntity userEntity = this.userDao.getUserByUsername(userLoginDto.getUsername());
 
         if (userEntity == null){
             throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
         }
 
-        return validateUser(userEntity, userLoginDto);
-
-
-
-    }
-
-    private boolean validateUser(UserEntity userEntity, UserLoginDto userLoginDto){
-        String encryptedPass = userLoginDto.getPassword();
-        if (userEntity.getPassword().equals(encryptedPass)){
-            if (userEntity.getCounter()>0){
-               return true;
-            }
-
+        if (userEntity.getCounter() == 0){
+            throw new BusinessException(ExceptionMessageCatalog.USER_LOGIN_TRIES_EXCEEDED);
         }
-        return false;
+        String encryptedPass = Hashing.sha256()
+                .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
+                .toString();
+
+        if (!userEntity.getPassword().equals(encryptedPass)){
+            userEntity.setCounter(userEntity.getCounter()-1);
+            this.userDao.setCounter(userEntity);
+            throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
+        }
+
+        return true;
     }
 }
