@@ -1,5 +1,7 @@
 package user.dto;
 
+import user.validation.Username;
+
 import java.util.Objects;
 
 /**
@@ -10,6 +12,7 @@ import java.util.Objects;
  */
 public class UserLoginDto {
 
+    @Username
     private String username;
 
     private String password;
