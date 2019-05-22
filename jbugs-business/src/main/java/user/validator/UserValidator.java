@@ -36,6 +36,8 @@ public class UserValidator {
                 case(ValidationMessageCatalog.INVALID_MOBILE_NUMBER):
                     throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_PHONENUMBER);
 
+                    //TODO refactor cascading constraints to be contained in custom constraints
+
             }
         }
 

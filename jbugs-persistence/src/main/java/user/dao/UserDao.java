@@ -28,7 +28,27 @@ public class UserDao {
                 .setParameter(UserEntity.USERNAME, username).getSingleResult();
     }
 
+    public boolean checkIfEmailExists(String email) {
+        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
+                .setParameter(UserEntity.EMAIL, email)
+                .getFirstResult() == 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean checkIfUsernameExists(String username) {
+        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
+                .setParameter(UserEntity.USERNAME, username)
+                .getFirstResult() == 0) {
+            return false;
+        }
+
+        return true;
+    }
 
 
-
+    public void createUser(UserEntity newUserEntity) {
+        entityManager.persist(newUserEntity);
+    }
 }
