@@ -1,16 +1,15 @@
 package user.dto;
 
 import user.validation.Username;
+import utils.BaseDto;
 
 import java.util.Objects;
 
 /**
- * Document me.
- *
  * @author msg systems AG; User Name.
  * @since 19.1.2
  */
-public class UserLoginDto {
+public class UserLoginDto implements BaseDto {
 
     @Username
     private String username;

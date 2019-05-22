@@ -9,9 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Document me.
- *
- * @author msg systems AG; User Name.
+ * @author Bungardean Tudor-Ionut
  * @since 19.1.2
  */
 @Entity

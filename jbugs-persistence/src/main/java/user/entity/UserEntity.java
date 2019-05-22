@@ -1,6 +1,7 @@
 package user.entity;
 
 import role.entity.RoleEntity;
+import utils.BaseDto;
 import utils.BaseEntity;
 
 import javax.persistence.*;
@@ -9,14 +10,18 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Document me.
- *
- * @author msg systems AG; User Name.
+ * @author Bungardean Tudor-Ionut
  * @since 19.1.2
  */
 @Entity
 @Table(name = "users")
+@NamedQueries(
+        @NamedQuery(name = UserEntity.GET_USER_BY_USERNAME, query = "Select user from UserEntity user where user.username = :" + UserEntity.USERNAME)
+)
 public class UserEntity extends BaseEntity<Long> {
+
+    public static final String USERNAME = "username";
+    public static final String GET_USER_BY_USERNAME = "UserEntity.getUserByUsername";
 
     @Column(name = "first_name", nullable = false)
     private String firstName;
