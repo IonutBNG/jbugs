@@ -1,6 +1,7 @@
 package user.converter;
 
 import user.dto.NewUserDto;
+import user.dto.ViewUserDto;
 import user.entity.UserEntity;
 
 import javax.ejb.Stateless;
@@ -27,6 +28,18 @@ public class UserConverter {
         //the username will be set in control
 
         return userEntity;
+    }
+
+    public ViewUserDto convertEntityToViewUserDto(UserEntity userEntity){
+        ViewUserDto viewUserDto = new ViewUserDto();
+
+        viewUserDto.setFirstName(userEntity.getFirstName());
+        viewUserDto.setLastName(userEntity.getLastName());
+        viewUserDto.setEmail(userEntity.getEmail());
+        viewUserDto.setMobileNumber(userEntity.getMobileNumber());
+        viewUserDto.setUsername(userEntity.getUsername());
+
+        return viewUserDto;
     }
 
 }

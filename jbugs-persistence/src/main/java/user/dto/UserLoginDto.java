@@ -1,5 +1,6 @@
 package user.dto;
 
+import user.validation.Password;
 import user.validation.Username;
 import utils.BaseDto;
 
@@ -14,6 +15,7 @@ public class UserLoginDto implements BaseDto {
     @Username
     private String username;
 
+    @Password
     private String password;
 
     public UserLoginDto() {

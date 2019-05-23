@@ -35,6 +35,10 @@ public class UserValidator {
                     throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_EMAIL);
                 case(ValidationMessageCatalog.INVALID_MOBILE_NUMBER):
                     throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_PHONENUMBER);
+                case(ValidationMessageCatalog.INVALID_USERNAME):
+                    throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_USERNAME);
+                case(ValidationMessageCatalog.INVALID_PASSWORD):
+                    throw  new BusinessException(ExceptionMessageCatalog.USER_INVALID_PASSWORD);
 
                     //TODO refactor cascading constraints to be contained in custom constraints
 

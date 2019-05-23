@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
 
-import {MatButtonModule, MatTableModule} from "@angular/material";
+import {MatButtonModule, MatIconModule, MatTableModule} from "@angular/material";
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTableModule,
     MatPaginatorModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

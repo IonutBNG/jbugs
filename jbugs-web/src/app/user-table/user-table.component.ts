@@ -10,14 +10,6 @@ export interface User {
 }
 
 const users: User[] = [
-  { firstname: 'Perry', lastname: 'Cox', email: 'email', mobilenumber : '+40700000000',    username: 'username'},
-  { firstname: 'Carla', lastname: 'Espinosa', email: 'email', mobilenumber : '+40700000000', username: 'username'},
-  { firstname: 'Elliot', lastname: 'Red', email: 'email', mobilenumber : '+40700000000', username: 'username'},
-  { firstname: 'Zsombor', lastname: 'Red', email: 'email', mobilenumber : '+40700000000', username: 'username'},
-  { firstname: 'Perry', lastname: 'Cox', email: 'email', mobilenumber : '+40700000000',    username: 'username'},
-  { firstname: 'Carla', lastname: 'Espainosa', email: 'email', mobilenumber : '+40700000000', username: 'username'},
-  { firstname: 'Elliot', lastname: 'Raed', email: 'email', mobilenumber : '+40700000000', username: 'username'},
-  { firstname: 'Zsombor', lastname: 'Reaaad', email: 'email', mobilenumber : '+40700000000', username: 'username'}
 ];
 
 
@@ -38,5 +30,9 @@ export class UserTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+  }
+
+  edit() {
+    alert('Edit');
   }
 }

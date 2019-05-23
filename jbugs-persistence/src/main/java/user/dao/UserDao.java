@@ -1,10 +1,12 @@
 package user.dao;
 
+import user.dto.EditUserDto;
 import user.entity.UserEntity;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -52,6 +54,22 @@ public class UserDao {
 
     public void createUser(UserEntity newUserEntity) {
         entityManager.persist(newUserEntity);
+    }
+
+    public void editUser(EditUserDto editUserDto) {
+        entityManager.createNamedQuery(UserEntity.EDIT_USER)
+                .setParameter(UserEntity.USERNAME, editUserDto.getUsername())
+                .setParameter(UserEntity.FIRST_NAME, editUserDto.getFirstName())
+                .setParameter(UserEntity.LAST_NAME, editUserDto.getLastName())
+                .setParameter(UserEntity.EMAIL, editUserDto.getEmail())
+                .setParameter(UserEntity.MOBLE_NUMBER, editUserDto.getMobileNumber())
+                .setParameter(UserEntity.PASSWORD, editUserDto.getPassword())
+                .setParameter(UserEntity.COUNTER, editUserDto.getCounter())
+                .executeUpdate();
+    }
+
+    public List<UserEntity> getAllUsers(){
+        return entityManager.createNamedQuery(UserEntity.GET_ALL_USERS, UserEntity.class).getResultList();
     }
 
 }
