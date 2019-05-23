@@ -1,19 +1,18 @@
 package user.dto;
 
-import user.validation.Email;
-import user.validation.Name;
-import user.validation.MobileNumber;
-import user.validation.Password;
+import user.validation.*;
 import utils.BaseDto;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 /**
- * @author Bungardean Tudor-Ionut
+ * Document me.
+ *
+ * @author msg systems AG; User Name.
  * @since 19.1.2
  */
-public class NewUserDto implements BaseDto {
+public class EditUserDto implements BaseDto {
+    //will not be edited, only used for the identity of the user
+    @Username
+    private String username;
 
     @Name
     private String firstName;
@@ -30,26 +29,14 @@ public class NewUserDto implements BaseDto {
     @Password
     private String password;
 
-    //TODO add RoleDTo
-    //private RoleDto[] roles;
+    private boolean activate;
 
-    public NewUserDto(String firstName, String lastName, String mobileNumber, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobileNumber = mobileNumber;
-        this.email = email;
+    private Integer counter;
+
+
+    public EditUserDto() {
     }
 
-    public NewUserDto() {
-    }
-
-    public NewUserDto(String firstName, String lastName, String mobileNumber, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.mobileNumber = mobileNumber;
-        this.email = email;
-        this.password = password;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -89,5 +76,29 @@ public class NewUserDto implements BaseDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isActivate() {
+        return activate;
+    }
+
+    public void setActivate(boolean activate) {
+        this.activate = activate;
+    }
+
+    public Integer getCounter() {
+        return counter;
+    }
+
+    public void setCounter(Integer counter) {
+        this.counter = counter;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

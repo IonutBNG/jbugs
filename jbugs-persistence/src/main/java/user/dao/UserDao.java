@@ -1,5 +1,6 @@
 package user.dao;
 
+import user.dto.EditUserDto;
 import user.entity.UserEntity;
 
 import javax.ejb.Stateless;
@@ -38,27 +39,33 @@ public class UserDao {
     }
 
     public boolean checkIfEmailExists(String email) {
-        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
+        return entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
                 .setParameter(UserEntity.EMAIL, email)
-                .getFirstResult() == 0) {
-            return false;
-        }
-        return true;
+                .getFirstResult() != 0;
     }
 
     public boolean checkIfUsernameExists(String username) {
-        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
+        return entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
                 .setParameter(UserEntity.USERNAME, username)
-                .getFirstResult() == 0) {
-            return false;
-        }
+                .getFirstResult() != 0;
 
-        return true;
     }
 
 
     public void createUser(UserEntity newUserEntity) {
         entityManager.persist(newUserEntity);
+    }
+
+    public void editUser(EditUserDto editUserDto) {
+        entityManager.createNamedQuery(UserEntity.EDIT_USER)
+                .setParameter(UserEntity.USERNAME, editUserDto.getUsername())
+                .setParameter(UserEntity.FIRST_NAME, editUserDto.getFirstName())
+                .setParameter(UserEntity.LAST_NAME, editUserDto.getLastName())
+                .setParameter(UserEntity.EMAIL, editUserDto.getEmail())
+                .setParameter(UserEntity.MOBLE_NUMBER, editUserDto.getMobileNumber())
+                .setParameter(UserEntity.PASSWORD, editUserDto.getPassword())
+                .setParameter(UserEntity.COUNTER, editUserDto.getCounter())
+                .executeUpdate();
     }
 
     public List<UserEntity> getAllUsers(){

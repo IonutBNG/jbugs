@@ -16,6 +16,9 @@ public class MobileNumberValidator implements ConstraintValidator<MobileNumber, 
 
    public boolean isValid(String phonenumber, ConstraintValidatorContext context) {
 
+      if (phonenumber == null) {
+         return false;
+      }
       //pattern to validate international phonenumbers, according to ITU-T standards
       String regex = "^\\+(?:[0-9] ?){6,14}[0-9]$";
       Pattern pattern = Pattern.compile(regex);

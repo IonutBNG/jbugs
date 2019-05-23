@@ -1,11 +1,25 @@
 package user.dto;
 
+import user.validation.Email;
+import user.validation.MobileNumber;
+import user.validation.Name;
+import user.validation.Username;
+
 public class ViewUserDto {
 
+    @Name
     private String firstName;
+
+    @Name
     private String lastName;
+
+    @Email
     private String email;
+
+    @MobileNumber
     private String mobileNumber;
+
+    @Username
     private String username;
 
     public ViewUserDto() {

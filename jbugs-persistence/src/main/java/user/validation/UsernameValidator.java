@@ -17,15 +17,6 @@ public class UsernameValidator implements ConstraintValidator<Username, String> 
 
    public boolean isValid(String username, ConstraintValidatorContext context) {
 
-      //validates if a username contains only letters
-
-//      char[] chars = username.toCharArray();
-//      for (char c : chars) {
-//         if(!Character.isLetter(c)) {
-//            return false;
-//         }
-//      }
-
       Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
       Matcher m = p.matcher(username);
       boolean check = m.find();
