@@ -2,6 +2,8 @@ package user.facade;
 
 import user.control.UserViewService.UserViewService;
 import user.control.authenticationUserService.UserAuthenticationService;
+import user.control.editUserService.EditUserService;
+import user.control.newUserService.NewUserService;
 import user.dto.UserLoginDto;
 import user.dto.ViewUserDto;
 
@@ -22,6 +24,12 @@ public class UserFacade {
 
     @EJB
     private UserViewService userViewService;
+
+    @EJB
+    private NewUserService newUserService;
+
+    @EJB
+    private EditUserService editUserService;
 
     /**
      * Calls authenticateUser method from UserAuthenticationService

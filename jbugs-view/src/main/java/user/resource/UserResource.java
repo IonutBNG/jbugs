@@ -21,7 +21,7 @@ import javax.ws.rs.core.Response;
 public class UserResource {
 
     @EJB
-    private UserFacade userFacade;
+    UserFacade userFacade;
 
     @POST
     @Path("/authenticate")

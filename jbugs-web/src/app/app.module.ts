@@ -12,13 +12,15 @@ import {MatButtonModule, MatIconModule, MatTableModule} from "@angular/material"
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AddUserComponent} from "./add-user/add-user.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     LoginComponent,
-    UserTableComponent
+    UserTableComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

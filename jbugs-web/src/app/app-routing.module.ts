@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {UserTableComponent} from "./user-table/user-table.component";
+import {AddUserComponent} from "./add-user/add-user.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "usertable",
     component: UserTableComponent
+  },
+  {
+    path: "adduser",
+    component: AddUserComponent
   }
 ];
 
