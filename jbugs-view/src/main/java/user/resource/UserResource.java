@@ -6,6 +6,8 @@ import user.facade.UserFacade;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ws.rs.*;
+import javax.print.attribute.standard.Media;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -26,6 +28,14 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response authenticateUser(UserLoginDto userLoginDto){
         return Response.ok(this.userFacade.authenticateUser(userLoginDto)).build();
+    }
+
+    @GET
+    @Path("/get")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getData(){
+        UserLoginDto userLoginDto = new UserLoginDto("aeiou", "pass");
+        return Response.ok(userLoginDto).build();
     }
 
     @GET

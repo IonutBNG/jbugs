@@ -5,6 +5,7 @@ import user.entity.UserEntity;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -26,8 +27,12 @@ public class UserDao {
      * @return UserEntity
      */
     public UserEntity getUserByUsername(String username){
-        return this.entityManager.createNamedQuery(UserEntity.GET_USER_BY_USERNAME, UserEntity.class)
-                .setParameter(UserEntity.USERNAME, username).getSingleResult();
+        try {
+            return this.entityManager.createNamedQuery(UserEntity.GET_USER_BY_USERNAME, UserEntity.class)
+                    .setParameter(UserEntity.USERNAME, username).getSingleResult();
+        } catch(NoResultException ex){
+            return null;
+        }
     }
 
     /**

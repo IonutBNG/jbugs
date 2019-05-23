@@ -21,6 +21,8 @@
             <type>ejb</type>
             <version>${project.version}</version>
         </dependency>
+
+
     </dependencies>
 
 

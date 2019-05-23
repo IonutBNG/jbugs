@@ -15,7 +15,7 @@ import java.util.Set;
  * @since 19.1.2
  */
 
-@ApplicationPath("jbugs-api")
+@ApplicationPath("/jbugs-api")
 public class JBugsApplication extends Application {
 
 
