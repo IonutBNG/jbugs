@@ -1,10 +1,13 @@
 package user.facade;
 
+import user.control.UserViewService.UserViewService;
 import user.control.authenticationUserService.UserAuthenticationService;
 import user.dto.UserLoginDto;
+import user.dto.ViewUserDto;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import java.util.List;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -17,6 +20,9 @@ public class UserFacade {
     @EJB
     private UserAuthenticationService userAuthenticationService;
 
+    @EJB
+    private UserViewService userViewService;
+
     /**
      * Calls authenticateUser method from UserAuthenticationService
      * @param userLoginDto sent further to UserAuthenticationService
@@ -24,5 +30,10 @@ public class UserFacade {
      */
     public boolean authenticateUser(UserLoginDto userLoginDto){
         return this.userAuthenticationService.authenticateUser(userLoginDto);
+    }
+
+
+    public List<ViewUserDto> getAllUsers() {
+        return userViewService.gettAllUsers();
     }
 }

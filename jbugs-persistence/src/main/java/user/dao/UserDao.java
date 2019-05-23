@@ -5,6 +5,7 @@ import user.entity.UserEntity;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -37,21 +38,31 @@ public class UserDao {
     }
 
     public boolean checkIfEmailExists(String email) {
-        return entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
+        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
                 .setParameter(UserEntity.EMAIL, email)
-                .getFirstResult() != 0;
+                .getFirstResult() == 0) {
+            return false;
+        }
+        return true;
     }
 
     public boolean checkIfUsernameExists(String username) {
-        return entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
+        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
                 .setParameter(UserEntity.USERNAME, username)
-                .getFirstResult() != 0;
+                .getFirstResult() == 0) {
+            return false;
+        }
 
+        return true;
     }
 
 
     public void createUser(UserEntity newUserEntity) {
         entityManager.persist(newUserEntity);
+    }
+
+    public List<UserEntity> getAllUsers(){
+        return entityManager.createNamedQuery(UserEntity.GET_ALL_USERS, UserEntity.class).getResultList();
     }
 
 }

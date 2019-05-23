@@ -19,7 +19,8 @@ import java.util.Objects;
 @NamedQueries({
         @NamedQuery(name = UserEntity.GET_USER_BY_USERNAME, query = "Select user from UserEntity user where user.username = :" + UserEntity.USERNAME),
         @NamedQuery(name = UserEntity.CHECK_IF_EMAIL_EXISTS, query = "SELECT COUNT(u) FROM UserEntity u WHERE u.email = :"+ UserEntity.EMAIL),
-        @NamedQuery(name = UserEntity.CHECK_IF_USERNAME_EXISTS, query = "SELECT COUNT(u) FROM UserEntity u WHERE u.username = :"+ UserEntity.USERNAME)
+        @NamedQuery(name = UserEntity.CHECK_IF_USERNAME_EXISTS, query = "SELECT COUNT(u) FROM UserEntity u WHERE u.username = :"+ UserEntity.USERNAME),
+        @NamedQuery(name = UserEntity.GET_ALL_USERS, query = "SELECT users from UserEntity users")
 })
 public class UserEntity extends BaseEntity<Long> {
 
@@ -27,6 +28,7 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String CHECK_IF_EMAIL_EXISTS = "UserEntity.checkIfEmailExists";
     public static final String CHECK_IF_USERNAME_EXISTS = "UserEntity.chekcIfUsernameExists";
     public static final String GET_USER_BY_USERNAME = "UserEntity.getUserByUsername";
+    public static final String GET_ALL_USERS = "UserEntity.getAllUsers";
 
     //Parameter names
     public static final String USERNAME = "username";
