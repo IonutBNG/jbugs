@@ -1,5 +1,6 @@
 package user.dao;
 
+import com.google.common.collect.Iterables;
 import user.dto.EditUserDto;
 import user.entity.UserEntity;
 
@@ -28,20 +29,24 @@ public class UserDao {
      * @return UserEntity
      */
     public UserEntity getUserByUsername(String username){
-        try {
-            return this.entityManager.createNamedQuery(UserEntity.GET_USER_BY_USERNAME, UserEntity.class)
-                    .setParameter(UserEntity.USERNAME, username).getSingleResult();
-        } catch(NoResultException ex){
-            return null;
-        }
+
+        return Iterables.getOnlyElement(this.entityManager
+                                            .createNamedQuery(UserEntity.GET_USER_BY_USERNAME, UserEntity.class)
+                                            .setParameter(UserEntity.USERNAME, username)
+                                            .getResultList(), null);
+
     }
 
     /**
-     * Merges the new userEntity with the old one from the database
-     * @param userEntity merged
+     * Sets the new counter value
+     * @param userEntity used for the query parameters set
      */
     public void setCounter(UserEntity userEntity){
-        this.entityManager.merge(userEntity);
+        this.entityManager.createNamedQuery(UserEntity.SET_COUNTER, UserEntity.class)
+                .setParameter(UserEntity.COUNTER, userEntity.getCounter())
+                .setParameter(UserEntity.USERNAME, userEntity.getUsername())
+                .executeUpdate();
+
     }
 
     public boolean checkIfEmailIsUsed(String email) {
@@ -72,7 +77,7 @@ public class UserDao {
     }
 
     public void editUser(EditUserDto editUserDto) {
-        entityManager.createNamedQuery(UserEntity.EDIT_USER)
+        this.entityManager.createNamedQuery(UserEntity.EDIT_USER)
                 .setParameter(UserEntity.USERNAME, editUserDto.getUsername())
                 .setParameter(UserEntity.FIRST_NAME, editUserDto.getFirstName())
                 .setParameter(UserEntity.LAST_NAME, editUserDto.getLastName())

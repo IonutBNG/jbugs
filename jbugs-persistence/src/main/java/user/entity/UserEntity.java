@@ -18,6 +18,7 @@ import java.util.Objects;
         @NamedQuery(name = UserEntity.GET_USER_BY_USERNAME, query = "Select user from UserEntity user where user.username = :" + UserEntity.USERNAME),
         @NamedQuery(name = UserEntity.CHECK_IF_EMAIL_EXISTS, query = "SELECT u FROM UserEntity u WHERE u.email = :"+ UserEntity.EMAIL),
         @NamedQuery(name = UserEntity.CHECK_IF_USERNAME_EXISTS, query = "SELECT u FROM UserEntity u WHERE u.username = :"+ UserEntity.USERNAME),
+        @NamedQuery(name = UserEntity.SET_COUNTER, query = "Update UserEntity user set user.counter = :" + UserEntity.COUNTER + " where user.username = :"+ UserEntity.USERNAME),
         @NamedQuery(name = UserEntity.EDIT_USER, query = "UPDATE UserEntity u SET" +
                 " u.firstName=:" + UserEntity.FIRST_NAME +
                 ", u.lastName=:" + UserEntity.LAST_NAME +
@@ -26,8 +27,7 @@ import java.util.Objects;
                 ", u.counter=:" + UserEntity.COUNTER +
                 ", u.password=:" + UserEntity.PASSWORD +
                 " WHERE u.username=:" + UserEntity.USERNAME),
-        @NamedQuery(name = UserEntity.GET_ALL_USERS, query = "SELECT users from UserEntity users"),
-        //@NamedQuery(name = UserEntity.MATCH_LOGIN_CREDENTIALS, query = "SELECT count()")
+        @NamedQuery(name = UserEntity.GET_ALL_USERS, query = "SELECT users from UserEntity users")
 })
 public class UserEntity extends BaseEntity<Long> {
 
@@ -47,6 +47,7 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String COUNTER = "counter";
     public static final String MOBLE_NUMBER = "mobileNumber";
     public static final String PASSWORD = "password";
+    public static final String SET_COUNTER = "UserEntity.SetCounter";
 
 
 

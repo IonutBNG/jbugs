@@ -22,11 +22,12 @@ import javax.ws.rs.core.Response;
 public class UserResource {
 
     @EJB
-    UserFacade userFacade;
+    private UserFacade userFacade;
 
     @POST
     @Path("/authenticate")
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response authenticateUser(UserLoginDto userLoginDto){
         return Response.ok(this.userFacade.authenticateUser(userLoginDto)).build();
     }

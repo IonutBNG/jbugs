@@ -57,6 +57,7 @@ public class UserAuthenticationService {
         if (userEntity.getCounter() == 0){
             throw new BusinessException(ExceptionMessageCatalog.USER_LOGIN_TRIES_EXCEEDED);
         }
+
         String encryptedPass = Hashing.sha256()
                 .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
                 .toString();
@@ -64,7 +65,8 @@ public class UserAuthenticationService {
         if (!userEntity.getPassword().equals(encryptedPass)){
             userEntity.setCounter(userEntity.getCounter()-1);
             this.userDao.setCounter(userEntity);
-            throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
+            return false;
+//            throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
         }
 
         return true;
