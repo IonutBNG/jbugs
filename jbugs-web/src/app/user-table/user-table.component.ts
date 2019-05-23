@@ -1,17 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, Output, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource} from "@angular/material";
-
-export interface User {
-  firstname: string;
-  lastname: string;
-  email: string;
-  mobilenumber : string;
-  username: string
-}
-
-const users: User[] = [
-];
-
+import {User} from "../user-model/user-table";
+import {UserService} from "../services/user-service/user.service";
 
 @Component({
   selector: 'app-user-table',
@@ -22,17 +12,29 @@ export class UserTableComponent implements OnInit {
 
   public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'actions'];
 
-  public dataSource = new MatTableDataSource<User>(users);
+  public users : User[];
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  // public dataSource = new MatTableDataSource<User>(this.users);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+
+    this.userService.getAllUsers().subscribe(
+      (users) => {
+        this.users = users as User[];
+      }
+    );
+
+    // this.dataSource.paginator = this.paginator;
+
   }
+
 
   edit() {
     alert('Edit');
   }
+
 }

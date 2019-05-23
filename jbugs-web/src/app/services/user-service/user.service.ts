@@ -3,7 +3,6 @@ import {BackendService} from "../backend-service/backend.service";
 import {Observable} from "rxjs";
 import {UserModel} from "../../user-model/user-model";
 import {of} from "rxjs/internal/observable/of";
-import {NewUserModel} from "../../user-model/new-user-model";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +20,13 @@ export class UserService {
     // const u: UserModel = {username: "AdminMock", password: "PasswordMock"};
     return this.backendService.post("/jbugs/jbugs-api/user/authenticate", user);
   }
+
+  public getAllUsers(): Observable<User[]> {
+    return this.backendService.get("/jbugs/jbugs-api/user/users");
+  }
+
+
+
 
   public addNewUser(newUser: NewUserModel) : Observable<NewUserModel> {
     console.log(newUser);

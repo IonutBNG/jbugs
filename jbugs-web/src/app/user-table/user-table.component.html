@@ -1,16 +1,16 @@
 <div>
   <button mat-raised-button id="addbtn"> Add User </button>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="users" class="mat-elevation-z8">
 
     <ng-container matColumnDef="firstName">
       <th mat-header-cell *matHeaderCellDef> FirstName </th>
-      <td mat-cell *matCellDef="let users"> {{users.firstname}} </td>
+      <td mat-cell *matCellDef="let users"> {{users.firstName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="lastName">
       <th mat-header-cell *matHeaderCellDef> LastName </th>
-      <td mat-cell *matCellDef="let users"> {{users.lastname}} </td>
+      <td mat-cell *matCellDef="let users"> {{users.lastName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="email">
@@ -20,7 +20,7 @@
 
     <ng-container matColumnDef="mobileNumber">
       <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
-      <td mat-cell *matCellDef="let users"> {{users.mobilenumber}} </td>
+      <td mat-cell *matCellDef="let users"> {{users.mobileNumber}} </td>
     </ng-container>
 
     <ng-container matColumnDef="userName">

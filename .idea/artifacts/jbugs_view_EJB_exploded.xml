@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-ejb" name="jbugs-view:EJB exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/jbugs_view_EJB_exploded</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="jbugs-view/ejb/EJB" />
-      <element id="module-output" name="jbugs-view" />
-    </root>
-  </artifact>
-</component>

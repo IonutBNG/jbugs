@@ -41,6 +41,7 @@ public class UserResource {
     }
 
     @GET
+    @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllUsers(){
         return Response.ok(userFacade.getAllUsers()).build();
