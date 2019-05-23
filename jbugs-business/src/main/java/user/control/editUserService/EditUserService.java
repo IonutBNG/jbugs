@@ -8,7 +8,6 @@ import user.validator.UserValidator;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.criteria.CriteriaBuilder;
 
 /**
  * Document me.
@@ -45,7 +44,7 @@ public class EditUserService {
     }
 
     private void validateIfEmailExists (EditUserDto editUserDto)throws BusinessException {
-        if (userDao.checkIfEmailExists(editUserDto.getEmail())) {
+        if (userDao.checkIfEmailIsUsed(editUserDto.getEmail())) {
             throw new BusinessException(ExceptionMessageCatalog.USER_EMAIL_ALREADY_EXISTS);
         }
     }

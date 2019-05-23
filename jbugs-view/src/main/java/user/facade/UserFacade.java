@@ -4,6 +4,7 @@ import user.control.UserViewService.UserViewService;
 import user.control.authenticationUserService.UserAuthenticationService;
 import user.control.editUserService.EditUserService;
 import user.control.newUserService.NewUserService;
+import user.dto.NewUserDto;
 import user.dto.UserLoginDto;
 import user.dto.ViewUserDto;
 
@@ -43,5 +44,9 @@ public class UserFacade {
 
     public List<ViewUserDto> getAllUsers() {
         return userViewService.gettAllUsers();
+    }
+
+    public boolean addNewUser(NewUserDto newUserDto) {
+        return  this.newUserService.addNewUser(newUserDto);
     }
 }

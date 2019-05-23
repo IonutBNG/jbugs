@@ -1,5 +1,6 @@
 package user.resource;
 
+import user.dto.NewUserDto;
 import user.dto.UserLoginDto;
 import user.facade.UserFacade;
 
@@ -42,6 +43,14 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllUsers(){
         return Response.ok(userFacade.getAllUsers()).build();
+    }
+
+    @POST
+    @Path("/add-new-user")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addNewUser(NewUserDto newUserDto) {
+        return Response.ok(this.userFacade.addNewUser(newUserDto)).build();
     }
 
 }

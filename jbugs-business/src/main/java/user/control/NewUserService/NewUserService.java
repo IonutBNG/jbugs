@@ -32,7 +32,7 @@ public class NewUserService {
     UserValidator userValidator;
 
 
-    public void addNewUser(NewUserDto newUserDto) throws BusinessException {
+    public boolean addNewUser(NewUserDto newUserDto) throws BusinessException {
         userValidator.validateBean(newUserDto);
         this.validateEmail(newUserDto);
 
@@ -42,13 +42,13 @@ public class NewUserService {
 
         userDao.createUser(userEntity);
 
-
+        return true;
     }
 
 
 
     private void validateEmail(NewUserDto newUserDto) throws BusinessException {
-        if(userDao.checkIfEmailExists(newUserDto.getEmail())) {
+        if(userDao.checkIfEmailIsUsed(newUserDto.getEmail())) {
             throw new BusinessException(ExceptionMessageCatalog.USER_EMAIL_ALREADY_EXISTS);
         }
     }
@@ -72,7 +72,7 @@ public class NewUserService {
 
         try {
 
-            while (lastDigitPart1 >= 1 || lastDigitPart2 <= firstName.length() || userDao.checkIfUsernameExists(tempUsername)) {
+            while (lastDigitPart1 >= 1 && lastDigitPart2 <= firstName.length() && userDao.checkIfUsernameExists(tempUsername)) {
                 lastDigitPart1--;
                 lastDigitPart2++;
 
@@ -82,7 +82,9 @@ public class NewUserService {
 
                 tempUsername = Part1 + Part2;
 
-                System.out.println(tempUsername);
+            }
+            if (userDao.checkIfUsernameExists(tempUsername)) {
+                throw new StringIndexOutOfBoundsException();
             }
 
             return tempUsername;

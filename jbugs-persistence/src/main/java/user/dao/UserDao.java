@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -43,16 +44,25 @@ public class UserDao {
         this.entityManager.merge(userEntity);
     }
 
-    public boolean checkIfEmailExists(String email) {
-        return entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
+    public boolean checkIfEmailIsUsed(String email) {
+
+       if (this.entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS, UserEntity.class)
                 .setParameter(UserEntity.EMAIL, email)
-                .getFirstResult() != 0;
+                .getResultList().size() >= 1) {
+
+           return true;
+       }
+       return  false;
+
     }
 
     public boolean checkIfUsernameExists(String username) {
-        return entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
+        if (entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS, UserEntity.class)
                 .setParameter(UserEntity.USERNAME, username)
-                .getFirstResult() != 0;
+                .getResultList().size() >= 1){
+            return true;
+        }
+        return false;
 
     }
 
