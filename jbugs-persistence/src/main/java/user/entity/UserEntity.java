@@ -4,6 +4,7 @@ import role.entity.RoleEntity;
 import utils.BaseDto;
 import utils.BaseEntity;
 
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,13 +16,22 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "users")
-@NamedQueries(
-        @NamedQuery(name = UserEntity.GET_USER_BY_USERNAME, query = "Select user from UserEntity user where user.username = :" + UserEntity.USERNAME)
-)
+@NamedQueries({
+        @NamedQuery(name = UserEntity.GET_USER_BY_USERNAME, query = "Select user from UserEntity user where user.username = :" + UserEntity.USERNAME),
+        @NamedQuery(name = UserEntity.CHECK_IF_EMAIL_EXISTS, query = "SELECT COUNT(u) FROM UserEntity u WHERE u.email = :"+ UserEntity.EMAIL),
+        @NamedQuery(name = UserEntity.CHECK_IF_USERNAME_EXISTS, query = "SELECT COUNT(u) FROM UserEntity u WHERE u.username = :"+ UserEntity.USERNAME)
+})
 public class UserEntity extends BaseEntity<Long> {
 
-    public static final String USERNAME = "username";
+    //Query names
+    public static final String CHECK_IF_EMAIL_EXISTS = "UserEntity.checkIfEmailExists";
+    public static final String CHECK_IF_USERNAME_EXISTS = "UserEntity.chekcIfUsernameExists";
     public static final String GET_USER_BY_USERNAME = "UserEntity.getUserByUsername";
+
+    //Parameter names
+    public static final String USERNAME = "username";
+    public static final String EMAIL = "email";
+
 
     @Column(name = "first_name", nullable = false)
     private String firstName;

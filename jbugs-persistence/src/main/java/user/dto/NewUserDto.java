@@ -15,23 +15,18 @@ import javax.validation.constraints.Size;
 public class NewUserDto implements BaseDto {
 
     @Name
-    @NotNull
-    @Size(min = 1, max = 35)
     private String firstName;
 
     @Name
-    @NotNull
-    @Size(min = 1, max = 35)
     private String lastName;
 
     @MobileNumber
-    @NotNull
     private String mobileNumber;
 
     @Email
-    @NotNull
-    @Size(max = 100)
     private String email;
+
+    private String password;
 
     //TODO add RoleDTo
     //private RoleDto[] roles;
@@ -44,6 +39,14 @@ public class NewUserDto implements BaseDto {
     }
 
     public NewUserDto() {
+    }
+
+    public NewUserDto(String firstName, String lastName, String mobileNumber, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mobileNumber = mobileNumber;
+        this.email = email;
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -76,5 +79,13 @@ public class NewUserDto implements BaseDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

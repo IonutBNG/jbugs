@@ -20,7 +20,7 @@ public class UserDao {
 
     /**
      * Extracts from the database the UserEntity that corresponds to the username
-     * @param username  - string
+     * @param username
      * @return UserEntity
      */
     public UserEntity getUserByUsername(String username){
@@ -36,7 +36,22 @@ public class UserDao {
         this.entityManager.merge(userEntity);
     }
 
+    public boolean checkIfEmailExists(String email) {
+        return entityManager.createNamedQuery(UserEntity.CHECK_IF_EMAIL_EXISTS)
+                .setParameter(UserEntity.EMAIL, email)
+                .getFirstResult() != 0;
+    }
+
+    public boolean checkIfUsernameExists(String username) {
+        return entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS)
+                .setParameter(UserEntity.USERNAME, username)
+                .getFirstResult() != 0;
+
+    }
 
 
+    public void createUser(UserEntity newUserEntity) {
+        entityManager.persist(newUserEntity);
+    }
 
 }

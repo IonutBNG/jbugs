@@ -26,4 +26,7 @@ public class ExceptionMessageCatalog {
     public static ExceptionMessage USER_INVALID_NAME = new ExceptionMessage("USER-006"
             ,"The name contains an invalid character");
 
+
+
+
 }
