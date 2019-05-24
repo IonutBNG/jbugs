@@ -29,15 +29,10 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response authenticateUser(UserLoginDto userLoginDto){
-        return Response.ok(this.userFacade.authenticateUser(userLoginDto)).build();
-    }
-
-    @GET
-    @Path("/get")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getData(){
-        UserLoginDto userLoginDto = new UserLoginDto("aeiou", "pass");
-        return Response.ok(userLoginDto).build();
+        return Response.status(Response.Status.OK)
+                .type(MediaType.APPLICATION_JSON_TYPE)
+                .entity(this.userFacade.authenticateUser(userLoginDto))
+                .build();
     }
 
     @GET

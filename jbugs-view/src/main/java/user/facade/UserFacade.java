@@ -10,6 +10,7 @@ import user.dto.ViewUserDto;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.json.JsonObject;
 import java.util.List;
 
 /**
@@ -37,7 +38,7 @@ public class UserFacade {
      * @param userLoginDto sent further to UserAuthenticationService
      * @return binary value
      */
-    public boolean authenticateUser(UserLoginDto userLoginDto){
+    public JsonObject authenticateUser(UserLoginDto userLoginDto){
         return this.userAuthenticationService.authenticateUser(userLoginDto);
     }
 
