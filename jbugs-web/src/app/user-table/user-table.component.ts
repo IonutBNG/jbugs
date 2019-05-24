@@ -16,7 +16,7 @@ export class UserTableComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  // public dataSource = new MatTableDataSource<User>(this.users);
+   public dataSource: any;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -25,10 +25,12 @@ export class UserTableComponent implements OnInit {
     this.userService.getAllUsers().subscribe(
       (users) => {
         this.users = users as User[];
+        this.dataSource =  new MatTableDataSource<User>(this.users);
+        this.dataSource.paginator = this.paginator;
       }
     );
 
-    // this.dataSource.paginator = this.paginator;
+
 
   }
 
