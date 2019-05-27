@@ -1,39 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import {UserModel} from "../user-model/user-model";
-import {UserService} from "../services/user-service/user.service";
+import {AuthService} from "../services/auth-service/auth.service";
+import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
+import {$} from "protractor";
 
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService: UserService) {
+  loginUserData = {};
+  private captchaResponse = null;
 
+  constructor(private auth: AuthService,
+              private router: Router,
+              private toast: ToastrService) {
   }
 
-  public loggedUser: UserModel;
+  resolved(captchaResponse: string){
+    this.captchaResponse = captchaResponse;
+  }
 
-  public user: UserModel;
 
   ngOnInit() {
 
   }
 
-  login(username, password){
-    var user: UserModel = {username: username, password: password};
-    console.log(user);
-    console.log(user);
-    this.userService.loginUser(user).subscribe(u => {
-      this.loggedUser = u;
-      console.log(this.loggedUser);
-    })
-    // this.userService.getUser()
-    //   .subscribe((user) => {
-    //     this.user = user;
-    //     console.log(this.user);
-    //   });
+  loginUser(){
+    if (this.captchaResponse != null && this.loginUserData["username"] && this.loginUserData["password"]) {
+      this.auth.loginUser(this.loginUserData)
+        .subscribe(
+          res => {
+            console.log(res);
+            this.checkToken(res);
+          },
+          err => {
+            console.log(err);
+          }
+        )
+    }
+  }
+
+  private checkToken(res){
+    if (res.token == undefined){
+      this.showToast(res.message);
+    } else if (res.token == ""){
+      this.showToast("Invalid username or password !");
+    } else {
+      localStorage.setItem('token', res.token);
+      this.router.navigate(['/usertable']);
+    }
+  }
+
+  private showToast(message){
+    this.toast.error(message, "Error");
   }
 
 }

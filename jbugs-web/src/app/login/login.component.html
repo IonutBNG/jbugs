@@ -14,8 +14,9 @@
         <form>
           <div class="form-group">
             <label> Username: </label>
-            <input class="form-control" type="text" id="userName" name="userName" pattern="[a-zA-Z0-9]*"
-                   required #userName="ngModel" ngModel>
+            <input [(ngModel)]="loginUserData.username" name="userName"
+                   class="form-control" required type="text" id="userName" pattern="[a-zA-Z0-9]*"
+                   #userName="ngModel" ngModel>
             <div class="alert alert-danger" *ngIf="userName.touched && userName.invalid">
               <div *ngIf="userName.errors.required"> Username name is required !</div>
               <div *ngIf="userName.errors.pattern"> The pattern is invalid !</div>
@@ -24,16 +25,24 @@
 
           <div class="form-group">
             <label> Password: </label>
-            <input class="form-control" type="text" id="password" name="password" pattern="[a-zA-Z0-9]*"
-                    required #password="ngModel" ngModel>
+            <input [(ngModel)]="loginUserData.password" class="form-control"
+                   type="password" id="password" name="password" pattern="[a-zA-Z0-9]*"
+                   required #password="ngModel" ngModel>
             <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
               <div *ngIf="password.errors.required"> Password is required !</div>
               <div *ngIf="password.errors.pattern"> The pattern is invalid !</div>
             </div>
           </div>
 
+          <div class="form-group">
+            <re-captcha id="recaptcha"
+                        (resolved)="resolved($event)"
+                        siteKey="6LduWKUUAAAAAPgmqNEQKaRw87f-dAKPO8TffbFq">
+            </re-captcha>
+          </div>
+
           <div class="login">
-          <input type="submit" class="btn btn-primary" (click)="login(userName.value, password.value)"
+          <input type="submit" class="btn btn-primary" (click)="loginUser()"
               value="Login">
           </div>
 
