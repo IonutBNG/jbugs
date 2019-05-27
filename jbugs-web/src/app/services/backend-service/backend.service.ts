@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {UserModel} from "../../user-model/user-model";
+import {map} from "rxjs/operators";
+
 
 /**
  * Base backend service. Business services should import this instead of using HttpClient directly.
@@ -9,7 +12,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BackendService {
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) {
+
+  }
+
 
   /**
    *

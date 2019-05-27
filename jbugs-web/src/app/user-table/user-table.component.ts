@@ -1,7 +1,23 @@
 import {Component, OnInit, Output, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource} from "@angular/material";
-import {User} from "../user-model/user-table";
 import {UserService} from "../services/user-service/user.service";
+import {UserModel} from "../user-model/user-model";
+import {Subscription} from "rxjs";
+import {BackendService} from "../services/backend-service/backend.service";
+import {AuthService} from "../services/auth-service/auth.service";
+import {Router} from "@angular/router";
+
+export interface User {
+  firstname: string;
+  lastname: string;
+  email: string;
+  mobilenumber : string;
+  username: string
+}
+
+const users: User[] = [
+];
+
 
 @Component({
   selector: 'app-user-table',
@@ -10,12 +26,15 @@ import {UserService} from "../services/user-service/user.service";
 })
 export class UserTableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName',
-    'counter', 'actions'];
+
+  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'actions'];
 
   public users : User[];
 
-  constructor(private userService: UserService) { }
+  constructor(private backendService: BackendService,
+              private authService: AuthService,
+              private userService: UserService,
+              private router: Router) { }
 
    public dataSource: any;
 
@@ -31,13 +50,20 @@ export class UserTableComponent implements OnInit {
       }
     );
 
-
-
   }
 
 
   edit() {
     alert('Edit');
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
+
+  addUserPopup(){
+    this.router.navigate(['/adduser']);
   }
 
 }

@@ -3,24 +3,27 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {UserTableComponent} from "./user-table/user-table.component";
 import {AddUserComponent} from "./add-user/add-user.component";
+import {AuthGuard} from "./auth-guard/auth.guard";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: 'usertable',
+    component: UserTableComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: "usertable",
-    component: UserTableComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: "adduser",
-    component: AddUserComponent
+    component: AddUserComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

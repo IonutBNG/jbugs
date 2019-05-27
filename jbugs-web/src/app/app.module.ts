@@ -11,8 +11,12 @@ import {UserTableComponent} from "./user-table/user-table.component";
 import {MatButtonModule, MatIconModule, MatTableModule} from "@angular/material";
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {AuthService} from "./services/auth-service/auth.service";
+import {AuthGuard} from "./auth-guard/auth.guard";
+import {ToastrModule} from "ngx-toastr";
+import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from "./add-user/add-user.component";
+import {RecaptchaModule} from "ng-recaptcha";
 
 @NgModule({
   declarations: [
@@ -33,8 +37,15 @@ import {AddUserComponent} from "./add-user/add-user.component";
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: false
+    }),
+    RecaptchaModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
