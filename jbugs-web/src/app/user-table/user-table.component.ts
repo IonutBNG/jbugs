@@ -6,6 +6,7 @@ import {Subscription} from "rxjs";
 import {BackendService} from "../services/backend-service/backend.service";
 import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 export interface User {
   firstname: string;
@@ -15,8 +16,7 @@ export interface User {
   username: string
 }
 
-const users: User[] = [
-];
+const users: User[] = [];
 
 
 @Component({
@@ -52,7 +52,6 @@ export class UserTableComponent implements OnInit {
 
   }
 
-
   edit() {
     alert('Edit');
   }
@@ -63,7 +62,8 @@ export class UserTableComponent implements OnInit {
   }
 
   addUserPopup(){
-    this.router.navigate(['/adduser']);
+    // this.router.navigate(['/adduser']);
+
   }
 
 }
