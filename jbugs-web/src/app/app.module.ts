@@ -46,7 +46,8 @@ import {RecaptchaModule} from "ng-recaptcha";
     RecaptchaModule
   ],
   providers: [AuthService, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddUserComponent]
 })
 export class AppModule {
 }

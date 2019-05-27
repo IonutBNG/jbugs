@@ -2,6 +2,7 @@ package user.control.authenticationUserService;
 
 import com.google.common.hash.Hashing;
 import exeptions.BusinessException;
+import exeptions.ExceptionMessage;
 import exeptions.ExceptionMessageCatalog;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -43,10 +44,10 @@ public class UserAuthenticationService {
         this.userValidator.validateBean(userLoginDto);
 
         if (validCredentials(userLoginDto)){
-            return generateJson(generateJwtToken(userLoginDto.getUsername()));
+            String jws = generateJwtToken(userLoginDto.getUsername());
+            return generateJson(jws);
         }
         return generateJson("");
-
     }
 
     /**
@@ -55,6 +56,7 @@ public class UserAuthenticationService {
      * @return binary value
      */
     private boolean validCredentials(UserLoginDto userLoginDto){
+
         UserEntity userEntity = this.userDao.getUserByUsername(userLoginDto.getUsername());
 
         if (userEntity == null){
@@ -73,16 +75,14 @@ public class UserAuthenticationService {
             userEntity.setCounter(userEntity.getCounter()-1);
             this.userDao.setCounter(userEntity);
             return false;
+//            throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
         }
+
         return true;
     }
 
-    /**
-     * Generates a token based on the username
-     * @param username used for token generation
-     * @return token of type String
-     */
-    private String generateJwtToken(String username){
+
+    private String generateJwtToken(String username) {
         Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
         String jwt = Jwts.builder()
                 .setIssuer(username)
@@ -91,15 +91,11 @@ public class UserAuthenticationService {
         return jwt;
     }
 
-    /**
-     * Generates Json containing the token
-     * @param token token that will be added
-     * @return JsonObject
-     */
-    private JsonObject generateJson(String token){
+    private JsonObject generateJson(String jwt){
         JsonObject jsonObject = Json.createObjectBuilder()
-                                        .add("token", token)
-                                        .build();
+                .add("token", jwt)
+                .build();
         return jsonObject;
     }
+
 }

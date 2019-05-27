@@ -29,9 +29,10 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response authenticateUser(UserLoginDto userLoginDto){
-        return Response.status(Response.Status.OK)
+        return Response
+                .status(200)
                 .type(MediaType.APPLICATION_JSON_TYPE)
-                .entity(this.userFacade.authenticateUser(userLoginDto))
+                .entity(userFacade.authenticateUser(userLoginDto))
                 .build();
     }
 

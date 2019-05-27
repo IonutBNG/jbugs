@@ -1,5 +1,5 @@
 import {Component, OnInit, Output, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource} from "@angular/material";
+import {MatDialog, MatPaginator, MatTableDataSource} from "@angular/material";
 import {UserService} from "../services/user-service/user.service";
 import {UserModel} from "../user-model/user-model";
 import {Subscription} from "rxjs";
@@ -7,6 +7,7 @@ import {BackendService} from "../services/backend-service/backend.service";
 import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {AddUserComponent} from "../add-user/add-user.component";
 
 export interface User {
   firstname: string;
@@ -34,7 +35,8 @@ export class UserTableComponent implements OnInit {
   constructor(private backendService: BackendService,
               private authService: AuthService,
               private userService: UserService,
-              private router: Router) { }
+              private router: Router,
+              private dialog: MatDialog) { }
 
    public dataSource: any;
 
@@ -62,8 +64,7 @@ export class UserTableComponent implements OnInit {
   }
 
   addUserPopup(){
-    // this.router.navigate(['/adduser']);
-
+    this.dialog.open(AddUserComponent);
   }
 
 }
