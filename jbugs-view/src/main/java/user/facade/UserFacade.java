@@ -47,7 +47,7 @@ public class UserFacade {
         return userViewService.gettAllUsers();
     }
 
-    public boolean addNewUser(NewUserDto newUserDto) {
-        return  this.newUserService.addNewUser(newUserDto);
+    public JsonObject addNewUser(NewUserDto newUserDto) {
+        return this.newUserService.addNewUser(newUserDto);
     }
 }

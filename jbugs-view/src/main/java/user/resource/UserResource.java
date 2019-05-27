@@ -45,8 +45,8 @@ public class UserResource {
 
     @POST
     @Path("/add-new-user")
-    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response addNewUser(NewUserDto newUserDto) {
         return Response.ok(this.userFacade.addNewUser(newUserDto)).build();
     }

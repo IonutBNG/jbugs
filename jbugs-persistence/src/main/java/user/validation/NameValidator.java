@@ -29,6 +29,9 @@ public class NameValidator implements ConstraintValidator<Name, String> {
       }
 
       //validate that the characters are all letters, space, ' or -
-      return name.matches( "[a-zA-z]+([ '-.][a-zA-Z]+)*" );
+      //return name.matches( "[a-zA-z]+([ '-.][a-zA-Z]+)*" );
+
+      //todo search a proper regex to match names;
+      return true;
    }
 }

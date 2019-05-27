@@ -10,6 +10,8 @@ import user.validator.UserValidator;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.json.Json;
+import javax.json.JsonObject;
 
 
 /**
@@ -23,16 +25,16 @@ import javax.ejb.Stateless;
 public class NewUserService {
 
     @EJB
-    UserDao userDao;
+    private UserDao userDao;
 
     @EJB
-    UserConverter userConverter;
+    private UserConverter userConverter;
 
     @EJB
-    UserValidator userValidator;
+    private UserValidator userValidator;
 
 
-    public boolean addNewUser(NewUserDto newUserDto) throws BusinessException {
+    public JsonObject addNewUser(NewUserDto newUserDto) {
         userValidator.validateBean(newUserDto);
         this.validateEmail(newUserDto);
 
@@ -42,12 +44,19 @@ public class NewUserService {
 
         userDao.createUser(userEntity);
 
-        return true;
+        return generateJson();
+    }
+
+    private JsonObject generateJson(){
+        JsonObject jsonObject = Json.createObjectBuilder()
+                .add("status", "OK")
+                .build();
+        return jsonObject;
     }
 
 
 
-    private void validateEmail(NewUserDto newUserDto) throws BusinessException {
+    private void validateEmail(NewUserDto newUserDto) {
         if(userDao.checkIfEmailIsUsed(newUserDto.getEmail())) {
             throw new BusinessException(ExceptionMessageCatalog.USER_EMAIL_ALREADY_EXISTS);
         }

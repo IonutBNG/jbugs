@@ -40,8 +40,6 @@ public class UserValidator {
                 case(ValidationMessageCatalog.INVALID_PASSWORD):
                     throw  new BusinessException(ExceptionMessageCatalog.USER_INVALID_PASSWORD);
 
-                    //TODO refactor cascading constraints to be contained in custom constraints
-
             }
         }
 
