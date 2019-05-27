@@ -10,7 +10,8 @@ import {UserService} from "../services/user-service/user.service";
 })
 export class UserTableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'actions'];
+  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName',
+    'counter', 'actions'];
 
   public users : User[];
 
