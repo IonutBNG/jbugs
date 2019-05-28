@@ -1,5 +1,6 @@
 package user.resource;
 
+import user.dto.EditUserDto;
 import user.dto.NewUserDto;
 import user.dto.UserLoginDto;
 import user.facade.UserFacade;
@@ -49,6 +50,14 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addNewUser(NewUserDto newUserDto) {
         return Response.ok(this.userFacade.addNewUser(newUserDto)).build();
+    }
+
+    @POST
+    @Path("/edit-user")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response editUser(EditUserDto editUserDto) {
+        return Response.ok(this.userFacade.editUser(editUserDto)).build();
     }
 
 }
