@@ -20,11 +20,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  {
-    path: "adduser",
-    component: AddUserComponent,
+  // {
+    // path: "adduser",
+    // component: AddUserComponent,
     //canActivate: [AuthGuard]
-  }
+  // }
 ];
 
 @NgModule({

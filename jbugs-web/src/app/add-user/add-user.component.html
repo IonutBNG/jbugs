@@ -4,49 +4,40 @@
     <label>First Name: </label>
     <input class="form-control" type="text" id="firstName" name="firstName"
            required #firstName="ngModel" ngModel>
-    <div class="alert alert-danger" *ngIf="firstName.touched && firstName.invalid">
-      <div *ngIf="firstName.errors.required"> First name is required!</div>
-    </div>
   </div>
 
   <div class="form-group">
     <label>Last Name:</label>
     <input class="form-control" type="text" id="lastName" name="lastName"
            required #lastName="ngModel" ngModel>
-    <div class="alert alert-danger" *ngIf="lastName.touched && lastName.invalid">
-      <div *ngIf="lastName.errors.required"> Last name is required !</div>
-    </div>
   </div>
 
   <div class="form-group">
     <label>Mobile Number:</label>
     <input class="form-control" type="text" id="mobileNumber" name="mobileNumber"
            required #mobileNumber="ngModel" ngModel>
-    <div class="alert alert-danger" *ngIf="mobileNumber.touched && mobileNumber.invalid">
-      <div *ngIf="mobileNumber.errors.required"> Mobile number is required !</div>
-<!--      TODO search good european format-->
-<!--      <div *ngIf="mobileNumber.errors.pattern">Invalid mobile number format!</div>-->
-    </div>
   </div>
 
   <div class="form-group">
     <label>Email:</label>
     <input class="form-control" type="text" id="email" name="email"
            required #email="ngModel" ngModel>
-    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
-      <div *ngIf="email.errors.required"> Email is required !</div>
-    </div>
   </div>
 
   <div class="form-group">
     <label>Password:</label>
-    <input class="form-control" type="text" id="password" name="password"
+    <input class="form-control" type="password" id="password" name="password"
            #password="ngModel" ngModel>
   </div>
 
   <div class="addNewUser">
     <input type="submit" class="btn btn-primary" (click)="addNewUser(firstName.value, lastName.value, mobileNumber.value, email.value, password.value)"
            value="Add New User">
+
+    <input type="button" class="btn btn-danger" (click)="close()"
+           value="Close">
   </div>
+
+
 </form>
 </div>
