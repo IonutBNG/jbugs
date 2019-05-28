@@ -4,6 +4,7 @@ import user.control.UserViewService.UserViewService;
 import user.control.authenticationUserService.UserAuthenticationService;
 import user.control.editUserService.EditUserService;
 import user.control.newUserService.NewUserService;
+import user.dto.EditUserDto;
 import user.dto.NewUserDto;
 import user.dto.UserLoginDto;
 import user.dto.ViewUserDto;
@@ -49,5 +50,9 @@ public class UserFacade {
 
     public JsonObject addNewUser(NewUserDto newUserDto) {
         return this.newUserService.addNewUser(newUserDto);
+    }
+
+    public JsonObject editUser(EditUserDto editUserDto) {
+        return  this.editUserService.editUser(editUserDto);
     }
 }

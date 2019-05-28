@@ -6,8 +6,9 @@ import {Subscription} from "rxjs";
 import {BackendService} from "../services/backend-service/backend.service";
 import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {AddUserComponent} from "../add-user/add-user.component";
-
+import {FormControl} from "@angular/forms";
 
 export interface User {
   firstname: string;
@@ -37,8 +38,7 @@ export class UserTableComponent implements OnInit {
               private authService: AuthService,
               private userService: UserService,
               private router: Router,
-              private dialog: MatDialog,
-  ) { }
+              private dialog: MatDialog) { }
 
    public dataSource: any;
 
@@ -55,6 +55,13 @@ export class UserTableComponent implements OnInit {
     );
 
     this.dialogConfig = new MatDialogConfig();
+  }
+
+  autoRenew = new FormControl();
+
+  onActivate(user: User) {
+    alert(user.username);
+    console.log(this.autoRenew.value);
   }
 
   edit() {

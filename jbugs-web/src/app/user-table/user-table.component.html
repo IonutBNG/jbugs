@@ -1,7 +1,8 @@
-<div>
-  <button mat-raised-button id="addbtn" (click)="addUserPopup()"> Add User </button>
+<button class="btn btn-primary"  (click)="addUserPopup()"> Add User </button>
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="mat-elevation-z8">
+
+  <table mat-table [dataSource]="dataSource" >
 
     <ng-container matColumnDef="firstName">
       <th mat-header-cell *matHeaderCellDef> FirstName </th>
@@ -36,8 +37,8 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell  *matHeaderCellDef > </mat-header-cell>
       <mat-cell *matCellDef="let users" >
-        <button color="primary" (click)="edit()">edit</button>
-        <button color="primary" >Activate</button>
+        <mat-slide-toggle [formControl]="autoRenew" (change)="onActivate(users)">Activate </mat-slide-toggle>
+        <button mat-raised-button class="editbtn" color="primary" (click)="edit(users)">  Edit </button>
       </mat-cell>
     </ng-container>
 
@@ -46,9 +47,8 @@
     <tr mat-row *matRowDef="let users; columns: displayedColumns;"></tr>
 
   </table>
+  <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
-
-  <button class="btn btn-primary" (click)="authService.logOut()">Log Out</button>
 
 </div>
+<button class="btn btn-primary" (click)="authService.logOut()">Log Out</button>

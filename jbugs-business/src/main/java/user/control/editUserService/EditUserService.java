@@ -8,6 +8,8 @@ import user.validator.UserValidator;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.json.Json;
+import javax.json.JsonObject;
 
 /**
  * Document me.
@@ -28,7 +30,7 @@ public class EditUserService {
     UserValidator userValidator;
 
 
-    public void editUser(EditUserDto editUserDto) throws BusinessException {
+    public JsonObject editUser(EditUserDto editUserDto) throws BusinessException {
 
         //exception will be thrown here
         userValidator.validateBean(editUserDto);
@@ -41,11 +43,20 @@ public class EditUserService {
 
         //update the user
         userDao.editUser(editUserDto);
+
+        return this.generateJson();
     }
 
     private void validateIfEmailExists (EditUserDto editUserDto)throws BusinessException {
         if (userDao.checkIfEmailIsUsed(editUserDto.getEmail())) {
             throw new BusinessException(ExceptionMessageCatalog.USER_EMAIL_ALREADY_EXISTS);
         }
+    }
+
+    private JsonObject generateJson(){
+        JsonObject jsonObject = Json.createObjectBuilder()
+                .add("status", "OK")
+                .build();
+        return jsonObject;
     }
 }

@@ -41,6 +41,7 @@ public class NewUserService {
         UserEntity userEntity;
         userEntity = userConverter.getEntityFromNewUserDto(newUserDto);
         userEntity.setUsername(this.generateUsername(newUserDto.getFirstName(), newUserDto.getLastName()));
+        userEntity.setCounter(5);
 
         userDao.createUser(userEntity);
 
