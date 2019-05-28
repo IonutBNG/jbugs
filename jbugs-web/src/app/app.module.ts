@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
 
 import {MatButtonModule, MatIconModule, MatTableModule} from "@angular/material";
@@ -17,6 +17,10 @@ import {ToastrModule} from "ngx-toastr";
 import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {RecaptchaModule} from "ng-recaptcha";
+
+import {MatDialogModule} from '@angular/material/dialog';
+
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -36,8 +40,11 @@ import {RecaptchaModule} from "ng-recaptcha";
     MatButtonModule,
     MatIconModule,
     MatButtonModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatDialogModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: 'toast-top-center',

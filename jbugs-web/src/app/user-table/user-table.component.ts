@@ -1,5 +1,5 @@
 import {Component, OnInit, Output, ViewChild} from '@angular/core';
-import {MatDialog, MatPaginator, MatTableDataSource} from "@angular/material";
+import {MatDialog, MatPaginator, MatSlideToggle, MatSlideToggleChange, MatTableDataSource} from "@angular/material";
 import {UserService} from "../services/user-service/user.service";
 import {UserModel} from "../user-model/user-model";
 import {Subscription} from "rxjs";
@@ -8,6 +8,7 @@ import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AddUserComponent} from "../add-user/add-user.component";
+import {FormControl} from "@angular/forms";
 
 export interface User {
   firstname: string;
@@ -28,7 +29,7 @@ const users: User[] = [];
 export class UserTableComponent implements OnInit {
 
 
-  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'actions'];
+  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'counter', 'actions'];
 
   public users : User[];
 
@@ -51,11 +52,17 @@ export class UserTableComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
       }
     );
-
   }
 
-  edit() {
-    alert('Edit');
+  autoRenew = new FormControl();
+
+  onActivate(user: User) {
+    alert(user.username);
+    console.log(this.autoRenew.value);
+  }
+
+  edit(user: User) {
+    console.log(JSON.stringify(user));
   }
 
   logout(){

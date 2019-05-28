@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'usertable',
     component: UserTableComponent,
-    canActivate: [AuthGuard]
+   // canActivate: [AuthGuard]
   },
   {
     path: 'login',
