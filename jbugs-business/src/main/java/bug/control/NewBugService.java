@@ -20,7 +20,7 @@ public class NewBugService {
     public boolean addNewBug(NewBugDto newBugDto){
 
         BugEntity bugEntity;
-        bugEntity = bugConverter.convertBugEntityToDto(newBugDto);
+        bugEntity = bugConverter.convertNewBugDtoToBugEntity(newBugDto);
 
         bugDao.createBug(bugEntity);
 

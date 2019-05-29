@@ -10,7 +10,11 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "bugs")
+@NamedQueries({
+        @NamedQuery(name = BugEntity.GET_ALL_BUGS, query = "SELECT b FROM BugEntity b")
+})
 public class BugEntity extends BaseEntity<Long> {
+    public static final String GET_ALL_BUGS = "BugEntity.getAllBugs";
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -24,23 +28,24 @@ public class BugEntity extends BaseEntity<Long> {
     @Column(name = "target_date")
     private Date targetDate;
 
+    //todo set it as enum
     @Column(name = "status", nullable = false)
     private String status;
 
     @Column(name = "fixed_version", nullable = false)
     private String fixedVersion;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "severity", nullable = false)
-    private String severity;
+    private Severity severity;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "createdByUser")
+    private UserEntity createdByUser;
 
-//    @ManyToOne(cascade = CascadeType.PERSIST)
-//    @JoinColumn()
-    @Column(name = "createdByUser")
-    private int createdByUser;
-
-    @Column(name = "assignedTo")
-    private int assignedTo;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "assignedTo")
+    private UserEntity assignedTo;
 
 
     public BugEntity() {
@@ -94,27 +99,27 @@ public class BugEntity extends BaseEntity<Long> {
         this.fixedVersion = fixedVersion;
     }
 
-    public String getSeverity() {
+    public Severity getSeverity() {
         return severity;
     }
 
-    public void setSeverity(String severity) {
+    public void setSeverity(Severity severity) {
         this.severity = severity;
     }
 
-    public int getCreatedByUser() {
+    public UserEntity getCreatedByUser() {
         return createdByUser;
     }
 
-    public void setCreatedByUser(int createdByUser) {
+    public void setCreatedByUser(UserEntity createdByUser) {
         this.createdByUser = createdByUser;
     }
 
-    public int getAssignedTo() {
+    public UserEntity getAssignedTo() {
         return assignedTo;
     }
 
-    public void setAssignedTo(int assignedTo) {
+    public void setAssignedTo(UserEntity assignedTo) {
         this.assignedTo = assignedTo;
     }
 
