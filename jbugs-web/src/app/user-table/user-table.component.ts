@@ -8,11 +8,17 @@ import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AddUserComponent} from "../add-user/add-user.component";
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {UserActivate} from "../user-model/activate-user";
-import {User} from "../user-model/user-table";
-import {forEach} from "@angular/router/src/utils/collection";
-import {log} from "util";
+import {FormControl} from "@angular/forms";
+
+export interface User {
+  firstname: string;
+  lastname: string;
+  email: string;
+  mobilenumber : string;
+  username: string
+}
+
+const users: User[] = [];
 
 
 @Component({
@@ -26,17 +32,15 @@ export class UserTableComponent implements OnInit {
   public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'counter', 'actions'];
 
   public users : User[];
+  private dialogConfig;
 
   constructor(private backendService: BackendService,
               private authService: AuthService,
               private userService: UserService,
               private router: Router,
-              private dialog: MatDialog){
-
-  }
+              private dialog: MatDialog) { }
 
    public dataSource: any;
-
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -47,10 +51,10 @@ export class UserTableComponent implements OnInit {
         this.users = users as User[];
         this.dataSource =  new MatTableDataSource<User>(this.users);
         this.dataSource.paginator = this.paginator;
-
       }
     );
 
+    this.dialogConfig = new MatDialogConfig();
   }
 
 
@@ -68,8 +72,8 @@ export class UserTableComponent implements OnInit {
 
   }
 
-  edit(user: User) {
-    console.log(JSON.stringify(user));
+  edit() {
+    alert('Edit');
   }
 
   logout(){
@@ -78,7 +82,14 @@ export class UserTableComponent implements OnInit {
   }
 
   addUserPopup(){
-    this.dialog.open(AddUserComponent);
+    this.dialogConfigSettup();
+    this.dialog.open(AddUserComponent, this.dialogConfig);
+  }
+
+  private dialogConfigSettup(){
+    this.dialogConfig.disableClose= true;
+    this.dialogConfig.autoFocus = true;
+    this.dialogConfig.width = "50%";
   }
 
 }

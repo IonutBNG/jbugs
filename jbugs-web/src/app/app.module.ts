@@ -17,6 +17,7 @@ import {ToastrModule} from "ngx-toastr";
 import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {RecaptchaModule} from "ng-recaptcha";
+import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatDialogModule} from '@angular/material/dialog';
 
@@ -52,7 +53,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
       positionClass: 'toast-top-center',
       preventDuplicates: false
     }),
-    RecaptchaModule
+    RecaptchaModule,
+    MatDialogModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
