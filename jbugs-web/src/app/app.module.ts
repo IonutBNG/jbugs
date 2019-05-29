@@ -21,7 +21,7 @@ import {RecaptchaModule} from "ng-recaptcha";
 import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { EditUserComponent } from './edit-user/edit-user.component';
+// import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     LoginComponent,
     UserTableComponent,
     AddUserComponent,
-    EditUserComponent
+    // EditUserComponent
   ],
   imports: [
     BrowserModule,

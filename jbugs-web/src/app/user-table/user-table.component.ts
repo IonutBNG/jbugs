@@ -8,17 +8,11 @@ import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {AddUserComponent} from "../add-user/add-user.component";
-import {FormControl} from "@angular/forms";
-
-export interface User {
-  firstname: string;
-  lastname: string;
-  email: string;
-  mobilenumber : string;
-  username: string
-}
-
-const users: User[] = [];
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {UserActivate} from "../user-model/activate-user";
+import {User} from "../user-model/user-table";
+import {forEach} from "@angular/router/src/utils/collection";
+import {log} from "util";
 
 
 @Component({
@@ -37,9 +31,12 @@ export class UserTableComponent implements OnInit {
               private authService: AuthService,
               private userService: UserService,
               private router: Router,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog){
+
+  }
 
    public dataSource: any;
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -50,15 +47,25 @@ export class UserTableComponent implements OnInit {
         this.users = users as User[];
         this.dataSource =  new MatTableDataSource<User>(this.users);
         this.dataSource.paginator = this.paginator;
+
       }
     );
+
   }
 
-  autoRenew = new FormControl();
 
-  onActivate(user: User) {
-    alert(user.username);
-    console.log(this.autoRenew.value);
+
+  onActivate(username: string, counter: number) {
+
+    console.log(counter);
+
+
+      var newActivateUser: UserActivate = {username: username};
+          this.userService.activateUser(newActivateUser).subscribe( res =>
+          console.log(res));
+
+    window.location.reload();
+
   }
 
   edit(user: User) {

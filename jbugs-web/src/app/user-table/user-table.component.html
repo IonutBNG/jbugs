@@ -36,10 +36,14 @@
 
     <ng-container matColumnDef="actions">
       <mat-header-cell  *matHeaderCellDef > </mat-header-cell>
+<!--      <form [formGroup]="formGroup"  novalidate>-->
+      <div *ngFor="let c of users">
       <mat-cell *matCellDef="let users" >
-        <mat-slide-toggle [formControl]="autoRenew" (change)="onActivate(users)">Activate </mat-slide-toggle>
+        <mat-slide-toggle [checked]="isChecked" (change)="onActivate(users.username, users.counter)">Activate  </mat-slide-toggle>
         <button mat-raised-button class="editbtn" color="primary" (click)="edit(users)">  Edit </button>
       </mat-cell>
+      </div>
+<!--      </form>-->
     </ng-container>
 
 

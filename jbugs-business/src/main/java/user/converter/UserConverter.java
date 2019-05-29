@@ -1,5 +1,6 @@
 package user.converter;
 
+import user.dto.EditUserDto;
 import user.dto.NewUserDto;
 import user.dto.ViewUserDto;
 import user.entity.UserEntity;
@@ -26,9 +27,16 @@ public class UserConverter {
         userEntity.setMobileNumber(newUserDto.getMobileNumber());
 
         //the username will be set in control
-
         return userEntity;
     }
+
+    public EditUserDto getDtoFromEntity(){
+       EditUserDto editUserDto = new EditUserDto();
+
+        return editUserDto;
+    }
+
+
 
     public ViewUserDto convertEntityToViewUserDto(UserEntity userEntity){
         ViewUserDto viewUserDto = new ViewUserDto();
@@ -38,6 +46,7 @@ public class UserConverter {
         viewUserDto.setEmail(userEntity.getEmail());
         viewUserDto.setMobileNumber(userEntity.getMobileNumber());
         viewUserDto.setUsername(userEntity.getUsername());
+        viewUserDto.setCounter(userEntity.getCounter());
 
         return viewUserDto;
     }

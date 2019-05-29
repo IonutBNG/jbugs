@@ -52,12 +52,22 @@ public class UserResource {
         return Response.ok(this.userFacade.addNewUser(newUserDto)).build();
     }
 
+
     @POST
     @Path("/edit-user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response editUser(EditUserDto editUserDto) {
         return Response.ok(this.userFacade.editUser(editUserDto)).build();
+    }
+
+
+    @POST
+    @Path("/activate-user")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response activateUser(EditUserDto editUserDto){
+        return Response.ok(this.userFacade.activateUser(editUserDto)).build();
     }
 
 }
