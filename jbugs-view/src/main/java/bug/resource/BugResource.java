@@ -5,10 +5,7 @@ import bug.facade.BugFacade;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -26,6 +23,15 @@ public class BugResource {
     public Response addNewBug(NewBugDto newBugDto){
         return Response.ok(bugFacade.addNewBug(newBugDto)).build();
     }
+
+    @GET
+    @Path("/bugs")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response getAllBugs() {
+        return Response.ok(bugFacade.getAllBugs()).build();
+    }
+
 
 
 }
