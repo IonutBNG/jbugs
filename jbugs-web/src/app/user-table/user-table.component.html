@@ -1,4 +1,10 @@
-<button class="btn btn-primary"  (click)="addUserPopup()"> Add User </button>
+<nav>
+  <a routerLinkActive="active current" routerLink="/usertable">Users</a>
+  <a routerLinkActive="active current" routerLink="/usertable" (click)="addUserPopup()">Add User</a>
+  <a routerLinkActive="active current" routerLink="" (click)="authService.logOut()">Log Out</a>
+</nav>
+
+<!--<button class="btn btn-primary"  > Add User </button>-->
 
 <div class="mat-elevation-z8">
 
@@ -51,4 +57,4 @@
 
 
 </div>
-<button class="btn btn-primary" (click)="authService.logOut()">Log Out</button>
+<!--<button class="btn btn-primary" (click)="authService.logOut()">Log Out</button>-->

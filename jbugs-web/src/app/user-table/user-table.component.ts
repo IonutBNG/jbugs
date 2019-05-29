@@ -45,15 +45,7 @@ export class UserTableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
-
-    this.userService.getAllUsers().subscribe(
-      (users) => {
-        this.users = users as User[];
-        this.dataSource =  new MatTableDataSource<User>(this.users);
-        this.dataSource.paginator = this.paginator;
-      }
-    );
-
+    this.getAllUsers();
     this.dialogConfig = new MatDialogConfig();
   }
 
@@ -62,6 +54,16 @@ export class UserTableComponent implements OnInit {
   onActivate(user: User) {
     alert(user.username);
     console.log(this.autoRenew.value);
+  }
+
+  public getAllUsers() {
+    this.userService.getAllUsers().subscribe(
+      (users) => {
+        this.users = users as User[];
+        this.dataSource =  new MatTableDataSource<User>(this.users);
+        this.dataSource.paginator = this.paginator;
+      }
+    );
   }
 
   edit() {
@@ -79,7 +81,7 @@ export class UserTableComponent implements OnInit {
   }
 
   private dialogConfigSettup(){
-    this.dialogConfig.disableClose= true;
+    this.dialogConfig.disableClose= false;
     this.dialogConfig.autoFocus = true;
     this.dialogConfig.width = "50%";
   }
