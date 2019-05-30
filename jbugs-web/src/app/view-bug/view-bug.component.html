@@ -1,0 +1,17 @@
+<div class="container">
+
+  <form class="view-bug-form" *ngFor="let bug of bugs">
+    <mat-form-field class="example-full-width" >
+      <input matInput  placeholder="Description" value="{{bug.description}}} ">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Version" value=""></textarea>
+    </mat-form-field>
+  </form>
+
+<button mat-raised-button mat-dialog-close> Close </button>
+
+</div>
+
+

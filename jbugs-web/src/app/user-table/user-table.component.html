@@ -35,17 +35,13 @@
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <mat-header-cell  *matHeaderCellDef > </mat-header-cell>
-<!--      <form [formGroup]="formGroup"  novalidate>-->
-      <div *ngFor="let c of users">
+      <th mat-header-cell  *matHeaderCellDef > Activate </th>
+
       <mat-cell *matCellDef="let users" >
-        <mat-slide-toggle [checked]="isChecked" (change)="onActivate(users.username, users.counter)">Activate  </mat-slide-toggle>
+        <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false" (change)="onActivate(users.username)">   </mat-slide-toggle>
         <button mat-raised-button class="editbtn" color="primary" (click)="edit(users)">  Edit </button>
       </mat-cell>
-      </div>
-<!--      </form>-->
     </ng-container>
-
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let users; columns: displayedColumns;"></tr>

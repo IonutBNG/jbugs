@@ -1,24 +1,20 @@
 import {Component, OnInit, Output, ViewChild} from '@angular/core';
-import {MatDialog, MatPaginator, MatSlideToggle, MatSlideToggleChange, MatTableDataSource} from "@angular/material";
+import {
+  MatDialog,
+  MatDialogConfig,
+  MatPaginator,
+  MatSlideToggle,
+  MatSlideToggleChange,
+  MatTableDataSource
+} from "@angular/material";
 import {UserService} from "../services/user-service/user.service";
-import {UserModel} from "../user-model/user-model";
-import {Subscription} from "rxjs";
 import {BackendService} from "../services/backend-service/backend.service";
 import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
-import {MatTooltipModule} from '@angular/material/tooltip';
 import {AddUserComponent} from "../add-user/add-user.component";
-import {FormControl} from "@angular/forms";
 
-export interface User {
-  firstname: string;
-  lastname: string;
-  email: string;
-  mobilenumber : string;
-  username: string
-}
-
-const users: User[] = [];
+import {User} from "../user-model/user-table";
+import {UserActivate} from "../user-model/activate-user";
 
 
 @Component({
@@ -59,9 +55,8 @@ export class UserTableComponent implements OnInit {
 
 
 
-  onActivate(username: string, counter: number) {
+  onActivate(username: string) {
 
-    console.log(counter);
 
 
       var newActivateUser: UserActivate = {username: username};
@@ -69,7 +64,6 @@ export class UserTableComponent implements OnInit {
           console.log(res));
 
     window.location.reload();
-
   }
 
   edit() {

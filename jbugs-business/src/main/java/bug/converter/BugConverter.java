@@ -35,7 +35,7 @@ public class BugConverter {
         viewBugDto.setDescription(bugEntity.getDescription());
         viewBugDto.setVersion(bugEntity.getVersion());
         viewBugDto.setTargetDate(bugEntity.getTargetDate());
-        viewBugDto.setStatus(bugEntity.getStatus().toString());
+        viewBugDto.setStatus(bugEntity.getStatus());
         viewBugDto.setFixedVersion(bugEntity.getFixedVersion());
         viewBugDto.setSeverity(bugEntity.getSeverity().toString());
         viewBugDto.setCreatedByUser(bugEntity.getCreatedByUser().getUsername());

@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
 
-import {MatButtonModule, MatIconModule, MatTableModule} from "@angular/material";
+import {MatButtonModule, MatIconModule, MatMenuModule, MatTableModule} from "@angular/material";
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthService} from "./services/auth-service/auth.service";
@@ -19,10 +19,12 @@ import {AddUserComponent} from "./add-user/add-user.component";
 import {RecaptchaModule} from "ng-recaptcha";
 import {MatDialogModule} from '@angular/material/dialog';
 
-import {MatDialogModule} from '@angular/material/dialog';
-
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-// import { EditUserComponent } from './edit-user/edit-user.component';
+import {EditUserComponent} from "./edit-user/edit-user.component";
+import { BugTableComponent } from './bug-table/bug-table.component';
+import { ViewBugComponent } from './view-bug/view-bug.component';
+
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     LoginComponent,
     UserTableComponent,
     AddUserComponent,
-    // EditUserComponent
+    EditUserComponent,
+    BugTableComponent,
+    ViewBugComponent
   ],
   imports: [
     BrowserModule,
@@ -48,17 +52,23 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatInputModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: 'toast-top-center',
       preventDuplicates: false
     }),
     RecaptchaModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
+  ],
+  exports: [
+    ViewBugComponent
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
-  entryComponents: [AddUserComponent]
+  entryComponents: [AddUserComponent,
+    ViewBugComponent,BugTableComponent]
 })
 export class AppModule {
 }
