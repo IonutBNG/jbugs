@@ -1,0 +1,7 @@
+<nav>
+  <a routerLinkActive="active current" routerLink="/usertable">Users</a>
+  <a routerLinkActive="active current" routerLink="/home/usertable/adduser" (click)="addUserPopup()">Add User</a>
+  <a routerLinkActive="active current" routerLink="" (click)="authService.logOut()">Log Out</a>
+</nav>
+
+<router-outlet></router-outlet>

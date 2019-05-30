@@ -1,9 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Optional,
+  Output,
+} from '@angular/core';
 import {UserService} from "../services/user-service/user.service";
 import {NewUserModel} from "../user-model/new-user-model";
 import {MatDialogRef} from "@angular/material";
 import {ToastrService} from "ngx-toastr";
-import {Router} from "@angular/router";
+import {UserEmitterService} from "../services/user-emitter-service/user-emitter.service";
 
 @Component({
   selector: 'add-user',
@@ -12,9 +19,13 @@ import {Router} from "@angular/router";
 })
 export class AddUserComponent implements OnInit {
 
+
   constructor(private userService: UserService,
-              private dialogRef: MatDialogRef<AddUserComponent>,
-              private toast: ToastrService) { }
+              private toast: ToastrService,
+              private userEmitter: UserEmitterService,
+              @Optional() private dialogRef: MatDialogRef<AddUserComponent>) {
+
+  }
 
   public addedUserSuccesfully:boolean;
 
@@ -27,10 +38,8 @@ export class AddUserComponent implements OnInit {
     this.userService.addNewUser(newUser).subscribe( res => {
       console.log(res);
       this.checkResponse(res);
-      window.location.reload();
     },
       err => { console.log(err) });
-
   }
 
   private checkResponse(res) {
@@ -48,8 +57,9 @@ export class AddUserComponent implements OnInit {
     this.toast.error(message, "Error");
   }
 
-  private closeDialogSuccess(message){
+  private closeDialogSuccess(message: string){
     this.dialogRef.close();
+    this.userEmitter.doSomething();
     this.toast.success(message, "Success");
   }
 

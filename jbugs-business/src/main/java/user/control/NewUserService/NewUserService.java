@@ -1,5 +1,6 @@
 package user.control.newUserService;
 
+import com.google.common.hash.Hashing;
 import exeptions.BusinessException;
 import exeptions.ExceptionMessageCatalog;
 import user.converter.UserConverter;
@@ -12,6 +13,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.json.Json;
 import javax.json.JsonObject;
+import java.nio.charset.StandardCharsets;
 
 
 /**
@@ -43,6 +45,11 @@ public class NewUserService {
         userEntity.setUsername(this.generateUsername(newUserDto.getFirstName(), newUserDto.getLastName()));
         userEntity.setCounter(5);
 
+        String encryptedPass = Hashing.sha256()
+                .hashString(userEntity.getPassword(), StandardCharsets.UTF_8)
+                .toString();
+        userEntity.setPassword(encryptedPass);
+
         userDao.createUser(userEntity);
 
         return generateJson();
@@ -50,7 +57,7 @@ public class NewUserService {
 
     private JsonObject generateJson(){
         JsonObject jsonObject = Json.createObjectBuilder()
-                .add("status", "OK")
+                .add("status", "User Added Successfully!")
                 .build();
         return jsonObject;
     }

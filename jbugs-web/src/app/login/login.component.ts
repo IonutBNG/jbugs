@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       this.showToast("Invalid username or password !");
     } else {
       localStorage.setItem('token', res.token);
-      this.router.navigate(['/usertable']);
+      this.router.navigate(['/home']);
     }
   }
 

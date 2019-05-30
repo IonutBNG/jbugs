@@ -20,7 +20,7 @@ import {RecaptchaModule} from "ng-recaptcha";
 import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-//import { EditUserComponent } from './edit-user/edit-user.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     LoginComponent,
     UserTableComponent,
     AddUserComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

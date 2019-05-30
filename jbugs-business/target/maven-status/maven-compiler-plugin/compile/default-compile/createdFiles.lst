@@ -1,0 +1,9 @@
+user\converter\UserConverter.class
+exeptions\ExceptionMessage.class
+exeptions\BusinessException.class
+user\control\newUserService\NewUserService.class
+user\control\authenticationUserService\UserAuthenticationService.class
+user\control\editUserService\EditUserService.class
+user\validator\UserValidator.class
+exeptions\ExceptionMessageCatalog.class
+user\control\UserViewService\UserViewService.class

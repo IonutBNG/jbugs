@@ -1,14 +1,9 @@
-import {Component, OnInit, Output, ViewChild} from '@angular/core';
-import {MatDialog, MatDialogConfig, MatPaginator, MatTableDataSource} from "@angular/material";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import { MatPaginator, MatTableDataSource} from "@angular/material";
 import {UserService} from "../services/user-service/user.service";
-import {UserModel} from "../user-model/user-model";
-import {Subscription} from "rxjs";
-import {BackendService} from "../services/backend-service/backend.service";
 import {AuthService} from "../services/auth-service/auth.service";
-import {Router} from "@angular/router";
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {AddUserComponent} from "../add-user/add-user.component";
 import {FormControl} from "@angular/forms";
+import {UserEmitterService} from "../services/user-emitter-service/user-emitter.service";
 
 export interface User {
   firstname: string;
@@ -24,7 +19,7 @@ const users: User[] = [];
 @Component({
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.scss']
+  styleUrls: ['./user-table.component.scss'],
 })
 export class UserTableComponent implements OnInit {
 
@@ -32,13 +27,10 @@ export class UserTableComponent implements OnInit {
   public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'actions'];
 
   public users : User[];
-  private dialogConfig;
 
-  constructor(private backendService: BackendService,
+  constructor(private userEmitter: UserEmitterService,
               private authService: AuthService,
-              private userService: UserService,
-              private router: Router,
-              private dialog: MatDialog) { }
+              private userService: UserService,) { }
 
    public dataSource: any;
 
@@ -46,7 +38,7 @@ export class UserTableComponent implements OnInit {
 
   ngOnInit() {
     this.getAllUsers();
-    this.dialogConfig = new MatDialogConfig();
+    this.subscribeEmitter();
   }
 
   autoRenew = new FormControl();
@@ -66,24 +58,19 @@ export class UserTableComponent implements OnInit {
     );
   }
 
-  edit() {
+  edit(users: User[]) {
     alert('Edit');
   }
 
-  logout(){
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+  private subscribeEmitter() {
+    this.userEmitter.changeEmitter.subscribe(value => {
+      if (value == true){
+        this.reloadTable()
+      }
+    });
   }
 
-  addUserPopup(){
-    this.dialogConfigSettup();
-    this.dialog.open(AddUserComponent, this.dialogConfig);
+  private reloadTable(){
+    this.getAllUsers();
   }
-
-  private dialogConfigSettup(){
-    this.dialogConfig.disableClose= false;
-    this.dialogConfig.autoFocus = true;
-    this.dialogConfig.width = "50%";
-  }
-
 }
