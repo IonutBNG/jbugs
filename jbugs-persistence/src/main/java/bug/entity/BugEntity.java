@@ -2,6 +2,7 @@ package bug.entity;
 
 import user.entity.UserEntity;
 import utils.BaseEntity;
+import utils.BugStatus;
 
 import javax.persistence.*;
 
@@ -28,9 +29,9 @@ public class BugEntity extends BaseEntity<Long> {
     @Column(name = "target_date")
     private Date targetDate;
 
-    //todo set it as enum
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private String status;
+    private BugStatus status;
 
     @Column(name = "fixed_version", nullable = false)
     private String fixedVersion;
@@ -83,11 +84,11 @@ public class BugEntity extends BaseEntity<Long> {
         this.targetDate = targetDate;
     }
 
-    public String getStatus() {
+    public BugStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(BugStatus status) {
         this.status = status;
     }
 

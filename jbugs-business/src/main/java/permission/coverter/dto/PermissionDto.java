@@ -1,38 +1,21 @@
-package permission.entity;
+package permission.coverter.dto;
 
-import utils.BaseEntity;
-
-import javax.persistence.*;
 import java.util.Objects;
 
 /**
  * @author Bungardean Tudor-Ionut
  * @since 19.1.2
  */
-@Entity
-@Table(name = "permissions")
-@NamedQueries(
-        {
-                @NamedQuery(name = PermissionEntity.GET_ALL_PERMISSIONS, query = "Select permission from PermissionEntity permission"),
-                @NamedQuery(name = PermissionEntity.GET_ID, query = "Select permission.id from PermissionEntity permission where permission.type = :" + PermissionEntity.TYPE)
-        }
-)
-public class PermissionEntity extends BaseEntity<Long> {
+public class PermissionDto {
 
-    public static final String GET_ALL_PERMISSIONS = "Permission.getAllPermissions";
-    public static final String TYPE = "type";
-    public static final String GET_ID = "PermissionEntity.getID";
-
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "type")
     private String type;
 
-    public PermissionEntity() {
+    public PermissionDto() {
     }
 
-    public PermissionEntity(String description, String type) {
+    public PermissionDto(String description, String type) {
         this.description = description;
         this.type = type;
     }
@@ -57,7 +40,7 @@ public class PermissionEntity extends BaseEntity<Long> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PermissionEntity that = (PermissionEntity) o;
+        PermissionDto that = (PermissionDto) o;
         return Objects.equals(description, that.description) &&
                 Objects.equals(type, that.type);
     }
@@ -69,7 +52,7 @@ public class PermissionEntity extends BaseEntity<Long> {
 
     @Override
     public String toString() {
-        return "PermissionEntity{" +
+        return "PermissionDto{" +
                 "description='" + description + '\'' +
                 ", type='" + type + '\'' +
                 '}';

@@ -3,6 +3,7 @@ package bug.converter;
 import bug.dto.NewBugDto;
 import bug.dto.ViewBugDto;
 import bug.entity.BugEntity;
+import utils.BugStatus;
 
 import javax.ejb.Stateless;
 
@@ -18,7 +19,7 @@ public class BugConverter {
         bugEntity.setVersion(newBugDto.getVersion());
         bugEntity.setFixedVersion(newBugDto.getFixedVersion());
         bugEntity.setTargetDate(newBugDto.getTargetDate());
-        bugEntity.setStatus(newBugDto.getStatus());
+        bugEntity.setStatus(BugStatus.getBugStatusByString(newBugDto.getStatus()));
 
         //todo create named queries for this operations
 //        bugEntity.setSeverity(newBugDto.getSeverity());
@@ -35,7 +36,7 @@ public class BugConverter {
         viewBugDto.setDescription(bugEntity.getDescription());
         viewBugDto.setVersion(bugEntity.getVersion());
         viewBugDto.setTargetDate(bugEntity.getTargetDate());
-        viewBugDto.setStatus(bugEntity.getStatus());
+        viewBugDto.setStatus(bugEntity.getStatus().getDisplayString());
         viewBugDto.setFixedVersion(bugEntity.getFixedVersion());
         viewBugDto.setSeverity(bugEntity.getSeverity().toString());
         viewBugDto.setCreatedByUser(bugEntity.getCreatedByUser().getUsername());
