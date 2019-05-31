@@ -38,7 +38,7 @@
       <th mat-header-cell  *matHeaderCellDef > Activate </th>
 
       <mat-cell *matCellDef="let users" >
-        <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false" (change)="onActivate(users.username)">   </mat-slide-toggle>
+        <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false" (change)="onChange(users.username, users.counter)">  </mat-slide-toggle>
         <button mat-raised-button class="editbtn" color="primary" (click)="edit(users)">  Edit </button>
       </mat-cell>
     </ng-container>

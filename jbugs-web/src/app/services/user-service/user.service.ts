@@ -7,6 +7,7 @@ import {NewUserModel} from "../../user-model/new-user-model";
 import {EditUserModel} from "../../user-model/edit-user";
 import {UserActivate} from "../../user-model/activate-user";
 import {User} from "../../user-model/user-table";
+import {UserDeactivate} from "../../user-model/deactivate-user";
 
 
 @Injectable({
@@ -36,4 +37,8 @@ export class UserService {
     return this.backendService.post("/jbugs/jbugs-api/user/edit-user", editedUser);
   }
 
+  deactivateUser(deactivateUser: UserDeactivate) {
+    console.log(deactivateUser.username+" User service ");
+    return this.backendService.post("/jbugs/jbugs-api/user/deactivate-user", deactivateUser)
+  }
 }

@@ -15,6 +15,7 @@ import {AddUserComponent} from "../add-user/add-user.component";
 
 import {User} from "../user-model/user-table";
 import {UserActivate} from "../user-model/activate-user";
+import {UserDeactivate} from "../user-model/deactivate-user";
 
 
 @Component({
@@ -53,19 +54,6 @@ export class UserTableComponent implements OnInit {
     this.dialogConfig = new MatDialogConfig();
   }
 
-
-
-  onActivate(username: string) {
-
-
-
-      var newActivateUser: UserActivate = {username: username};
-          this.userService.activateUser(newActivateUser).subscribe( res =>
-          console.log(res));
-
-    window.location.reload();
-  }
-
   edit() {
     alert('Edit');
   }
@@ -86,4 +74,35 @@ export class UserTableComponent implements OnInit {
     this.dialogConfig.width = "50%";
   }
 
+  onChange(username: string, counter: number) {
+    //if user is active, deactivate it
+    if(counter > 0) {
+      this.deactivateUser(username);
+      console.log("Deactivating user " + username)
+    }
+    //if user is deactivated, activate it
+    if (counter <= 0) {
+      this.activateUser(username);
+      console.log("Activating user " + username)
+    }
+  }
+
+  activateUser(username: string) {
+
+    var newActivateUser: UserActivate = {username: username};
+    this.userService.activateUser(newActivateUser).subscribe( res => {
+      this.ngOnInit();
+    });
+
+  }
+
+  deactivateUser(username: string) {
+
+    var newDeactivateUser: UserDeactivate = {username: username};
+    this.userService.deactivateUser(newDeactivateUser).subscribe( res => {
+      this.ngOnInit();
+    });
+
+
+  }
 }
