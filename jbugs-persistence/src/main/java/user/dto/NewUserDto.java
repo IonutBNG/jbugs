@@ -90,4 +90,5 @@ public class NewUserDto implements BaseDto {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

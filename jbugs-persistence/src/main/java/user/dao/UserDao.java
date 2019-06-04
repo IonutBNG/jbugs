@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import java.io.Console;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -91,5 +92,7 @@ public class UserDao {
     public List<UserEntity> getAllUsers(){
         return entityManager.createNamedQuery(UserEntity.GET_ALL_USERS, UserEntity.class).getResultList();
     }
+
+
 
 }

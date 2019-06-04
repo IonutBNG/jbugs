@@ -27,7 +27,7 @@ import java.util.Objects;
                 ", u.counter=:" + UserEntity.COUNTER +
                 ", u.password=:" + UserEntity.PASSWORD +
                 " WHERE u.username=:" + UserEntity.USERNAME),
-        @NamedQuery(name = UserEntity.GET_ALL_USERS, query = "SELECT users from UserEntity users")
+        @NamedQuery(name = UserEntity.GET_ALL_USERS, query = "SELECT users from UserEntity users"),
 })
 public class UserEntity extends BaseEntity<Long> {
 
@@ -47,8 +47,8 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String COUNTER = "counter";
     public static final String MOBLE_NUMBER = "mobileNumber";
     public static final String PASSWORD = "password";
+    public static final String ID = "id";
     public static final String SET_COUNTER = "UserEntity.SetCounter";
-
 
 
     @Column(name = "first_name", nullable = false)
@@ -191,4 +191,5 @@ public class UserEntity extends BaseEntity<Long> {
                 ", roleEntityList=" + roleEntityList +
                 '}';
     }
+
 }

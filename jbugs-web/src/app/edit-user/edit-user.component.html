@@ -1,0 +1,36 @@
+<div class="container">
+  <form>
+    <label>User: {{currentUser.userName}}</label>
+    <div class="form-group">
+      <label>First Name: </label>
+      <input class="form-control" type="text" id="firstName" name="firstName" value="{{currentUser.firstName}}">
+    </div>
+
+    <div class="form-group">
+      <label>Last Name:</label>
+      <input class="form-control" type="text" id="lastName" name="lastName" value="{{currentUser.lastName}}">
+    </div>
+
+    <div class="form-group">
+      <label>Mobile Number:</label>
+      <input class="form-control" type="text" id="mobileNumber" name="lastName" value="{{currentUser.mobileNumber}}">
+    </div>
+
+    <div class="form-group">
+      <label>Email:</label>
+      <input class="form-control" type="text" id="email" name="lastName" value="{{currentUser.email}}">
+    </div>
+
+    <div class="form-group">
+      <label>Password:</label>
+      <input class="form-control" type="text" id="password" name="lastName" value="{{currentUser.password}}">
+    </div>
+
+
+
+    <div class="addNewUser">
+      <input type="submit" class="btn btn-primary" (click)="addNewUser(firstName.value, lastName.value, mobileNumber.value, email.value, password.value)"
+             value="Update {{currentUser.userName}}" >
+    </div>
+  </form>
+</div>

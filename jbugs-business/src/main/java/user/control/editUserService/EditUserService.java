@@ -2,8 +2,10 @@ package user.control.editUserService;
 
 import exeptions.BusinessException;
 import exeptions.ExceptionMessageCatalog;
+import user.converter.UserConverter;
 import user.dao.UserDao;
 import user.dto.EditUserDto;
+import user.entity.UserEntity;
 import user.validator.UserValidator;
 
 import javax.ejb.EJB;
@@ -59,4 +61,13 @@ public class EditUserService {
                 .build();
         return jsonObject;
     }
+
+    public JsonObject activateUser(EditUserDto editUserDto){
+        UserEntity userEntity = userDao.getUserByUsername(editUserDto.getUsername());
+
+        userEntity.setCounter(COUNTER_INIT);
+
+        return generateJson();
+    }
+
 }

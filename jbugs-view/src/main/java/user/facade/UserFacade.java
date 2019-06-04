@@ -1,6 +1,5 @@
 package user.facade;
 
-import user.control.UserViewService.UserViewService;
 import user.control.authenticationUserService.UserAuthenticationService;
 import user.control.editUserService.EditUserService;
 import user.control.newUserService.NewUserService;
@@ -26,7 +25,7 @@ public class UserFacade {
     private UserAuthenticationService userAuthenticationService;
 
     @EJB
-    private UserViewService userViewService;
+    private user.control.userViewService.UserViewService userViewService;
 
     @EJB
     private NewUserService newUserService;
@@ -54,5 +53,9 @@ public class UserFacade {
 
     public JsonObject editUser(EditUserDto editUserDto) {
         return  this.editUserService.editUser(editUserDto);
+    }
+
+    public JsonObject activateUser(EditUserDto editUserDto){
+        return this.editUserService.activateUser(editUserDto);
     }
 }

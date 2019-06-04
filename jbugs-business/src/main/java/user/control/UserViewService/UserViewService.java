@@ -1,4 +1,4 @@
-package user.control.UserViewService;
+package user.control.userViewService;
 
 import user.converter.UserConverter;
 import user.dao.UserDao;
@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
 public class UserViewService {
 
     @EJB
-    UserDao userDao;
+    private UserDao userDao;
 
     @EJB
-    UserConverter userConverter;
+    private UserConverter userConverter;
 
     public List<ViewUserDto> gettAllUsers() {
         return userDao.getAllUsers()
