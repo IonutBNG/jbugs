@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import {BackendService} from "../backend-service/backend.service";
 import {Observable} from "rxjs";
-import {UserModel} from "../../user-model/user-model";
-import {of} from "rxjs/internal/observable/of";
 import {NewUserModel} from "../../user-model/new-user-model";
-import {EditUserModel} from "../../user-model/edit-user";
 import {UserActivate} from "../../user-model/activate-user";
 import {User} from "../../user-model/user-table";
+import {EditUserModel} from "../../user-model/edit-user";
 
 
 @Injectable({

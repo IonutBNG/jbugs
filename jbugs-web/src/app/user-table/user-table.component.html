@@ -23,7 +23,7 @@
       <td mat-cell *matCellDef="let users"> {{users.mobileNumber}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="userName">
+    <ng-container matColumnDef="username">
       <th mat-header-cell *matHeaderCellDef> Username </th>
       <td mat-cell *matCellDef="let users"> {{users.username}} </td>
     </ng-container>
@@ -37,8 +37,11 @@
       <th mat-header-cell  *matHeaderCellDef > Activate </th>
 
       <mat-cell *matCellDef="let users" >
-        <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false" (change)="onActivate(users.username)">   </mat-slide-toggle>
-        <button mat-raised-button class="editbtn" color="primary" (click)="edit(users)">  Edit </button>
+        <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false"
+                          (change)="onActivate(users.userName)">   </mat-slide-toggle>
+        <button mat-raised-button class="editbtn" color="primary" (click)="editUserPopup(myView, users.firstName,
+            users.lastName, users.email, users.mobileNumber, users.username, users.counter)">  Edit </button>
+        <ng-template #myView >  <app-edit-user *ngIf ="loadComponent" ></app-edit-user> </ng-template>
       </mat-cell>
     </ng-container>
 

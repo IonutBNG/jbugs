@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {EditUserModel} from "../user-model/edit-user";
+import {Component, OnInit, Optional} from '@angular/core';
+import {EditUserService} from "../services/edit-user-service/edit-user.service";
+import {User} from "../user-model/user-table";
 import {UserService} from "../services/user-service/user.service";
-import {NewUserModel} from "../user-model/new-user-model";
+import {EditUserModel} from "../user-model/edit-user";
+import {ToastrService} from "ngx-toastr";
+import {MatDialogRef} from "@angular/material";
+import {UserEmitterService} from "../services/user-emitter-service/user-emitter.service";
 
 @Component({
   selector: 'app-edit-user',
@@ -10,40 +14,86 @@ import {NewUserModel} from "../user-model/new-user-model";
 })
 export class EditUserComponent implements OnInit {
 
-  public currentUser:EditUserModel;
+  private editedUser:User;
+  private username: string;
+  private firstName: string;
+  private lastName: string;
+  private mobileNumber: string;
+  private email: string;
+  private counter: number;
 
-  public editedUserSuccesfully;
-
-  constructor(private userService: UserService) { }
+  constructor(private editUserService: EditUserService,
+              private userService: UserService,
+              private toast: ToastrService,
+              private userEmitter: UserEmitterService,
+              @Optional() private dialogRef: MatDialogRef<EditUserComponent>) { }
 
   ngOnInit() {
+    this.setUser();
   }
 
-  editUser(userName: string, firstname: string,  lastName: string,  mobileNumber: string,  email: string,  password: string) {
-    var editUser: EditUserModel ={userName:userName, firstName:firstname, lastName:lastName,mobileNumber:mobileNumber,email:email, password:password};
-    this.userService.addNewUser(this.currentUser).subscribe( res => {
+  private editedNewUser: EditUserModel;
+  private addedUserSuccesfully: boolean;
+
+  private setUser() {
+    this.editUserService.currentEditedUser.subscribe(user => this.editedUser = user);
+    this.firstName = this.editedUser.firstName;
+    this.lastName = this.editedUser.lastName;
+    this.email = this.editedUser.email;
+    this.mobileNumber = this.editedUser.mobileNumber;
+    this.username = this.editedUser.username;
+    this.counter = this.editedUser.counter;
+    console.log(this.username);
+  }
+
+  private editNewUser(username: string, firstName: string, lastName: string, mobileNumber: string, email: string,
+                      counter: number, password: string){
+    this.setEditedUser(username, firstName, lastName, mobileNumber, email, counter, password);
+    console.log(this.editedNewUser);
+    this.userService.editUser(this.editedNewUser).subscribe( res => {
         console.log(res);
-        if(!this.okResponse(res)) {
-
-        }
+        this.checkResponse(res);
       },
-      err => {
-        console.log(err)
-      });
-
+      err => { console.log(err) });
   }
 
-  okResponse(res) {
-    if (res.status === undefined) {
-      this.editedUserSuccesfully = false;
-    }
+  private setEditedUser(username: string, firstName: string, lastName: string, mobileNumber: string, email: string,
+                  counter: number, password: string){
+    const user: EditUserModel = {
+      username: username,
+      firstName: firstName,
+      lastName: lastName,
+      mobileNumber: mobileNumber,
+      email: email,
+      password: password,
+      counter: counter
+    };
+    this.editedNewUser = user;
+  }
 
-    if (res.status === "OK") {
-      this.editedUserSuccesfully=true;
+  private checkResponse(res) {
+    if (res.status === undefined) {
+      this.addedUserSuccesfully = false;
+      this.closeDialogError(res.message);
     }
     else {
-      return false;
+      this.addedUserSuccesfully = true;
+      this.closeDialogSuccess(res.status);
     }
+  }
+
+  private closeDialogError(message){
+    this.toast.error(message, "Error");
+  }
+
+  private closeDialogSuccess(message: string){
+    this.dialogRef.close();
+    this.userEmitter.doSomething();
+    this.toast.success(message, "Success");
+  }
+
+  private close() {
+    this.dialogRef.close();
   }
 
 }

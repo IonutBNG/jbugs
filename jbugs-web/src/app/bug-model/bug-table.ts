@@ -3,10 +3,10 @@ export interface Bug {
   title : string,
   description : string,
   version : string,
-  target_date: string,
+  targetDate: string,
   status : string,
-  changed_status : string
-  fixed_version: string,
+  changed_status : string,
+  fixedVersion: string,
   severity: string,
   createdByUser : string,
   assignedTo : string
