@@ -7,7 +7,6 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
-
 import {MatButtonModule, MatIconModule, MatTableModule} from "@angular/material";
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,9 +17,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {RecaptchaModule} from "ng-recaptcha";
 import {MatDialogModule} from '@angular/material/dialog';
-
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { HomeComponent } from './home/home.component';
+import {EditUserComponent} from "./edit-user/edit-user.component";
+import {BugTableComponent} from "./bug-table/bug-table.component";
+import {ViewBugComponent} from "./view-bug/view-bug.component";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,9 @@ import { HomeComponent } from './home/home.component';
     UserTableComponent,
     AddUserComponent,
     HomeComponent,
+    EditUserComponent,
+    BugTableComponent,
+    ViewBugComponent,
   ],
   imports: [
     BrowserModule,
