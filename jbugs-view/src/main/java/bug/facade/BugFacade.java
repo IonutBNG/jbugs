@@ -9,6 +9,7 @@ import bug.dto.ViewBugDto;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.json.JsonObject;
 import java.util.List;
 
 @Stateless
@@ -28,8 +29,12 @@ public class BugFacade {
         return newBugService.addNewBug(newBugDto);
     }
 
-    public List<BugStatus> getPossibleTransitions(BugStatus bugStatus){
+    public List<String> getPossibleTransitions(String bugStatus){
         return this.bugStatusService.getPossibleTransitions(bugStatus);
+    }
+
+    public void setStatus(ViewBugDto viewBugDto){
+        this.bugStatusService.setStatus(viewBugDto);
     }
 
     public List<ViewBugDto> getAllBugs() {

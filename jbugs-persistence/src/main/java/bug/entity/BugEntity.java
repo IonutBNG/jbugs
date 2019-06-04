@@ -12,10 +12,14 @@ import java.util.Objects;
 @Entity
 @Table(name = "bugs")
 @NamedQueries({
-        @NamedQuery(name = BugEntity.GET_ALL_BUGS, query = "SELECT b FROM BugEntity b")
+        @NamedQuery(name = BugEntity.GET_ALL_BUGS, query = "SELECT b FROM BugEntity b"),
+        @NamedQuery(name = BugEntity.SET_STATUS, query = "Update BugEntity bug set bug.status = :" + BugEntity.STATUS + " where bug.id = :" + BugEntity.ID)
 })
 public class BugEntity extends BaseEntity<Long> {
     public static final String GET_ALL_BUGS = "BugEntity.getAllBugs";
+    public static final String ID = "id";
+    public static final String STATUS = "status";
+    public static final String SET_STATUS = "BugEntity.setStatus";
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -50,6 +54,19 @@ public class BugEntity extends BaseEntity<Long> {
 
 
     public BugEntity() {
+    }
+
+    public BugEntity(Long id, String title, String description, String version, Date targetDate, BugStatus status, String fixedVersion, Severity severity, UserEntity createdByUser, UserEntity assignedTo) {
+        this.setId(id);
+        this.title = title;
+        this.description = description;
+        this.version = version;
+        this.targetDate = targetDate;
+        this.status = status;
+        this.fixedVersion = fixedVersion;
+        this.severity = severity;
+        this.createdByUser = createdByUser;
+        this.assignedTo = assignedTo;
     }
 
     public String getTitle() {

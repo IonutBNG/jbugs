@@ -3,6 +3,7 @@ package bug.converter;
 import bug.dto.NewBugDto;
 import bug.dto.ViewBugDto;
 import bug.entity.BugEntity;
+import bug.entity.Severity;
 import utils.BugStatus;
 
 import javax.ejb.Stateless;
@@ -32,6 +33,7 @@ public class BugConverter {
     public ViewBugDto convertBugEntityToViewBugDto(BugEntity bugEntity) {
         ViewBugDto viewBugDto = new ViewBugDto();
 
+        viewBugDto.setId(bugEntity.getId());
         viewBugDto.setTitle(bugEntity.getTitle());
         viewBugDto.setDescription(bugEntity.getDescription());
         viewBugDto.setVersion(bugEntity.getVersion());
@@ -44,6 +46,22 @@ public class BugConverter {
 
         return viewBugDto;
 
+    }
+
+    public BugEntity convertViewBugDtoToBugEntity(ViewBugDto viewBugDto){
+        return new BugEntity(
+                viewBugDto.getId(),
+                viewBugDto.getTitle(),
+                viewBugDto.getDescription(),
+                viewBugDto.getVersion(),
+                viewBugDto.getTargetDate(),
+                BugStatus.getBugStatusByString(viewBugDto.getStatus()),
+                viewBugDto.getFixedVersion(),
+                Severity.getSeverityByString(viewBugDto.getSeverity()),
+                //TODO solve created by user & assigned to
+                null,
+                null
+                );
     }
 
 

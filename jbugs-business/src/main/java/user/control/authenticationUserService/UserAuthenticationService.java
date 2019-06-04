@@ -82,6 +82,11 @@ public class UserAuthenticationService {
     }
 
 
+    /**
+     * Generates token based on the username
+     * @param username used for the token generation
+     * @return token as String
+     */
     private String generateJwtToken(String username) {
         Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
         String jwt = Jwts.builder()
@@ -91,6 +96,11 @@ public class UserAuthenticationService {
         return jwt;
     }
 
+    /**
+     * Generates Json
+     * @param jwt used in the Json
+     * @return JsonObject
+     */
     private JsonObject generateJson(String jwt){
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("token", jwt)

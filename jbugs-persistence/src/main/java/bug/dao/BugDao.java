@@ -29,4 +29,18 @@ public class BugDao {
         return this.entityManager.createNamedQuery(BugEntity.GET_ALL_BUGS, BugEntity.class).getResultList();
     }
 
+    /**
+     * Updates the status for the given BugEntity
+     * @param bugEntity used for the status update
+     */
+    public void setStatus(BugEntity bugEntity){
+        this.entityManager
+                .createNamedQuery(BugEntity.SET_STATUS)
+                .setParameter(BugEntity.STATUS, bugEntity.getStatus())
+                .setParameter(BugEntity.ID, bugEntity.getId())
+                .executeUpdate();
+    }
+
+
+
 }
