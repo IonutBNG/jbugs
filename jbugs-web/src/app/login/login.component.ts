@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../services/auth-service/auth.service";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
-import {$} from "protractor";
 
 
 @Component({
@@ -26,7 +25,6 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-
   }
 
   loginUser(){
@@ -49,6 +47,7 @@ export class LoginComponent implements OnInit {
       this.showToast(res.message);
     } else if (res.token == ""){
       this.showToast("Invalid username or password !");
+
     } else {
       localStorage.setItem('token', res.token);
       this.router.navigate(['/usertable']);

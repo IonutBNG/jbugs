@@ -20,6 +20,8 @@ export class AddUserComponent implements OnInit {
   public errorJson:Object;
 
   ngOnInit() {
+
+
   }
 
   addNewUser(firstname: string,  lastName: string,  mobileNumber: string,  email: string,  password: string) {

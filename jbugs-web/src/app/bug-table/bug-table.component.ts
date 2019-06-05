@@ -1,10 +1,14 @@
-import {Component, EventEmitter, Input, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {Bug} from "../bug-model/bug-table";
-import {MatDialog, MatDialogConfig, MatPaginator, MatTableDataSource} from "@angular/material";
+import {MatDialog, MatDialogConfig, MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 import {ViewBugComponent} from "../view-bug/view-bug.component";
 import {BugService} from "../services/bug-service/bug.service";
-import {User} from "../user-model/user-table";
-import {ComponentType} from "@angular/cdk/portal";
+import {AddBugComponent} from "../add-bug/add-bug.component";
+
+
+export interface Dates  {
+  data : Date
+}
 
 @Component({
   selector: 'app-bug-table',
@@ -17,7 +21,6 @@ export class BugTableComponent implements OnInit {
 
   private dialogConfig;
 
-
   constructor( private dialog: MatDialog,
                private bugService: BugService) { }
 
@@ -28,24 +31,32 @@ export class BugTableComponent implements OnInit {
 
   loadComponent = false;
 
+  length: any;
+  pageSize: any;
+
+
   public dataSource : any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
-
 
     this.bugService.getAllBugs().subscribe(
       bugs => {
         this.bugs = bugs;
-        this.dataSource =  new MatTableDataSource<Bug>(this.bugs);
+        this.dataSource =  new MatTableDataSource<Bug>(bugs);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       }
-    )
-
+    );
     this.dialogConfig = new MatDialogConfig();
+
   }
 
+
   addBug(){
+    this.dialogConfigSettup();
+    this.dialog.open(AddBugComponent, this.dialogConfig);
   }
 
   viewBugPopUp(component: TemplateRef<ViewBugComponent>){
@@ -60,5 +71,9 @@ export class BugTableComponent implements OnInit {
     this.dialogConfig.width = "50%";
   }
 
+
+  onPaginateChange(event){
+    alert(JSON.stringify("Current page index: " + event.pageIndex + " Page Size "+event.pageSize + " Length "+event.length));
+  }
 
 }

@@ -1,5 +1,6 @@
 package user.dao;
 
+import bug.dto.NewBugDto;
 import com.google.common.collect.Iterables;
 import user.dto.EditUserDto;
 import user.entity.UserEntity;
@@ -47,7 +48,6 @@ public class UserDao {
                 .setParameter(UserEntity.COUNTER, userEntity.getCounter())
                 .setParameter(UserEntity.USERNAME, userEntity.getUsername())
                 .executeUpdate();
-
     }
 
     public boolean checkIfEmailIsUsed(String email) {

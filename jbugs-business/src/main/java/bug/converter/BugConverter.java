@@ -20,7 +20,9 @@ public class BugConverter {
         bugEntity.setVersion(newBugDto.getVersion());
         bugEntity.setFixedVersion(newBugDto.getFixedVersion());
         bugEntity.setTargetDate(newBugDto.getTargetDate());
-        bugEntity.setStatus(BugStatus.getBugStatusByString(newBugDto.getStatus()));
+        bugEntity.setStatus(BugStatus.OPEN);
+//        bugEntity.setStatus(BugStatus.getBugStatusByString(newBugDto.getStatus()));
+        bugEntity.setSeverity(Severity.getSeverityByString(newBugDto.getSeverity()));
 
         //todo create named queries for this operations
 //        bugEntity.setSeverity(newBugDto.getSeverity());

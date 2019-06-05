@@ -1,8 +1,10 @@
 table{
   width:100%;
+  padding: 0 80px;
 }
 .mat-header-row {
   font-weight: bold;
+  text-align: center;
 }
 
 .mat-header-cell {
@@ -18,14 +20,40 @@ table{
 .mat-row:nth-child(odd) {
   background-color: #ebebeb;
 }
-.mat-cell{
-  //border-right: solid 0.5px black;
-}
-
-.editbtn {
-  margin-left: 30px;
-}
 
 .btn-primary {
   margin: 20px 0;
+}
+.viewbtn {
+  width: 100px;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-sort-header {
+  display: flex;
+  cursor: pointer;
+  align-items: center !important;
+  padding-left: 30px !important;
+}
+
+
+.search-field {
+  float: right;
+}
+
+.btnfilter {
+  width: 100px;
+  margin-left: 20px;
+}
+
+.class1  .mat-select-placeholder {
+  color:red !important;
+}
+
+.class2  .mat-select-placeholder {
+  color:blue !important;
 }

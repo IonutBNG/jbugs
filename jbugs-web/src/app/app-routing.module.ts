@@ -5,6 +5,8 @@ import {UserTableComponent} from "./user-table/user-table.component";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {BugTableComponent} from "./bug-table/bug-table.component";
+import {AddBugComponent} from "./add-bug/add-bug.component";
+import {AuthGuard} from "./auth-guard/auth.guard";
 
 const routes: Routes = [
   {
@@ -15,7 +17,7 @@ const routes: Routes = [
   {
     path: 'usertable',
     component: UserTableComponent,
-   // canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -24,7 +26,7 @@ const routes: Routes = [
   {
     path: "adduser",
     component: AddUserComponent,
-    //canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path:"edituser",
@@ -33,6 +35,10 @@ const routes: Routes = [
   {
     path: "bugtable",
     component: BugTableComponent
+  },
+  {
+    path: "addbug",
+    component: AddBugComponent
   }
 ];
 

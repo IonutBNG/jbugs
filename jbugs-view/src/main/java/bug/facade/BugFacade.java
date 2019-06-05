@@ -11,6 +11,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.json.JsonObject;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Stateless
 public class BugFacade {
@@ -24,7 +25,7 @@ public class BugFacade {
     @EJB
     BugViewService bugViewService;
 
-    public boolean addNewBug(NewBugDto newBugDto){
+    public JsonObject addNewBug(NewBugDto newBugDto){
         System.out.println(newBugDto.toString());
         return newBugService.addNewBug(newBugDto);
     }
@@ -39,6 +40,11 @@ public class BugFacade {
 
     public List<ViewBugDto> getAllBugs() {
         return this.bugViewService.getAllBugs();
+    }
+
+
+    public List<String> getSeverityValues(){
+        return this.newBugService.getSeverityValues();
     }
 
 }

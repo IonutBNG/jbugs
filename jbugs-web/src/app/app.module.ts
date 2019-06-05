@@ -8,7 +8,14 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
 
-import {MatButtonModule, MatIconModule, MatMenuModule, MatTableModule} from "@angular/material";
+import {
+  MatButtonModule, MatCardModule,
+  MatDatepickerModule, MatFormFieldModule,
+  MatIconModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatTableModule
+} from "@angular/material";
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthService} from "./services/auth-service/auth.service";
@@ -25,6 +32,11 @@ import { BugTableComponent } from './bug-table/bug-table.component';
 import { ViewBugComponent } from './view-bug/view-bug.component';
 
 import {MatInputModule} from '@angular/material/input';
+import { AddBugComponent } from './add-bug/add-bug.component';
+
+import {MatSelectModule} from '@angular/material/select';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +47,8 @@ import {MatInputModule} from '@angular/material/input';
     AddUserComponent,
     EditUserComponent,
     BugTableComponent,
-    ViewBugComponent
+    ViewBugComponent,
+    AddBugComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +66,8 @@ import {MatInputModule} from '@angular/material/input';
     BrowserAnimationsModule,
     MatDialogModule,
     MatInputModule,
+    MatSelectModule,
+    MatSortModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: 'toast-top-center',
@@ -60,12 +75,19 @@ import {MatInputModule} from '@angular/material/input';
     }),
     RecaptchaModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatCardModule
   ],
   exports: [
     ViewBugComponent
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService,
+    AuthGuard,
+    MatDatepickerModule],
   bootstrap: [AppComponent],
   entryComponents: [AddUserComponent,
     ViewBugComponent,BugTableComponent]
