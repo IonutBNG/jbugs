@@ -8,6 +8,8 @@ import {User} from "../user-model/user-table";
 import {EditUserComponent} from "../edit-user/edit-user.component";
 import {EditUserService} from "../services/edit-user-service/edit-user.service";
 import {UserActivate} from "../user-model/activate-user";
+import {AddUserComponent} from "../add-user/add-user.component";
+import {PermissionsComponent} from "../permissions/permissions.component";
 
 const users: User[] = [];
 
@@ -65,7 +67,7 @@ export class UserTableComponent implements OnInit {
   editUserPopup(component: TemplateRef<EditUserComponent>, firstName: string, lastName: string, email: string,
                 mobileNumber: string, userName: string, counter: number) {
     this.loadComponent = true;
-    this.dialogConfigSetup();
+    this.dialogConfigSetupUser();
     this.dialog.open(EditUserComponent, this.dialogConfig);
     this.setUser(firstName, lastName, email, mobileNumber, userName, counter);
     this.editUserService.viewEditedUser(this.editedUser);
@@ -75,11 +77,6 @@ export class UserTableComponent implements OnInit {
     alert('Edit');
   }
 
-  private dialogConfigSetup(){
-    this.dialogConfig.disableClose= false;
-    this.dialogConfig.autoFocus = true;
-    this.dialogConfig.width = "50%";
-  }
 
   private setUser(firstName: string, lastName: string, email: string,
                   mobileNumber: string, userName: string, counter: number) {
@@ -103,6 +100,32 @@ export class UserTableComponent implements OnInit {
 
   private reloadTable(){
     this.getAllUsers();
+  }
+
+
+
+
+
+  private addUserPopup(){
+    this.dialogConfigSetupUser();
+    this.dialog.open(AddUserComponent, this.dialogConfig);
+  }
+
+  private permissionsPopup(){
+    this.dialogConfigSetupPermissions();
+    this.dialog.open(PermissionsComponent, this.dialogConfig);
+  }
+
+  private dialogConfigSetupUser(){
+    this.dialogConfig.disableClose= false;
+    this.dialogConfig.autoFocus = true;
+    this.dialogConfig.width = "40%";
+  }
+
+  private dialogConfigSetupPermissions(){
+    this.dialogConfig.disableClose= false;
+    this.dialogConfig.autoFocus = true;
+    this.dialogConfig.width = "20%";
   }
 
 }

@@ -7,6 +7,7 @@ import {AuthGuard} from "./auth-guard/auth.guard";
 import {HomeComponent} from "./home/home.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {BugTableComponent} from "./bug-table/bug-table.component";
+import {PermissionsComponent} from "./permissions/permissions.component";
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
           {
             path:"edituser",
             component:EditUserComponent
+          },
+          {
+            path: "permissions",
+            component: PermissionsComponent
           },
         ]
       },

@@ -58,4 +58,6 @@ public class UserFacade {
     public JsonObject activateUser(EditUserDto editUserDto){
         return this.editUserService.activateUser(editUserDto);
     }
+
+    public JsonObject deactivateUser(EditUserDto editUserDto) { return this.editUserService.deactivateUser(editUserDto);}
 }

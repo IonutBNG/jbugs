@@ -1,0 +1,55 @@
+<div >
+
+  <p id="buttons">
+    <mat-button-toggle-group appearance="legacy" aria-label="Font Style"
+        name="types" [(ngModel)]="selectedRadio" (change)="radioChange()">
+      <mat-button-toggle *ngFor="let type of types" value="{{type}}" name="{{type}}">
+        {{type}}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </p>
+
+  <br *ngIf="selectedRadio == types[0]">
+  <mat-form-field class="fields" appearance="outline" *ngIf="selectedRadio == types[0]">
+    <mat-label>Role</mat-label>
+    <mat-select [(ngModel)]="selectedValuePerm" (selectionChange)="showPermissionAdd($event.value)">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let role of addRoles"
+                  [value]="role.type" >{{role.type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br *ngIf="selectedRadio == types[0]">
+  <mat-form-field class="fields" appearance="outline" *ngIf="selectedRadio == types[0]">
+    <mat-label>Permission</mat-label>
+    <mat-select [(ngModel)]="selectedValueRole" multiple (selectionChange)="setPermissionsAdd($event.value)">
+      <mat-option *ngFor="let perm of addPermissions" [value]="perm.type">{{perm.type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br *ngIf="selectedRadio == types[0]">
+  <button class="btn btn-outline-info fields" *ngIf="selectedRadio == types[0]" (click)="addPermission()">Add</button>
+
+
+  <br *ngIf="selectedRadio == types[1]">
+  <mat-form-field class="fields" appearance="outline" *ngIf="selectedRadio == types[1]">
+    <mat-label>Role</mat-label>
+    <mat-select [(ngModel)]="selectedValuePerm" (selectionChange)="showPermissionDelete($event.value)">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let role of deleteRoles"
+                  [value]="role.type" >{{role.type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br *ngIf="selectedRadio == types[1]">
+  <mat-form-field class="fields" appearance="outline" *ngIf="selectedRadio == types[1]">
+    <mat-label>Permission</mat-label>
+    <mat-select [(ngModel)]="selectedValueRole" multiple (selectionChange)="setPermissionsDelete($event.value)">
+        <mat-option *ngFor="let perm of deletePermissions" [value]="perm.type">{{perm.type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br *ngIf="selectedRadio == types[1]">
+  <button class="btn btn-outline-info fields" *ngIf="selectedRadio == types[1]" (click)="deletePermission()">Delete</button>
+
+</div>

@@ -1,12 +1,15 @@
 package bug.facade;
 
 import bug.control.NewBugService;
+import bug.control.bugStatusService.BugStatusService;
 import bug.control.bugViewService.BugViewService;
 import bug.dto.NewBugDto;
+import utils.BugStatus;
 import bug.dto.ViewBugDto;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.json.JsonObject;
 import java.util.List;
 
 @Stateless
@@ -16,11 +19,22 @@ public class BugFacade {
     NewBugService newBugService;
 
     @EJB
+    private BugStatusService bugStatusService;
+
+    @EJB
     BugViewService bugViewService;
 
     public boolean addNewBug(NewBugDto newBugDto){
         System.out.println(newBugDto.toString());
         return newBugService.addNewBug(newBugDto);
+    }
+
+    public List<String> getPossibleTransitions(String bugStatus){
+        return this.bugStatusService.getPossibleTransitions(bugStatus);
+    }
+
+    public void setStatus(ViewBugDto viewBugDto){
+        this.bugStatusService.setStatus(viewBugDto);
     }
 
     public List<ViewBugDto> getAllBugs() {

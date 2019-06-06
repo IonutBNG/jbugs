@@ -32,4 +32,9 @@ public class BugViewService {
                 .collect(Collectors.toList());
     }
 
+    public List<ViewBugDto> sortBugs(List<ViewBugDto> viewBugDtoList){
+
+        return null;
+    }
+
 }

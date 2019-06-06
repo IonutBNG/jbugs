@@ -7,7 +7,14 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
-import {MatButtonModule, MatIconModule, MatTableModule} from "@angular/material";
+import {
+  MatButtonModule, MatButtonToggleModule,
+  MatIconModule,
+  MatInputModule,
+  MatRadioModule,
+  MatSelectModule, MatSidenavModule,
+  MatTableModule
+} from "@angular/material";
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthService} from "./services/auth-service/auth.service";
@@ -22,6 +29,7 @@ import { HomeComponent } from './home/home.component';
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {BugTableComponent} from "./bug-table/bug-table.component";
 import {ViewBugComponent} from "./view-bug/view-bug.component";
+import { PermissionsComponent } from './permissions/permissions.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +42,7 @@ import {ViewBugComponent} from "./view-bug/view-bug.component";
     EditUserComponent,
     BugTableComponent,
     ViewBugComponent,
+    PermissionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +65,12 @@ import {ViewBugComponent} from "./view-bug/view-bug.component";
       preventDuplicates: false
     }),
     RecaptchaModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatButtonToggleModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],

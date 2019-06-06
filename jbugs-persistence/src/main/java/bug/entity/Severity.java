@@ -16,4 +16,13 @@ public enum Severity {
     Severity (int severityLevel) {
         this.severityLevel = severityLevel;
     }
+
+    public static Severity getSeverityByString(String value){
+        for (Severity severity : Severity.values()){
+            if (value.equals(severity.toString())){
+                return severity;
+            }
+        }
+        return null;
+    }
 }

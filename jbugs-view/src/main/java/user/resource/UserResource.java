@@ -8,8 +8,6 @@ import user.facade.UserFacade;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ws.rs.*;
-import javax.print.attribute.standard.Media;
-import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -68,6 +66,14 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response activateUser(EditUserDto editUserDto){
         return Response.ok(this.userFacade.activateUser(editUserDto)).build();
+    }
+
+    @POST
+    @Path("/deactivate-user")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deactivateUser(EditUserDto editUserDto){
+        return Response.ok(this.userFacade.deactivateUser(editUserDto)).build();
     }
 
 }

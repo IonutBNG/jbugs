@@ -1,13 +1,16 @@
 package bug.resource;
 
 import bug.dto.NewBugDto;
+import bug.dto.ViewBugDto;
 import bug.facade.BugFacade;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.json.JsonObject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Stateless
 @Path("/bug")
@@ -30,6 +33,21 @@ public class BugResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response getAllBugs() {
         return Response.ok(bugFacade.getAllBugs()).build();
+    }
+
+    @GET
+    @Path("/status-transition/{status}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getPossibleTransitions(@PathParam("status") String status){
+        return Response.ok(this.bugFacade.getPossibleTransitions(status)).build();
+    }
+
+    @PUT
+    @Path("/set-status")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response setStatus(ViewBugDto viewBugDto){
+        this.bugFacade.setStatus(viewBugDto);
+        return Response.ok().build();
     }
 
 

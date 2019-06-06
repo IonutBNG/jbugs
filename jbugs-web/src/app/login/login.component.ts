@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
   loginUserData = {};
   private captchaResponse = null;
 
+  showFiller = true;
+
   constructor(private auth: AuthService,
               private router: Router,
               private toast: ToastrService) {

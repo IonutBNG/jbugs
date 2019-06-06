@@ -24,6 +24,7 @@ import javax.json.JsonObject;
 public class EditUserService {
 
     public static final Integer COUNTER_INIT = 5;
+    public static final Integer COUNTER_DEACTIVATE = 0;
 
     @EJB
     UserDao userDao;
@@ -68,6 +69,16 @@ public class EditUserService {
         userEntity.setCounter(COUNTER_INIT);
 
         return generateJson();
+    }
+
+    public JsonObject deactivateUser(EditUserDto editUserDto) {
+        UserEntity userEntity = userDao.getUserByUsername(editUserDto.getUsername());
+
+        userEntity.setCounter(COUNTER_DEACTIVATE);
+
+        return generateJson();
+
+
     }
 
 }

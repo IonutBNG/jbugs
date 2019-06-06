@@ -2,9 +2,7 @@ package permission.entity;
 
 import utils.BaseEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
@@ -13,7 +11,17 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "permissions")
+@NamedQueries(
+        {
+                @NamedQuery(name = PermissionEntity.GET_ALL_PERMISSIONS, query = "Select permission from PermissionEntity permission"),
+                @NamedQuery(name = PermissionEntity.GET_ID, query = "Select permission.id from PermissionEntity permission where permission.type = :" + PermissionEntity.TYPE)
+        }
+)
 public class PermissionEntity extends BaseEntity<Long> {
+
+    public static final String GET_ALL_PERMISSIONS = "Permission.getAllPermissions";
+    public static final String TYPE = "type";
+    public static final String GET_ID = "PermissionEntity.getID";
 
     @Column(name = "description")
     private String description;

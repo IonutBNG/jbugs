@@ -1,3 +1,4 @@
+role\facade\RoleFacade.class
 bug\facade\BugFacade.class
 bug\resource\BugResource.class
 exceptionMapper\BusinessExceptionMapper.class
@@ -5,3 +6,4 @@ user\resource\UserResource.class
 exceptionMapper\RuntimeExceptionMapper.class
 user\facade\UserFacade.class
 application\JBugsApplication.class
+role\resource\RoleResource.class

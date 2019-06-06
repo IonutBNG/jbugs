@@ -6,9 +6,11 @@ bug\dto\ViewBugDto.class
 bug\dto\NewBugDto.class
 user\validation\MobileNumber.class
 user\dto\NewUserDto.class
+utils\BugStatus.class
 user\dto\EditUserDto.class
 user\validation\ValidationMessageCatalog.class
 user\validation\NameValidator.class
+role\dao\RoleDao.class
 utils\BaseEntity.class
 user\validation\Username.class
 bug\dao\BugDao.class
@@ -21,6 +23,7 @@ user\dto\ViewUserDto.class
 bug\entity\BugEntity.class
 user\dao\UserDao.class
 user\validation\Name.class
+permission\dao\PermissionDao.class
 user\validation\Password.class
 bug\entity\Severity.class
 user\validation\MobileNumberValidator.class

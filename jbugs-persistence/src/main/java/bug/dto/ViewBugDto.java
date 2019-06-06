@@ -9,6 +9,8 @@ import java.sql.Date;
  * @since 19.1.2
  */
 public class ViewBugDto {
+
+    private Long id;
     private String title;
     private String description;
     private String version;
@@ -22,6 +24,26 @@ public class ViewBugDto {
     public ViewBugDto() {
     }
 
+    public ViewBugDto(Long id, String title, String description, String version, Date targetDate, String status, String fixedVersion, String severity, String createdByUser, String assignedTo) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.version = version;
+        this.targetDate = targetDate;
+        this.status = status;
+        this.fixedVersion = fixedVersion;
+        this.severity = severity;
+        this.createdByUser = createdByUser;
+        this.assignedTo = assignedTo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -94,4 +116,5 @@ public class ViewBugDto {
     public void setAssignedTo(String assignedTo) {
         this.assignedTo = assignedTo;
     }
+
 }
