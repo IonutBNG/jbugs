@@ -30,7 +30,7 @@ public class ManageRolePermissionsService {
 
     /**
      * Converts the role entities to dto
-     * Sets the permissions to the dto and returns the result
+     * Sets the permissionsAllowed to the dto and returns the result
      * @return <list>RoleDto</list>
      */
     public List<RoleDto> getAllRolesForPermissionsAdd(){
@@ -45,7 +45,7 @@ public class ManageRolePermissionsService {
 
     /**
      * Converts the role entities to dto
-     * Sets the permissions to the dto and returns the result
+     * Sets the permissionsAllowed to the dto and returns the result
      * Sets the permission
      * @return <list>RoleDto</list>
      */

@@ -13,9 +13,8 @@ public class NewBugDto implements BaseDto {
     private String status;
     private String fixedVersion;
     private String severity;
-     //todo
-    private int createdByUser;
-    private int assignedTo;
+    private String createdByUser;
+    private String assignedTo;
 
     public NewBugDto() {
     }
@@ -86,20 +85,19 @@ public class NewBugDto implements BaseDto {
         this.severity = severity;
     }
 
-    public int getCreatedByUser() {
+    public String getCreatedByUser() {
         return createdByUser;
     }
 
-    public void setCreatedByUser(int breatedByUser) {
-        this.createdByUser = breatedByUser;
+    public void setCreatedByUser(String createdByUser) {
+        this.createdByUser = createdByUser;
     }
 
-    public int getAssignedTo() {
+    public String getAssignedTo() {
         return assignedTo;
     }
 
-    public void setAssignedTo(int assignedTo) {
+    public void setAssignedTo(String assignedTo) {
         this.assignedTo = assignedTo;
     }
-
 }

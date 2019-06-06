@@ -50,6 +50,12 @@ public class BugResource {
         return Response.ok().build();
     }
 
+    @GET
+    @Path("/get-severity")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSeverityValues(){
+        return Response.ok(this.bugFacade.getSeverityValues()).build();
+    }
 
 
 }

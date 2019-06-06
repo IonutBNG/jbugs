@@ -32,4 +32,9 @@ public class ExceptionMessageCatalog {
 
     public static final ExceptionMessage USER_INVALID_PASSWORD = new ExceptionMessage("USER-008"
             ,"The password is in an invalid format");
+
+    public static final ExceptionMessage INVALID_TOKEN = new ExceptionMessage("AUTHENTICATION-001"
+            ,"The token is invalid");
+    public static final ExceptionMessage NOT_ALLOWED = new ExceptionMessage("AUTHENTICATION-002"
+            ,"You dont have the necessary permissionsAllowed to perform this request");
 }

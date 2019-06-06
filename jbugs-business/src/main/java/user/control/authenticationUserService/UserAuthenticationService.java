@@ -1,12 +1,11 @@
 package user.control.authenticationUserService;
 
-import com.google.common.hash.Hashing;
 import exeptions.BusinessException;
-import exeptions.ExceptionMessage;
 import exeptions.ExceptionMessageCatalog;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
+import security.KeyGenerator;
+import user.authentication.TokenDao;
+import user.authentication.TokenDto;
 import user.dao.UserDao;
 import user.dto.UserLoginDto;
 import user.entity.UserEntity;
@@ -16,8 +15,9 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.json.Json;
 import javax.json.JsonObject;
-import java.nio.charset.StandardCharsets;
 import java.security.Key;
+import java.sql.Date;
+import java.util.Calendar;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -26,12 +26,19 @@ import java.security.Key;
 
 @Stateless
 public class UserAuthenticationService {
+    private static final int DAYS_UNTIL_TOKEN_INVALIDATION = 1;
 
     @EJB
     private UserDao userDao;
 
     @EJB
     private UserValidator userValidator;
+
+    @EJB
+    private TokenDao tokenDao;
+
+    @EJB
+    private KeyGenerator keyGenerator;
 
 
     /**
@@ -44,8 +51,9 @@ public class UserAuthenticationService {
         this.userValidator.validateBean(userLoginDto);
 
         if (validCredentials(userLoginDto)){
-            String jws = generateJwtToken(userLoginDto.getUsername());
-            return generateJson(jws);
+            String jwt = generateJwtToken(userLoginDto.getUsername());
+            persistJwtToken(jwt, userLoginDto.getUsername());
+            return generateJson(jwt);
         }
         return generateJson("");
     }
@@ -67,9 +75,11 @@ public class UserAuthenticationService {
             throw new BusinessException(ExceptionMessageCatalog.USER_LOGIN_TRIES_EXCEEDED);
         }
 
-        String encryptedPass = Hashing.sha256()
-                .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
-                .toString();
+//        String encryptedPass = Hashing.sha256()
+//                .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
+//                .toString();
+
+        String encryptedPass =(userLoginDto.getPassword());
 
         if (!userEntity.getPassword().equals(encryptedPass)){
             userEntity.setCounter(userEntity.getCounter()-1);
@@ -88,7 +98,7 @@ public class UserAuthenticationService {
      * @return token as String
      */
     private String generateJwtToken(String username) {
-        Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        Key key = keyGenerator.getKey();
         String jwt = Jwts.builder()
                 .setIssuer(username)
                 .signWith(key)
@@ -106,6 +116,28 @@ public class UserAuthenticationService {
                 .add("token", jwt)
                 .build();
         return jsonObject;
+    }
+
+    private void persistJwtToken(String jwtToken, String username) {
+        TokenDto tokenDto = new TokenDto();
+        tokenDto.setToken(jwtToken);
+        tokenDto.setUsername(username);
+
+        //setting expiration date
+        Calendar c = Calendar.getInstance();
+        Date date=new Date(c.getTimeInMillis());
+        date = addDays(date, DAYS_UNTIL_TOKEN_INVALIDATION);
+        tokenDto.setExpiryDate(date);
+
+        tokenDao.addToken(tokenDto);
+
+    }
+
+    private Date addDays(Date date, int days) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.add(Calendar.DATE, days);
+        return new Date(c.getTimeInMillis());
     }
 
 }

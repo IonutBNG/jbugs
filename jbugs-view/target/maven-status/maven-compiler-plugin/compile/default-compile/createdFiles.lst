@@ -6,4 +6,5 @@ user\resource\UserResource.class
 exceptionMapper\RuntimeExceptionMapper.class
 user\facade\UserFacade.class
 application\JBugsApplication.class
+exceptionMapper\AuthentificationExceptionMapper.class
 role\resource\RoleResource.class

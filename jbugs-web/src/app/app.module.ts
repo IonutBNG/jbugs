@@ -7,12 +7,13 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
+
 import {
   MatButtonModule, MatButtonToggleModule,
+  MatDatepickerModule,
   MatIconModule,
-  MatInputModule,
-  MatRadioModule,
-  MatSelectModule, MatSidenavModule,
+  MatMenuModule, MatSelectModule,
+  MatSidenavModule,
   MatTableModule
 } from "@angular/material";
 import { MatPaginatorModule } from '@angular/material';
@@ -20,16 +21,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthService} from "./services/auth-service/auth.service";
 import {AuthGuard} from "./auth-guard/auth.guard";
 import {ToastrModule} from "ngx-toastr";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {RecaptchaModule} from "ng-recaptcha";
 import {MatDialogModule} from '@angular/material/dialog';
+
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { HomeComponent } from './home/home.component';
 import {EditUserComponent} from "./edit-user/edit-user.component";
-import {BugTableComponent} from "./bug-table/bug-table.component";
-import {ViewBugComponent} from "./view-bug/view-bug.component";
-import { PermissionsComponent } from './permissions/permissions.component';
+import { BugTableComponent } from './bug-table/bug-table.component';
+import { ViewBugComponent } from './view-bug/view-bug.component';
+
+import {MatInputModule} from '@angular/material/input';
+import {AuthenticationInterceptorComponent} from "./authentication-interceptor/authentication-interceptor.component";
+import {PermissionsComponent} from "./permissions/permissions.component";
+import {HomeComponent} from "./home/home.component";
 
 @NgModule({
   declarations: [
@@ -38,11 +43,11 @@ import { PermissionsComponent } from './permissions/permissions.component';
     LoginComponent,
     UserTableComponent,
     AddUserComponent,
-    HomeComponent,
     EditUserComponent,
     BugTableComponent,
     ViewBugComponent,
     PermissionsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,7 @@ import { PermissionsComponent } from './permissions/permissions.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatInputModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       positionClass: 'toast-top-center',
@@ -66,15 +72,25 @@ import { PermissionsComponent } from './permissions/permissions.component';
     }),
     RecaptchaModule,
     MatDialogModule,
-    MatRadioModule,
-    MatInputModule,
-    MatSelectModule,
+    MatMenuModule,
     MatSidenavModule,
+    MatSelectModule,
     MatButtonToggleModule
   ],
-  providers: [AuthService, AuthGuard],
+  exports: [
+    ViewBugComponent
+  ],
+  providers: [AuthService, AuthGuard,
+    MatDatepickerModule,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptorComponent,
+      multi   : true,
+    }
+    ],
   bootstrap: [AppComponent],
-  entryComponents: [AddUserComponent]
+  entryComponents: [AddUserComponent,
+    ViewBugComponent,BugTableComponent]
 })
 export class AppModule {
 }

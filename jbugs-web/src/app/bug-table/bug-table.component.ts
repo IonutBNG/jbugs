@@ -1,9 +1,15 @@
-import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {Bug} from "../bug-model/bug-table";
-import {MatDialog, MatDialogConfig, MatPaginator, MatTableDataSource} from "@angular/material";
+import {MatDialog, MatDialogConfig, MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 import {ViewBugComponent} from "../view-bug/view-bug.component";
 import {BugService} from "../services/bug-service/bug.service";
 import {ViewBugService} from "../services/view-bug-service/view-bug.service";
+import {AddBugComponent} from "../add-bug/add-bug.component";
+
+
+export interface Dates  {
+  data : Date
+}
 
 @Component({
   selector: 'app-bug-table',
@@ -11,6 +17,11 @@ import {ViewBugService} from "../services/view-bug-service/view-bug.service";
   styleUrls: ['./bug-table.component.scss']
 })
 export class BugTableComponent implements OnInit {
+
+  @Output() bugEmitter : EventEmitter<Bug>= new EventEmitter<Bug>();
+
+  private dialogConfig;
+
 
   constructor( private dialog: MatDialog,
                private bugService: BugService,
@@ -23,16 +34,19 @@ export class BugTableComponent implements OnInit {
   public bugs : Bug[];
 
   loadComponent = false;
-  private dialogConfig;
+
+  length: any;
+  pageSize: any;
+
 
   public dataSource : any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
     this.setAllBugs();
     this.dialogConfig = new MatDialogConfig();
 
-    // this.viewBugServ.currentBug.subscribe(newBug => this.bugSetter = newBug)
   }
 
   private setAllBugs(){
@@ -41,11 +55,14 @@ export class BugTableComponent implements OnInit {
         this.bugs = bugs;
         this.dataSource =  new MatTableDataSource<Bug>(this.bugs);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       }
     );
   }
 
   addBug(){
+    this.dialogConfigSetup();
+    this.dialog.open(AddBugComponent, this.dialogConfig);
   }
 
   viewBugPopUp(component: TemplateRef<ViewBugComponent>, title: string, descr: string, version: string, targetDate: string,
@@ -80,5 +97,9 @@ export class BugTableComponent implements OnInit {
     this.dialogConfig.width = "50%";
   }
 
+
+  onPaginateChange(event){
+    alert(JSON.stringify("Current page index: " + event.pageIndex + " Page Size "+event.pageSize + " Length "+event.length));
+  }
 
 }

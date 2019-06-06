@@ -5,6 +5,7 @@ C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\Email.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\role\entity\RoleEntity.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\EmailValidator.java
+C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\authentication\TokenEntity.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\utils\BaseDto.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\Name.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\role\dao\RoleDao.java
@@ -13,10 +14,12 @@ C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\bug\d
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\entity\UserEntity.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\NameValidator.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\dto\ViewUserDto.java
+C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\authentication\TokenDto.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\UsernameValidator.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\bug\dao\BugDao.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\PasswordValidator.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\Username.java
+C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\authentication\TokenDao.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\validation\MobileNumber.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\bug\entity\Severity.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-persistence\src\main\java\user\dto\NewUserDto.java

@@ -77,8 +77,8 @@ public class PermissionService {
     }
 
     /**
-     * Returns the eligible permissions.
-     * Eligible permission -> permission which isn't present in the param list, but it is persisted in the permissions table in the database
+     * Returns the eligible permissionsAllowed.
+     * Eligible permission -> permission which isn't present in the param list, but it is persisted in the permissionsAllowed table in the database
      * Converts the permission entities to dto
      * @param permissionEntityList used to obtain the new list
      * @return <list>Permission dto</list>

@@ -1,0 +1,82 @@
+<div class="container">
+  <form>
+
+    <div class="form-group">
+      <label> Title: </label>
+      <input class="form-control" type="text" id="title" name="title"
+             required #title="ngModel" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label> Description: </label>
+      <input class="form-control" type="text" id="description" name="description"
+             required #description="ngModel" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label> Version: </label>
+      <input class="form-control" type="text" id="version" name="version"
+             required #version="ngModel" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label> Fixed in version: </label>
+      <input class="form-control" type="text" id="fixedVersion" name="fixedVersion"
+             required #fixedVersion="ngModel" ngModel>
+    </div>
+
+    <div class = "form-group">
+      <label> Target Date: </label>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder=" "  name="date" #myDate="ngModel" ngModel>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    </div>
+
+    <div class = "form-group">
+      <label> Severity: </label>
+        <select
+          class = "form-control"
+          id = "severity"
+          name = "severity"
+          ngModel
+          #severityval= "ngModel">
+          <option *ngFor="let sev of severity" value={{sev}}>
+            {{sev}}
+          </option>
+        </select>
+    </div>
+
+    <div class = "form-group">
+      <label> Assigned To: </label>
+      <select
+        class = "form-control"
+        id = "assigned"
+        name = "assigned"
+        ngModel
+        #assigned= "ngModel">
+        <option required *ngFor="let user of users" value={{user.username}}>
+          {{user.username}}
+        </option>
+      </select>
+    </div>
+
+    <div class="addNewUser">
+      <input type="submit" class="btn btn-primary"
+             (click)="addNewBug(title.value,
+                                description.value,
+                                version.value ,
+                                fixedVersion.value,
+                                myDate.value,
+                                severityval.value,
+                                loggedUser ,
+                                assigned.value)"
+             value="Add New Bug">
+
+      <input type="button" class="btn btn-danger" (click)="close()"
+             value="Close">
+    </div>
+
+  </form>
+</div>

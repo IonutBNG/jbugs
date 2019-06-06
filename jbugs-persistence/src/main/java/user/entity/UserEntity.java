@@ -1,9 +1,11 @@
 package user.entity;
 
+import bug.entity.BugEntity;
 import role.entity.RoleEntity;
 import utils.BaseEntity;
 
 import javax.persistence.*;
+import javax.xml.registry.infomodel.User;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -37,6 +39,7 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String GET_USER_BY_USERNAME = "UserEntity.getUserByUsername";
     public static final String GET_ALL_USERS = "UserEntity.getAllUsers";
     public static final String EDIT_USER = "UserEntity.editUser";
+    public static final String GET_USER_ID = "UserEntity.getUserId";
     //public static final String MATCH_LOGIN_CREDENTIALS = "UserEntity.matchLoginCredentials";
 
     //Parameter names
@@ -79,6 +82,9 @@ public class UserEntity extends BaseEntity<Long> {
             inverseJoinColumns = @JoinColumn(name="role_id",referencedColumnName = "id",nullable = false)
     )
     private List<RoleEntity> roleEntityList = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.PERSIST)
+    private List<BugEntity> bugEntityList = new ArrayList<>();
 
     public UserEntity() {
     }

@@ -42,7 +42,6 @@ public class UserFacade {
         return this.userAuthenticationService.authenticateUser(userLoginDto);
     }
 
-
     public List<ViewUserDto> getAllUsers() {
         return userViewService.gettAllUsers();
     }

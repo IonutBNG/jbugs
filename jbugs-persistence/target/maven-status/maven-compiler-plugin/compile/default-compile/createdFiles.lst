@@ -1,3 +1,4 @@
+user\authentication\TokenDao.class
 permission\entity\PermissionEntity.class
 user\entity\UserEntity.class
 role\entity\RoleEntity.class
@@ -19,10 +20,12 @@ user\validation\UsernameValidator.class
 user\validation\PasswordValidator.class
 user\validation\EmailValidator.class
 user\validation\Email.class
+user\authentication\TokenDto.class
 user\dto\ViewUserDto.class
 bug\entity\BugEntity.class
 user\dao\UserDao.class
 user\validation\Name.class
+user\authentication\TokenEntity.class
 permission\dao\PermissionDao.class
 user\validation\Password.class
 bug\entity\Severity.class

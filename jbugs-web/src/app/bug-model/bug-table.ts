@@ -1,5 +1,5 @@
-export interface Bug {
 
+export interface Bug {
   title : string,
   description : string,
   version : string,
@@ -10,5 +10,4 @@ export interface Bug {
   severity: string,
   createdByUser : string,
   assignedTo : string
-
 }
