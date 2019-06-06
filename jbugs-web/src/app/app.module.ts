@@ -21,7 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthService} from "./services/auth-service/auth.service";
 import {AuthGuard} from "./auth-guard/auth.guard";
 import {ToastrModule} from "ngx-toastr";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from "./add-user/add-user.component";
 import {RecaptchaModule} from "ng-recaptcha";
 import {MatDialogModule} from '@angular/material/dialog';
@@ -32,6 +32,7 @@ import { BugTableComponent } from './bug-table/bug-table.component';
 import { ViewBugComponent } from './view-bug/view-bug.component';
 
 import {MatInputModule} from '@angular/material/input';
+import { AuthenticationInterceptorComponent } from './authentication-interceptor/authentication-interceptor.component';
 import { AddBugComponent } from './add-bug/add-bug.component';
 
 import {MatSelectModule} from '@angular/material/select';
@@ -47,6 +48,8 @@ import {MatSortModule} from '@angular/material/sort';
     AddUserComponent,
     EditUserComponent,
     BugTableComponent,
+    ViewBugComponent,
+    AuthenticationInterceptorComponent,
     ViewBugComponent,
     AddBugComponent
   ],
@@ -87,7 +90,13 @@ import {MatSortModule} from '@angular/material/sort';
   providers: [
     AuthService,
     AuthGuard,
-    MatDatepickerModule],
+    MatDatepickerModule,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AuthenticationInterceptorComponent,
+      multi   : true,
+    }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [AddUserComponent,
     ViewBugComponent,BugTableComponent]

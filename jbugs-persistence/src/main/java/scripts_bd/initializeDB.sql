@@ -64,3 +64,12 @@ create table bugs
 	constraint FK_bugs_users_assigned_id
 		foreign key (assignedTo) references users (id)
 );
+
+create table tokens (
+    id bigint auto_increment primary key,
+    token varchar(255) not null,
+    user_id int not null,
+    expire_time TIME not null,
+    constraint FK_tokens_users_id
+        foreign key (user_id) references users(id)
+)

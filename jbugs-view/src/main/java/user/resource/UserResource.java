@@ -1,5 +1,7 @@
 package user.resource;
 
+import security.Secured;
+import security.SecurityPermission;
 import user.dto.EditUserDto;
 import user.dto.NewUserDto;
 import user.dto.UserLoginDto;
@@ -8,8 +10,10 @@ import user.facade.UserFacade;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -22,6 +26,7 @@ public class UserResource {
 
     @EJB
     private UserFacade userFacade;
+
 
     @POST
     @Path("/authenticate")
@@ -38,7 +43,8 @@ public class UserResource {
     @GET
     @Path("/users")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllUsers(){
+    @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
+    public Response getAllUsers(@Context SecurityContext securityContext){
         return Response.ok(userFacade.getAllUsers()).build();
     }
 
@@ -46,7 +52,8 @@ public class UserResource {
     @Path("/add-new-user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addNewUser(NewUserDto newUserDto) {
+    @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
+    public Response addNewUser(NewUserDto newUserDto,@Context SecurityContext securityContext) {
         return Response.ok(this.userFacade.addNewUser(newUserDto)).build();
     }
 
@@ -55,7 +62,8 @@ public class UserResource {
     @Path("/edit-user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response editUser(EditUserDto editUserDto) {
+    @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
+    public Response editUser(EditUserDto editUserDto,@Context SecurityContext securityContext) {
         return Response.ok(this.userFacade.editUser(editUserDto)).build();
     }
 
@@ -64,7 +72,8 @@ public class UserResource {
     @Path("/activate-user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response activateUser(EditUserDto editUserDto){
+    @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
+    public Response activateUser(EditUserDto editUserDto,@Context SecurityContext securityContext){
         return Response.ok(this.userFacade.activateUser(editUserDto)).build();
     }
 
@@ -72,7 +81,8 @@ public class UserResource {
     @Path("/deactivate-user")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deactivateUser(EditUserDto editUserDto){
+    @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
+    public Response deactivateUser(EditUserDto editUserDto,@Context SecurityContext securityContext){
         return Response.ok(this.userFacade.deactivateUser(editUserDto)).build();
     }
 

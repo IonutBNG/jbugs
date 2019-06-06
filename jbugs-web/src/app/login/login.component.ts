@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
       this.showToast("Invalid username or password !");
 
     } else {
+      console.log(res.token);
       localStorage.setItem('token', res.token);
       this.router.navigate(['/usertable']);
     }

@@ -42,7 +42,7 @@ public class RoleDto {
     /**
      * Sets the new permission dto list and returns the object
      * Used in lambda expressions / stream().map(...)
-     * @param permissionDtoList set as the permissions list
+     * @param permissionDtoList set as the permissionsAllowed list
      * @return RoleEntity
      */
     public RoleDto setPermissionsAndGetObject(List<PermissionDto> permissionDtoList){
