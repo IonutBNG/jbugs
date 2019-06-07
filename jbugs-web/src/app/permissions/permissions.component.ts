@@ -77,7 +77,8 @@ export class PermissionsComponent implements OnInit {
   }
 
   private reloadDelete(deletedRoles: Role[]) {
-    if (this.deletePermissions != undefined && this.deletePermissions.length > 0) {
+    if (this.deletePermissions != undefined && this.deletePermissions.length > 0
+      && this.permissionsDeleted != undefined && this.permissionsDeleted.length > 0) {
       this.permissionService.putDeletePermissions(deletedRoles)
         .subscribe(res => console.log(res));
       this.setModelsUndefined();
@@ -135,7 +136,8 @@ export class PermissionsComponent implements OnInit {
   }
 
   private reloadAdd(addedRoles: Role[]) {
-    if (this.addPermissions!= undefined && this.addPermissions.length > 0) {
+    if (this.addPermissions!= undefined && this.addPermissions.length > 0
+      && this.permissionsAdded != undefined && this.permissionsAdded.length > 0) {
       this.permissionService.putAddPermissions(addedRoles)
         .subscribe(res => console.log(res));
       this.setModelsUndefined();
@@ -152,6 +154,8 @@ export class PermissionsComponent implements OnInit {
     this.selectedValueRole = undefined;
     this.addPermissions = [];
     this.deletePermissions = [];
+    this.permissionsDeleted = [];
+    this.permissionsAdded = [];
   }
 
   private radioChange(){

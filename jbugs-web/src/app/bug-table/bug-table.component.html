@@ -1,66 +1,78 @@
-<button class="btn btn-primary"  (click)="addBug()"> Add Bug </button>
+<div class="container first-back-div">
 
-<div class="mat-elevation-z8">
 
-  <table mat-table matSort [dataSource]="dataSource">
+  <div class="back-div">
 
-    <ng-container matColumnDef="title">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef> Title </th>
-      <td mat-cell *matCellDef="let bugs"> {{bugs.title}} </td>
-    </ng-container>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="nav-link" style="font-size: 15px;" routerLinkActive="active" routerLink="/home/bugtable/addbug"
+           (click)="addBug()"> Add Bug </a>
+      </nav>
+    </div>
 
-    <ng-container matColumnDef="target_date">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let bugs"> {{bugs.targetDate}} </td>
-    </ng-container>
+    <br>
 
-    <ng-container matColumnDef="status">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let bugs" >
-        {{bugs.status}}
-      </td>
-    </ng-container>
+    <div class="mat-elevation-z8">
 
-    <ng-container matColumnDef="severity">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef> Severity </th>
-      <td mat-cell *matCellDef="let bugs">
-        {{bugs.severity}}
-      </td>
-    </ng-container>
+      <table mat-table matSort [dataSource]="dataSource">
 
-    <ng-container matColumnDef="createdByUser">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef> Created By </th>
-      <td mat-cell *matCellDef="let bugs"> {{bugs.createdByUser}} </td>
-    </ng-container>
+        <ng-container matColumnDef="title">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let bugs"> {{bugs.title}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="assignedTo">
-      <th mat-header-cell mat-sort-header *matHeaderCellDef> Assigned To </th>
-      <td mat-cell *matCellDef="let bugs"> {{bugs.assignedTo}} </td>
-    </ng-container>
+        <ng-container matColumnDef="target_date">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let bugs"> {{bugs.targetDate}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell  *matHeaderCellDef > Details </th>
-      <mat-cell *matCellDef="let bugs">
-        <button mat-raised-button class="editbtn" color="primary" (click)="viewBugPopUp(myView, bugs.title, bugs.description,
-                bugs.version, bugs.targetDate, bugs.status, bugs.changed_status, bugs.fixedVersion, bugs.severity,
-                bugs.createdByUser, bugs.assignedTo)" >
-          View
-        </button>
-       <ng-template #myView> <app-view-bug *ngIf ="loadComponent" ></app-view-bug> </ng-template>
-      </mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let bugs" >
+            {{bugs.status}}
+          </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let bugs; columns: displayedColumns;"></tr>
+        <ng-container matColumnDef="severity">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Severity </th>
+          <td mat-cell *matCellDef="let bugs">
+            {{bugs.severity}}
+          </td>
+        </ng-container>
 
-  </table>
-  <mat-paginator (page)="onPaginateChange($event)"
-                 [length]="length"
-                 [pageSize]="pageSize"
-                 [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+        <ng-container matColumnDef="createdByUser">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Created By </th>
+          <td mat-cell *matCellDef="let bugs"> {{bugs.createdByUser}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="assignedTo">
+          <th mat-header-cell mat-sort-header *matHeaderCellDef> Assigned To </th>
+          <td mat-cell *matCellDef="let bugs"> {{bugs.assignedTo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell  *matHeaderCellDef > Details </th>
+          <mat-cell *matCellDef="let bugs">
+            <button mat-raised-button class="editbtn" color="primary" (click)="viewBugPopUp(myView, bugs.title, bugs.description,
+                    bugs.version, bugs.targetDate, bugs.status, bugs.changed_status, bugs.fixedVersion, bugs.severity,
+                    bugs.createdByUser, bugs.assignedTo)" >
+              View
+            </button>
+           <ng-template #myView> <app-view-bug *ngIf ="loadComponent" ></app-view-bug> </ng-template>
+          </mat-cell>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let bugs; columns: displayedColumns;"></tr>
+
+      </table>
+      <mat-paginator (page)="onPaginateChange($event)"
+                     [length]="length"
+                     [pageSize]="pageSize"
+                     [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
+
+    </div>
+
+  </div>
 
 </div>
-
-
-
-

@@ -34,27 +34,27 @@ export class AddBugComponent implements OnInit {
 
   ngOnInit() {
 
-    this.userService.getAllUsers().subscribe(
-      users => {
-        this.users = users;
+  this.userService.getAllUsers().subscribe(
+    users => {
+      this.users = users;
+    }
+  );
+
+  this.bugService.getAllBugs().subscribe(
+    bugs => {
+      this.bugs = bugs;
+    }
+  );
+
+  this.bugService.getSeverityValues().subscribe(
+      severity => {
+        this.severity = severity;
+        console.log(severity);
       }
-    );
+  );
 
-    this.bugService.getAllBugs().subscribe(
-      bugs => {
-        this.bugs = bugs;
-      }
-    );
-
-    this.bugService.getSeverityValues().subscribe(
-        severity => {
-          this.severity = severity;
-          console.log(severity);
-        }
-    );
-
-    this.loggedUser = this.token;
-    console.log('User '+ this.loggedUser);
+  this.loggedUser = this.token;
+  console.log('User '+ this.loggedUser);
 
   }
 

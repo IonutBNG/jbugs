@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -35,6 +36,7 @@ import {MatInputModule} from '@angular/material/input';
 import {AuthenticationInterceptorComponent} from "./authentication-interceptor/authentication-interceptor.component";
 import {PermissionsComponent} from "./permissions/permissions.component";
 import {HomeComponent} from "./home/home.component";
+import {AddBugComponent} from "./add-bug/add-bug.component";
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import {HomeComponent} from "./home/home.component";
     BugTableComponent,
     ViewBugComponent,
     PermissionsComponent,
-    HomeComponent
+    HomeComponent,
+    AuthenticationInterceptorComponent,
+    AddBugComponent
   ],
   imports: [
     BrowserModule,
@@ -75,10 +79,12 @@ import {HomeComponent} from "./home/home.component";
     MatMenuModule,
     MatSidenavModule,
     MatSelectModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatDatepickerModule,
+    NgbModule.forRoot()
   ],
   exports: [
-    ViewBugComponent
+    ViewBugComponent,
   ],
   providers: [AuthService, AuthGuard,
     MatDatepickerModule,
@@ -90,7 +96,8 @@ import {HomeComponent} from "./home/home.component";
     ],
   bootstrap: [AppComponent],
   entryComponents: [AddUserComponent,
-    ViewBugComponent,BugTableComponent]
+    ViewBugComponent,BugTableComponent, AddBugComponent
+  ]
 })
 export class AppModule {
 }

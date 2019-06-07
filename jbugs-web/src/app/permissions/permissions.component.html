@@ -1,13 +1,13 @@
 <div >
 
-  <p id="buttons">
+  <div id="buttons">
     <mat-button-toggle-group appearance="legacy" aria-label="Font Style"
         name="types" [(ngModel)]="selectedRadio" (change)="radioChange()">
-      <mat-button-toggle *ngFor="let type of types" value="{{type}}" name="{{type}}">
+      <mat-button-toggle  *ngFor="let type of types" value="{{type}}" name="{{type}}">
         {{type}}
       </mat-button-toggle>
     </mat-button-toggle-group>
-  </p>
+  </div>
 
   <br *ngIf="selectedRadio == types[0]">
   <mat-form-field class="fields" appearance="outline" *ngIf="selectedRadio == types[0]">
@@ -28,7 +28,7 @@
   </mat-form-field>
 
   <br *ngIf="selectedRadio == types[0]">
-  <button class="btn btn-outline-info fields" *ngIf="selectedRadio == types[0]" (click)="addPermission()">Add</button>
+  <button class="btn btn-outline-primary fields" *ngIf="selectedRadio == types[0]" (click)="addPermission()">Add</button>
 
 
   <br *ngIf="selectedRadio == types[1]">
@@ -50,6 +50,6 @@
   </mat-form-field>
 
   <br *ngIf="selectedRadio == types[1]">
-  <button class="btn btn-outline-info fields" *ngIf="selectedRadio == types[1]" (click)="deletePermission()">Delete</button>
+  <button class="btn btn-outline-danger fields" *ngIf="selectedRadio == types[1]" (click)="deletePermission()">Delete</button>
 
 </div>

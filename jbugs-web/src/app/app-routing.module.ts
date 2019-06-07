@@ -8,6 +8,7 @@ import {HomeComponent} from "./home/home.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {BugTableComponent} from "./bug-table/bug-table.component";
 import {PermissionsComponent} from "./permissions/permissions.component";
+import {AddBugComponent} from "./add-bug/add-bug.component";
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -49,7 +50,13 @@ const routes: Routes = [
       },
       {
         path: "bugtable",
-        component: BugTableComponent
+        component: BugTableComponent,
+        children: [
+          {
+            path: 'addbug',
+            component: AddBugComponent
+          }
+        ]
       },
     ]
   },

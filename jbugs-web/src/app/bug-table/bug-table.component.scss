@@ -57,3 +57,52 @@ table{
 .class2  .mat-select-placeholder {
   color:blue !important;
 }
+
+
+
+//center links in navbar
+.container {
+  margin: 0 auto
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+nav a:visited, a:link {
+  color: #607d8b;
+}
+
+nav a:hover {
+  color: #039be5;
+  background-color: #cfd8dc;
+}
+
+nav a.active {
+  color: #039be5;
+}
+
+.aaa {
+  font-size: 10px;
+}
+
+.back-div {
+  max-width: 90%;
+  margin: auto;
+}
+
+.first-back-div {
+  background-image: linear-gradient(to bottom, #ffffff, #f8f8f8, #f2f2f2, #ebebeb, #e5e5e5);
+  height: 80vh;
+}

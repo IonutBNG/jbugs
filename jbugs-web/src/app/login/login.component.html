@@ -1,16 +1,31 @@
+<div class="container">
 
-<div class="jumbotron">
-  <h1 class="display-4">Welcome to JBugs!</h1>
-  <p class="lead">This is a great application. Do you really want to experience its functionality? Join our adventure!</p>
-  <hr class="my-4">
-  <div class="lead">
+  <div class="split left">
+    <ngb-carousel class="a">
+      <ng-template ngbSlide>
+        <img [src]="image1" alt="Not found ...">
+<!--        <div class="carousel-caption">-->
+<!--          <h3>First slide label</h3>-->
+<!--          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>-->
+<!--        </div>-->
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="image2" alt="Not found ...">
+      </ng-template>
+    </ngb-carousel>
+  </div>
 
+  <div class="split right">
 
+    <h1 class="display-4">Welcome to JBugs!</h1>
+    <p class="lead">This is a great application. Do you really want to experience its functionality? Join our adventure!</p>
+    <hr class="my-4">
     <div class="example-sidenav-content">
-      <button class="btn btn-primary btn-lg firstLogin" (click)="drawer.toggle()">
-        Login NOW
-      </button>
+        <button class="btn btn-primary btn-lg firstLogin" (click)="drawer.toggle()">
+          Login NOW
+        </button>
     </div>
+    <br>
 
     <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
@@ -61,12 +76,91 @@
               </div>
             </div>
           </div>
-
-
         </div>
       </mat-drawer>
     </mat-drawer-container>
 
-
   </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+<!--<div class="jumbotron">-->
+<!--  <h1 class="display-4">Welcome to JBugs!</h1>-->
+<!--  <p class="lead">This is a great application. Do you really want to experience its functionality? Join our adventure!</p>-->
+<!--  <hr class="my-4">-->
+<!--  <div class="lead">-->
+
+
+<!--    <div class="example-sidenav-content">-->
+<!--      <button class="btn btn-primary btn-lg firstLogin" (click)="drawer.toggle()">-->
+<!--        Login NOW-->
+<!--      </button>-->
+<!--    </div>-->
+
+<!--    <mat-drawer-container class="example-container" autosize>-->
+<!--      <mat-drawer #drawer class="example-sidenav" mode="side" position="end">-->
+<!--        <div *ngIf="showFiller">-->
+<!--          <div class="lead" >-->
+<!--            <div class="card">-->
+<!--              <div class="card-header">-->
+<!--                <h3>Sign in</h3>-->
+<!--              </div>-->
+
+<!--              <div class="card-body">-->
+<!--                <form>-->
+<!--                  <div class="form-group">-->
+<!--                    <label> Username: </label>-->
+<!--                    <input [(ngModel)]="loginUserData.username" name="userName"-->
+<!--                           class="form-control" required type="text" id="userName" pattern="[a-zA-Z0-9]*"-->
+<!--                           #userName="ngModel" ngModel>-->
+<!--                    <div class="alert alert-danger" *ngIf="userName.touched && userName.invalid">-->
+<!--                      <div *ngIf="userName.errors.required"> Username name is required !</div>-->
+<!--                      <div *ngIf="userName.errors.pattern"> The pattern is invalid !</div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                  <div class="form-group">-->
+<!--                    <label> Password: </label>-->
+<!--                    <input [(ngModel)]="loginUserData.password" class="form-control"-->
+<!--                           type="password" id="password" name="password" pattern="[a-zA-Z0-9]*"-->
+<!--                           required #password="ngModel" ngModel>-->
+<!--                    <div class="alert alert-danger" *ngIf="password.touched && password.invalid">-->
+<!--                      <div *ngIf="password.errors.required"> Password is required !</div>-->
+<!--                      <div *ngIf="password.errors.pattern"> The pattern is invalid !</div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+
+<!--                  <div class="form-group">-->
+<!--                    <re-captcha id="recaptcha"-->
+<!--                                (resolved)="resolved($event)"-->
+<!--                                siteKey="6LduWKUUAAAAAPgmqNEQKaRw87f-dAKPO8TffbFq">-->
+<!--                    </re-captcha>-->
+<!--                  </div>-->
+
+<!--                  <div class="login">-->
+<!--                    <input type="submit" class="btn btn-primary" (click)="loginUser()"-->
+<!--                           value="Login">-->
+<!--                  </div>-->
+
+<!--                </form>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+
+<!--        </div>-->
+<!--      </mat-drawer>-->
+<!--    </mat-drawer-container>-->
+
+
+<!--  </div>-->
+<!--</div>-->
