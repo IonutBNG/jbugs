@@ -28,7 +28,7 @@ export class AddBugComponent implements OnInit {
 
    public bugAddedSucces : boolean;
 
-  token = this.authService.getDecodedToken();
+   token = this.authService.getDecodedToken();
 
   loggedUser : string;
 
@@ -49,7 +49,6 @@ export class AddBugComponent implements OnInit {
     this.bugService.getSeverityValues().subscribe(
         severity => {
           this.severity = severity;
-          console.log(severity);
         }
     );
 

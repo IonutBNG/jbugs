@@ -24,6 +24,7 @@ table{
 .btn-primary {
   margin: 20px 0;
 }
+
 .viewbtn {
   width: 100px;
 }
@@ -41,19 +42,29 @@ table{
 }
 
 
-.search-field {
+.sortheader {
   float: right;
+  padding: 0 10px;
 }
 
-.btnfilter {
+label {
+  display: inline-block;
+  margin-right: 1.0rem;
+  margin-left: 2.0rem;
+}
+
+.btnapply {
   width: 100px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
-.class1  .mat-select-placeholder {
-  color:red !important;
+.mat-menu-content {
+  background-color: 'red' !important;
 }
 
-.class2  .mat-select-placeholder {
-  color:blue !important;
+.option:disabled {
+  background: rgba(140, 145, 149, 0.6);
+  color: black;
 }
+
+

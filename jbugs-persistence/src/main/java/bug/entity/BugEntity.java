@@ -15,6 +15,7 @@ import java.util.Objects;
         @NamedQuery(name = BugEntity.GET_ALL_BUGS, query = "SELECT b FROM BugEntity b"),
         @NamedQuery(name = BugEntity.SET_STATUS, query = "Update BugEntity bug set bug.status = :" + BugEntity.STATUS + " where bug.id = :" + BugEntity.ID)
 })
+
 public class BugEntity extends BaseEntity<Long> {
     public static final String GET_ALL_BUGS = "BugEntity.getAllBugs";
     public static final String ID = "id";
@@ -24,20 +25,21 @@ public class BugEntity extends BaseEntity<Long> {
     @Column(name = "title", nullable = false)
     private String title;
 
+
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "version")
+    @Column(name = "version", nullable = false)
     private String version;
 
-    @Column(name = "target_date")
+    @Column(name = "target_date", nullable = false)
     private Date targetDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private BugStatus status;
 
-    @Column(name = "fixed_version", nullable = true)
+    @Column(name = "fixed_version", nullable = false)
     private String fixedVersion;
 
     @Enumerated(EnumType.STRING)

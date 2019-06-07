@@ -20,6 +20,7 @@ import java.util.Objects;
         @NamedQuery(name = UserEntity.GET_USER_BY_USERNAME, query = "Select user from UserEntity user where user.username = :" + UserEntity.USERNAME),
         @NamedQuery(name = UserEntity.CHECK_IF_EMAIL_EXISTS, query = "SELECT u FROM UserEntity u WHERE u.email = :"+ UserEntity.EMAIL),
         @NamedQuery(name = UserEntity.CHECK_IF_USERNAME_EXISTS, query = "SELECT u FROM UserEntity u WHERE u.username = :"+ UserEntity.USERNAME),
+        @NamedQuery(name = UserEntity.GET_USERNAME_BY_EMAIL, query = "Select user.username from UserEntity user where user.email = :"+UserEntity.EMAIL),
         @NamedQuery(name = UserEntity.SET_COUNTER, query = "Update UserEntity user set user.counter = :" + UserEntity.COUNTER + " where user.username = :"+ UserEntity.USERNAME),
         @NamedQuery(name = UserEntity.EDIT_USER, query = "UPDATE UserEntity u SET" +
                 " u.firstName=:" + UserEntity.FIRST_NAME +
@@ -52,6 +53,7 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String PASSWORD = "password";
     public static final String ID = "id";
     public static final String SET_COUNTER = "UserEntity.SetCounter";
+    public static final String GET_USERNAME_BY_EMAIL = "UserEntity.getUsernameByEmail";
 
 
     @Column(name = "first_name", nullable = false)

@@ -1,10 +1,11 @@
-package bug.control;
+package bug.control.newBugService;
 
 import bug.converter.BugConverter;
 import bug.dao.BugDao;
 import bug.dto.NewBugDto;
 import bug.entity.BugEntity;
 import bug.entity.Severity;
+import bug.validation.BugValidator;
 import user.dao.UserDao;
 import user.entity.UserEntity;
 
@@ -20,15 +21,20 @@ import java.util.stream.Stream;
 public class NewBugService {
 
     @EJB
-    BugDao bugDao;
+    private BugDao bugDao;
 
     @EJB
-    UserDao userDao;
+    private UserDao userDao;
 
     @EJB
-    BugConverter bugConverter;
+    private BugConverter bugConverter;
+
+    @EJB
+    private BugValidator bugValidator;
 
     public JsonObject addNewBug(NewBugDto newBugDto){
+
+        bugValidator.validateBean(newBugDto);
 
         BugEntity bugEntity;
         UserEntity userEntity;

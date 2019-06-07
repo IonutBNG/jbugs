@@ -1,5 +1,6 @@
 package application;
 
+import bug.resource.BugResource;
 import exceptionMapper.BusinessExceptionMapper;
 import exceptionMapper.RuntimeExceptionMapper;
 import org.glassfish.jersey.jackson.internal.jackson.jaxrs.json.JacksonJsonProvider;
@@ -26,6 +27,7 @@ public class JBugsApplication extends Application {
 
         classes.add(BusinessExceptionMapper.class);
         classes.add(RuntimeExceptionMapper.class);
+        classes.add(BugResource.class);
         classes.add(UserResource.class);
         classes.add(AuthenticationFilter.class);
 

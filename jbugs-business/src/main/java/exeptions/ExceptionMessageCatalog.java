@@ -37,4 +37,25 @@ public class ExceptionMessageCatalog {
             ,"The token is invalid");
     public static final ExceptionMessage NOT_ALLOWED = new ExceptionMessage("AUTHENTICATION-002"
             ,"You dont have the necessary permissionsAllowed to perform this request");
+
+    public static final ExceptionMessage BUG_INVALID_TITLE = new ExceptionMessage("BUG-001",
+            "The title is in an invalid format");
+
+    public static final ExceptionMessage BUG_INVALID_DESCRIPTION = new ExceptionMessage("BUG-002",
+            "Bug description too short");
+
+    public static final ExceptionMessage BUG_INVALID_VERSION = new ExceptionMessage("BUG-003",
+            "Version is in an invalid format!");
+
+    public static final ExceptionMessage BUG_INVALID_DATE = new ExceptionMessage("BUG-004",
+            "Date is in an invalid format!");
+
+    public static final ExceptionMessage BUG_INVALID_SEVERITY = new ExceptionMessage("BUG-005",
+            "Severity is in an invalid format!");
+
+    public static final ExceptionMessage BUG_INVALID_USER = new ExceptionMessage("BUG-005",
+            "Severity is in an invalid format!");
+
+
+
 }

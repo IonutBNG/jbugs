@@ -1,5 +1,6 @@
 package bug.resource;
 
+import bug.dto.BugSublistSetterDto;
 import bug.dto.NewBugDto;
 import bug.dto.ViewBugDto;
 import bug.facade.BugFacade;
@@ -65,6 +66,14 @@ public class BugResource {
     public Response getSeverityValues(@Context SecurityContext securityContext){
         return Response.ok(this.bugFacade.getSeverityValues()).build();
     }
+    @PUT
+    @Path("/filtered")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSublist(BugSublistSetterDto bugSublistSetterDto){
+        return Response.ok().entity(this.bugFacade.getSublist(bugSublistSetterDto)).build();
+    }
+
 
 
 }

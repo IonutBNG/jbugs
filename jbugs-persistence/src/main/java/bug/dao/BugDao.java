@@ -40,5 +40,20 @@ public class BugDao {
     }
 
 
+    /**
+     * Gets the desired sublist by applying sort, filter and truncate operations on the list persisted in the database
+     * @param field used for the sort operation
+     * @param value used for the filter operation
+     * @param startingItem used for setting the first item of the sublist as the nth(n = startingItem)
+     * @param numberOfItems used for getting numberOfItems consecutive filtered items after the startingItem
+     * @return <list>BugEntity</list>
+     */
+    public List<BugEntity> getSublist(String field, String value, int startingItem, int numberOfItems){
+        return this.entityManager
+                .createNativeQuery("Select * from jbugs.bugs where bugs.title like '%" + value + "%' order by bugs."+field, BugEntity.class)
+                .setFirstResult(startingItem)
+                .setMaxResults(numberOfItems)
+                .getResultList();
+    }
 
 }

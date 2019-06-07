@@ -7,6 +7,8 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
+import {MatRadioModule} from '@angular/material/radio';
+
 
 import {
   MatButtonModule, MatCardModule,
@@ -37,6 +39,7 @@ import { AddBugComponent } from './add-bug/add-bug.component';
 
 import {MatSelectModule} from '@angular/material/select';
 import {MatSortModule} from '@angular/material/sort';
+import { StatusChangeComponent } from './status-change/status-change.component';
 
 
 @NgModule({
@@ -51,7 +54,7 @@ import {MatSortModule} from '@angular/material/sort';
     ViewBugComponent,
     AuthenticationInterceptorComponent,
     ViewBugComponent,
-    AddBugComponent
+    AddBugComponent, StatusChangeComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule
   ],
   exports: [
     ViewBugComponent
@@ -99,7 +103,7 @@ import {MatSortModule} from '@angular/material/sort';
   ],
   bootstrap: [AppComponent],
   entryComponents: [AddUserComponent,
-    ViewBugComponent,BugTableComponent]
+    ViewBugComponent,BugTableComponent, StatusChangeComponent, StatusChangeComponent]
 })
 export class AppModule {
 }
