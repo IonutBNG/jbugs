@@ -1,4 +1,28 @@
+<div>
 <button class="btn btn-primary"  (click)="addBug()"> Add Bug </button>
+
+<div class = "sortheader form-group">
+  <label> Sort by: </label>
+  <select
+    ngModel
+    #sortvalue = "ngModel">
+    <option value="None"> None </option>
+    <option value="Title"> Title </option>
+    <option value="Status"> Status </option>
+  </select>
+
+  <label> Filter: </label>
+  <input  type="text" id="filter" name="filter"
+                   required #filtervalue="ngModel" ngModel>
+
+
+  <button class="btn btn-primary btnapply" (click)="applyChanges( sortvalue.value,
+                                                                  filtervalue.value,
+                                                                  paginator.pageIndex,
+                                                                  paginator.pageSize)"> Apply </button>
+</div>
+
+</div>
 
 <div class="mat-elevation-z8">
 
@@ -17,10 +41,25 @@
     <ng-container matColumnDef="status">
       <th mat-header-cell mat-sort-header *matHeaderCellDef> Status </th>
       <td mat-cell *matCellDef="let bugs" >
-        {{bugs.status}}
-<!--        <mat-select placeholder={{bugs.status}} value={{bugs.status}} [ngClass]="className">-->
-<!--&lt;!&ndash;          <mat-option (click)="saveStatus(bugs.status)" >{{bugs.status}}</mat-option>&ndash;&gt;-->
-<!--        </mat-select>-->
+<!--        {{bugs.status}}-->
+        <ng-template ngIf="true">
+          <button mat-button [matMenuTriggerFor]="menu"
+
+                  (click)="openMenu(bugs.status)"
+                  [disabled]="bugs.status === 'Closed' ? true : false"
+                  class="option">
+                  {{bugs.status}} </button>
+          <mat-menu #menu="matMenu" [overlapTrigger]="true">
+            <div>
+              <button *ngFor="let tr of transitions" mat-menu-item
+                      (click)="setTransition(bugs.id, bugs.title,bugs.description, bugs.version, bugs.targetDate,
+                                             tr, bugs.fixedVersion, bugs.severity, bugs.createdByUser, bugs.assignedTo)">
+
+                {{tr}}
+              </button>
+            </div>
+          </mat-menu>
+        </ng-template>
       </td>
     </ng-container>
 
@@ -55,11 +94,10 @@
     <tr mat-row *matRowDef="let bugs; columns: displayedColumns;"></tr>
 
   </table>
-  <mat-paginator (page)="onPaginateChange($event)"
+  <mat-paginator
                  [length]="length"
                  [pageSize]="pageSize"
                  [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
-
 </div>
 
 

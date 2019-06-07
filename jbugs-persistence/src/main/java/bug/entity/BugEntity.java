@@ -24,20 +24,21 @@ public class BugEntity extends BaseEntity<Long> {
     @Column(name = "title", nullable = false)
     private String title;
 
+
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "version")
+    @Column(name = "version", nullable = false)
     private String version;
 
-    @Column(name = "target_date")
+    @Column(name = "target_date", nullable = false)
     private Date targetDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private BugStatus status;
 
-    @Column(name = "fixed_version", nullable = true)
+    @Column(name = "fixed_version", nullable = false)
     private String fixedVersion;
 
     @Enumerated(EnumType.STRING)

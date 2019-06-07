@@ -1,17 +1,15 @@
 package bug.facade;
 
-import bug.control.NewBugService;
+import bug.control.newBugService.NewBugService;
 import bug.control.bugStatusService.BugStatusService;
 import bug.control.bugViewService.BugViewService;
 import bug.dto.NewBugDto;
-import utils.BugStatus;
 import bug.dto.ViewBugDto;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.json.JsonObject;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Stateless
 public class BugFacade {

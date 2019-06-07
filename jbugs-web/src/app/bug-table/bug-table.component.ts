@@ -1,14 +1,10 @@
 import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {Bug} from "../bug-model/bug-table";
-import {MatDialog, MatDialogConfig, MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
+import {MatDialog, MatDialogConfig, MatPaginator, MatSort, MatTableDataSource, PageEvent} from "@angular/material";
 import {ViewBugComponent} from "../view-bug/view-bug.component";
 import {BugService} from "../services/bug-service/bug.service";
 import {AddBugComponent} from "../add-bug/add-bug.component";
 
-
-export interface Dates  {
-  data : Date
-}
 
 @Component({
   selector: 'app-bug-table',
@@ -24,8 +20,7 @@ export class BugTableComponent implements OnInit {
   constructor( private dialog: MatDialog,
                private bugService: BugService) { }
 
-  public displayedColumns: string[] = ['title', 'target_date','status',
-    'severity', 'createdByUser','assignedTo', 'actions'];
+  public displayedColumns: string[] = ['title', 'target_date','status','severity', 'createdByUser','assignedTo', 'actions'];
 
   public bugs : Bug[];
 
@@ -34,6 +29,10 @@ export class BugTableComponent implements OnInit {
   length: any;
   pageSize: any;
 
+  transitions : String[];
+
+  @Output()
+  page: EventEmitter<PageEvent>
 
   public dataSource : any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -47,16 +46,18 @@ export class BugTableComponent implements OnInit {
         this.dataSource =  new MatTableDataSource<Bug>(bugs);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+
       }
     );
+
+    console.log(this.page);
     this.dialogConfig = new MatDialogConfig();
-
   }
-
 
   addBug(){
     this.dialogConfigSettup();
     this.dialog.open(AddBugComponent, this.dialogConfig);
+    this.ngOnInit();
   }
 
   viewBugPopUp(component: TemplateRef<ViewBugComponent>){
@@ -72,8 +73,37 @@ export class BugTableComponent implements OnInit {
   }
 
 
-  onPaginateChange(event){
-    alert(JSON.stringify("Current page index: " + event.pageIndex + " Page Size "+event.pageSize + " Length "+event.length));
+  applyChanges(sortvalue : string, filtervalue : string, pageIndex : number, pageSize : number){
+      console.log(sortvalue, filtervalue, pageIndex, pageSize );
+  }
+
+
+  openMenu(status: string){
+    console.log("BUG STATUS"+status);
+
+    this.bugService.getPossibleTransitions(status).subscribe(
+      res => {
+        console.log(res);
+        this.transitions = res;
+        console.log(this.transitions);
+      }
+    );
+  }
+
+
+  setTransition(id : number, title: string, description: string, version: string, targetDate: string, status: string,
+                fixedVersion: string, severity: string, createdByUser: string, assignedTo: string){
+
+    var viewBug : Bug = { id, title, description, version , targetDate, status, fixedVersion, severity, createdByUser, assignedTo};
+
+    this.bugService.setStatus(viewBug).subscribe(
+      res => {
+        console.log(res);
+        console.log(viewBug);
+      }
+    );
+
+    this.ngOnInit();
   }
 
 }

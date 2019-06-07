@@ -7,6 +7,7 @@ import bug.entity.Severity;
 import utils.BugStatus;
 
 import javax.ejb.Stateless;
+import java.sql.Date;
 
 @Stateless
 public class BugConverter {
@@ -20,14 +21,8 @@ public class BugConverter {
         bugEntity.setVersion(newBugDto.getVersion());
         bugEntity.setFixedVersion(newBugDto.getFixedVersion());
         bugEntity.setTargetDate(newBugDto.getTargetDate());
-        bugEntity.setStatus(BugStatus.OPEN);
-//        bugEntity.setStatus(BugStatus.getBugStatusByString(newBugDto.getStatus()));
+        bugEntity.setStatus(BugStatus.getBugStatusByString("Open"));
         bugEntity.setSeverity(Severity.getSeverityByString(newBugDto.getSeverity()));
-
-        //todo create named queries for this operations
-//        bugEntity.setSeverity(newBugDto.getSeverity());
-//        bugEntity.setCreatedByUser(newBugDto.getCreatedByUser());
-//        bugEntity.setAssignedTo(newBugDto.getAssignedTo());
 
         return bugEntity;
     }

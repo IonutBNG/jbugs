@@ -1,19 +1,36 @@
 package bug.dto;
 
+import bug.validation.*;
 import utils.BaseDto;
 
 import java.sql.Date;
 
 public class NewBugDto implements BaseDto {
 
+    @Title
     private String title;
+
+    @Description
     private String description;
+
+    @Version
     private String version;
+
+    @DateV
     private Date targetDate;
+
     private String status;
+
+    @Version
     private String fixedVersion;
+
+    @Severity
     private String severity;
+
+    @AssignedTo
     private String createdByUser;
+
+    @AssignedTo
     private String assignedTo;
 
     public NewBugDto() {

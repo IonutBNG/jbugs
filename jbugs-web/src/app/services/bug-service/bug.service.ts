@@ -3,8 +3,6 @@ import {BackendService} from "../backend-service/backend.service";
 import {Observable} from "rxjs";
 import {Bug} from "../../bug-model/bug-table";
 import {NewBugModel} from "../../bug-model/new-bug";
-import {ViewBugComponent} from "../../view-bug/view-bug.component";
-import {BugTableComponent} from "../../bug-table/bug-table.component";
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +23,7 @@ export class BugService {
     return this.backendService.get("/jbugs/jbugs-api/bug/status-transition/"+status);
   }
 
-  public setStatus(statusBug : BugTableComponent) : Observable<BugTableComponent> {
+  public setStatus(statusBug : Bug) : Observable<Bug> {
     return this.backendService.put("jbugs/jbugs-api/bug/set-status", statusBug);
   }
 
