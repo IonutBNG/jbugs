@@ -1,7 +1,14 @@
-import {Component, Injectable, OnInit} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
+import {Component, Injectable} from '@angular/core';
+import {
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+  HttpResponse
+} from "@angular/common/http";
+import 'rxjs/add/operator/do';
 import {Observable} from "rxjs";
-import {AuthService} from "../services/auth-service/auth.service";
 
 @Component({
   selector: 'app-authentication-interceptor',
@@ -25,7 +32,17 @@ export class AuthenticationInterceptorComponent implements HttpInterceptor {
       },
     });
 
-    return next.handle(req);
+    return next.handle(req).do((event: HttpEvent<any>) => {
+      if (event instanceof HttpResponse) {
+      }
+    }, (err: any) => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401) {
+          console.log("Unauthorized: 401");
+          console.log(err);
+        }
+      }
+    });
   }
 
 }

@@ -18,8 +18,17 @@ export class HomeComponent implements OnInit {
 
   private dialogConfig;
 
+  private isUser = false;
+
   ngOnInit() {
     this.dialogConfig = new MatDialogConfig();
+  }
+
+  private showUser(){
+    const perms = localStorage.getItem("permissions");
+    var array = perms.split(',');
+    if (array.includes('USER_MANAGEMENT'))
+      this.isUser = true;
   }
 
 }

@@ -10,8 +10,7 @@ export class AuthService {
   private loginUrl = "/jbugs/jbugs-api/user/authenticate";
 
 
-  constructor(private http: HttpClient,
-              private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   loginUser(user){
     console.log(this.loginUrl);
@@ -20,7 +19,6 @@ export class AuthService {
 
   getDecodedToken(){
     return this.parseJwt(localStorage.getItem('token'));
-    // return localStorage.getItem('token');
   }
 
   loggedIn(){
@@ -29,7 +27,6 @@ export class AuthService {
 
   logOut(){
     localStorage.removeItem('token');
-    // this.router.navigate(['/login']);
   }
 
   parseJwt (token) {

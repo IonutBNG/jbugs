@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0b09c61-291b-4d47-951d-a8344b5b28d1" name="Default Changelist" comment="Login token">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/authenticationUserService/UserAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/authenticationUserService/UserAuthenticationService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT-client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT-client.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/maven-archiver/pom.properties" afterDir="false" />
@@ -20,23 +21,15 @@
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-business-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-persistence-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-persistence-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/add-bug/add-bug.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/add-bug/add-bug.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/auth-guard/auth.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/auth-guard/auth.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/jbugs-ear/target/" />
@@ -72,10 +65,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/app.module.ts">
+        <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1358">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="205">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
@@ -83,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+            <state relative-caret-position="242">
+              <caret line="55" column="51" lean-forward="true" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -93,19 +86,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.html">
+        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/home/home.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+              <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/home/home.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/auth-guard/auth.guard.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.scss">
+        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,11 +178,11 @@
       <find>toast</find>
       <find>deletePermissions</find>
       <find>mat-button-to</find>
-      <find>UserRes</find>
       <find>style.scs</find>
       <find>styles.s</find>
       <find>@ng-boo</find>
       <find>alert-danger</find>
+      <find>UserRes</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\schulcj01\IdeaProjects\BaseProject\jbugs\jbugs-web\src\app\services\user-service</dir>
@@ -163,10 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/application/JBugsApplication.java" />
-        <option value="$PROJECT_DIR$/jbugs-web/src/app/auth-guard/auth.guard.ts" />
-        <option value="$PROJECT_DIR$/jbugs-web/src/app/services/token-interceptor/token-interceptor.service.ts" />
-        <option value="$PROJECT_DIR$/jbugs-view/pom.xml" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/services/user-service/user.service.ts" />
         <option value="$PROJECT_DIR$/jbugs-business/pom.xml" />
         <option value="$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java" />
@@ -184,10 +212,7 @@
         <option value="$PROJECT_DIR$/jbugs-web/src/app/services/permissions-service/permissions-model.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/services/permissions-service/permission-model.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/services/permissions-service/role-model.ts" />
-        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/services/permissions-service/permissions.service.ts" />
-        <option value="$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts" />
-        <option value="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.html" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.scss" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.ts" />
@@ -196,7 +221,6 @@
         <option value="$PROJECT_DIR$/jbugs-business/src/main/java/bug/converter/BugConverter.java" />
         <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/entity/Severity.java" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/add-bug/add-bug.component.ts" />
-        <option value="$PROJECT_DIR$/jbugs-web/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.html" />
         <option value="$PROJECT_DIR$/jbugs-web/angular.json" />
@@ -204,16 +228,24 @@
         <option value="$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.scss" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/app.component.scss" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.scss" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.scss" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.html" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/login-config/login-carousel.service.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/package.json" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.html" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.scss" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.html" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.scss" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/auth-guard/auth.guard.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.html" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/home/home.component.ts" />
       </list>
     </option>
   </component>
@@ -250,6 +282,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,6 +293,51 @@
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-persistence" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -274,6 +352,30 @@
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="auth-guard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="authentication-interceptor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
@@ -283,12 +385,19 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view-bug" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -502,7 +611,8 @@
       <workItem from="1559826577871" duration="14195000" />
       <workItem from="1559856579556" duration="1980000" />
       <workItem from="1559892326666" duration="11413000" />
-      <workItem from="1559904544266" duration="4620000" />
+      <workItem from="1559904544266" duration="4687000" />
+      <workItem from="1559912807884" duration="6541000" />
     </task>
     <task id="LOCAL-00001" summary="Persistance.xml">
       <created>1558457030578</created>
@@ -564,13 +674,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174040000" />
+    <option name="totallyTimeSpent" value="180648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.80588233" visible="true" weight="0.19571045" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8055556" visible="true" weight="0.23324397" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -578,13 +688,13 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info id="npm" order="8" sideWeight="0.19411765" side_tool="true" visible="true" weight="0.19571045" />
+      <window_info id="npm" order="8" sideWeight="0.19444445" side_tool="true" visible="true" weight="0.23324397" />
       <window_info id="EJB" order="9" side_tool="true" />
       <window_info id="JavaEE:App" order="10" side_tool="true" />
       <window_info id="Web" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.27864215" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.28712872" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -624,34 +734,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add user Frontend Popup" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/user/validation/PasswordValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/bugStatus/BugStatusHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/bugStatusService/BugStatusService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/bugViewService/BugViewService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://T:/20_TOOLS/jdks/src.zip!/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -682,16 +764,6 @@
             <element signature="e#321#322#0" expanded="true" />
             <element signature="e#620#621#0" expanded="true" />
             <element signature="e#661#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -730,13 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -746,25 +811,6 @@
           <caret line="48" column="5" lean-forward="true" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
           <folding>
             <element signature="e#0#102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/auth-guard/auth.guard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,16 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-446">
           <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/add-bug/add-bug.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -871,16 +907,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/app.component.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -888,23 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/home/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -981,41 +990,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login-config/login-carousel.service.ts" />
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1358">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state>
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login-config/login-carousel.service.ts">
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state relative-caret-position="313">
+          <caret line="106" column="66" selection-start-line="106" selection-start-column="66" selection-end-line="106" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts">
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="160">
+          <caret line="50" column="26" lean-forward="true" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.scss">
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/view-bug/view-bug.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        <state relative-caret-position="160">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/scripts_bd/initializeDB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="64" column="10" lean-forward="true" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/add-bug/add-bug.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-41">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="21" column="4" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/auth-guard/auth.guard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="55" column="51" lean-forward="true" selection-start-line="55" selection-start-column="51" selection-end-line="55" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

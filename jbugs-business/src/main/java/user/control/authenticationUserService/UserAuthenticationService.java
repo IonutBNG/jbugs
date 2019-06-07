@@ -1,5 +1,6 @@
 package user.control.authenticationUserService;
 
+import com.google.common.hash.Hashing;
 import exeptions.BusinessException;
 import exeptions.ExceptionMessageCatalog;
 import io.jsonwebtoken.Jwts;
@@ -15,6 +16,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.json.Json;
 import javax.json.JsonObject;
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.sql.Date;
 import java.util.Calendar;
@@ -75,11 +77,10 @@ public class UserAuthenticationService {
             throw new BusinessException(ExceptionMessageCatalog.USER_LOGIN_TRIES_EXCEEDED);
         }
 
-//        String encryptedPass = Hashing.sha256()
-//                .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
-//                .toString();
+        String encryptedPass = Hashing.sha256()
+                .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
+                .toString();
 
-        String encryptedPass =(userLoginDto.getPassword());
 
         if (!userEntity.getPassword().equals(encryptedPass)){
             userEntity.setCounter(userEntity.getCounter()-1);

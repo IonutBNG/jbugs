@@ -51,10 +51,11 @@ export class LoginComponent implements OnInit {
       this.showToast(res.message);
     } else if (res.token == ""){
       this.showToast("Invalid username or password !");
-
     } else {
-      console.log(res.token);
+      console.log("[Login Comp] TOKEN " + res.token);
+      console.log("[Login Comp] PERMISSIONS" + res.permissions);
       localStorage.setItem('token', res.token);
+      localStorage.setItem('roles', res.permissions);
       this.router.navigate(['/home']);
     }
   }
