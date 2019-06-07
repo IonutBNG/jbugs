@@ -11,18 +11,18 @@ export class PermissionsService {
   constructor(private backendService: BackendService) { }
 
   public getAllDeletePermissions(): Observable<Role[]>{
-    return this.backendService.get("/jbugs/jbugs-api/role/delete-permissions");
+    return this.backendService.get("/jbugs/jbugs-api/role/delete-permissionsAllowed");
   }
 
   public getAllAddPermissions() : Observable<Role[]> {
-    return this.backendService.get("/jbugs/jbugs-api/role/add-permissions");
+    return this.backendService.get("/jbugs/jbugs-api/role/add-permissionsAllowed");
   }
 
   public putDeletePermissions(roles: Role[]): Observable<Role[]> {
-    return this.backendService.put("/jbugs/jbugs-api/role/delete-permissions", roles);
+    return this.backendService.put("/jbugs/jbugs-api/role/delete-permissionsAllowed", roles);
   }
 
   public putAddPermissions(roles: Role[]): Observable<Role[]> {
-    return this.backendService.put("/jbugs/jbugs-api/role/add-permissions", roles);
+    return this.backendService.put("/jbugs/jbugs-api/role/add-permissionsAllowed", roles);
   }
 }

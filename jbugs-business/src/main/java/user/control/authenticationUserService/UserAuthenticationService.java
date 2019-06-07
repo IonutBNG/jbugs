@@ -4,6 +4,8 @@ import com.google.common.hash.Hashing;
 import exeptions.BusinessException;
 import exeptions.ExceptionMessageCatalog;
 import io.jsonwebtoken.Jwts;
+import permission.entity.PermissionEntity;
+import role.entity.RoleEntity;
 import security.KeyGenerator;
 import user.authentication.TokenDao;
 import user.authentication.TokenDto;
@@ -19,7 +21,9 @@ import javax.json.JsonObject;
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -55,9 +59,9 @@ public class UserAuthenticationService {
         if (validCredentials(userLoginDto)){
             String jwt = generateJwtToken(userLoginDto.getUsername());
             persistJwtToken(jwt, userLoginDto.getUsername());
-            return generateJson(jwt);
+            return generateJson(jwt, userLoginDto.getUsername());
         }
-        return generateJson("");
+        return generateJson("","");
     }
 
     /**
@@ -81,12 +85,10 @@ public class UserAuthenticationService {
                 .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
                 .toString();
 
-
         if (!userEntity.getPassword().equals(encryptedPass)){
             userEntity.setCounter(userEntity.getCounter()-1);
             this.userDao.setCounter(userEntity);
             return false;
-//            throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
         }
 
         return true;
@@ -112,9 +114,10 @@ public class UserAuthenticationService {
      * @param jwt used in the Json
      * @return JsonObject
      */
-    private JsonObject generateJson(String jwt){
+    private JsonObject generateJson(String jwt, String username){
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("token", jwt)
+                .add("permissions", getPermissionString(username))
                 .build();
         return jsonObject;
     }
@@ -139,6 +142,32 @@ public class UserAuthenticationService {
         c.setTime(date);
         c.add(Calendar.DATE, days);
         return new Date(c.getTimeInMillis());
+    }
+
+    private String getPermissionString(String username) {
+        List<RoleEntity> userRoles = userDao.getUserByUsername(username).getRoleEntityList();
+        List<PermissionEntity> permissionEntities = new ArrayList<>();
+        List<String> permissionStrings = new ArrayList<>();
+
+        for (RoleEntity r : userRoles) {
+            for (PermissionEntity p : r.getPermissionEntityList()) {
+                if (!permissionEntities.contains(p)) {
+                    permissionEntities.add(p);
+                }
+            }
+        }
+
+        for (PermissionEntity p : permissionEntities) {
+            permissionStrings.add(p.getType());
+        }
+
+        String res = "";
+
+        for (String s : permissionStrings) {
+            res += s + ",";
+        }
+
+        return  res;
     }
 
 }

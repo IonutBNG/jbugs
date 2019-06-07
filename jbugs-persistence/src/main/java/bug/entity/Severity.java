@@ -26,21 +26,9 @@ public enum Severity {
         return null;
     }
 
+
     public String getSeverityLevel(){
         return this.severityLevel;
     }
 
-//    int severityLevel;
-//    Severity (int severityLevel) {
-//        this.severityLevel = severityLevel;
-//    }
-//
-//    public static Severity getSeverityByString(String value){
-//        for (Severity severity : Severity.values()){
-//            if (value.equals(severity.toString())){
-//                return severity;
-//            }
-//        }
-//        return null;
-//    }
 }

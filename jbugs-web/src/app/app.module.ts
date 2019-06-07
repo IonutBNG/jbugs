@@ -20,7 +20,7 @@ import {
 import { MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AuthService} from "./services/auth-service/auth.service";
-import {AuthGuard} from "./auth-guard/auth.guard";
+import {AuthGuard} from "./guards/auth-guard/auth.guard";
 import {ToastrModule} from "ngx-toastr";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from "./add-user/add-user.component";

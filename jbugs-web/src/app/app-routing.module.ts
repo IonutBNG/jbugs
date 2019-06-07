@@ -3,12 +3,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {UserTableComponent} from "./user-table/user-table.component";
 import {AddUserComponent} from "./add-user/add-user.component";
-import {AuthGuard} from "./auth-guard/auth.guard";
+import {AuthGuard} from "./guards/auth-guard/auth.guard";
 import {HomeComponent} from "./home/home.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {BugTableComponent} from "./bug-table/bug-table.component";
 import {PermissionsComponent} from "./permissions/permissions.component";
 import {AddBugComponent} from "./add-bug/add-bug.component";
+import {UsersGuard} from "./guards/users-guard/users-guard.guard";
+import {BugGuard} from "./guards/bug-guard/bug.guard";
+import {PermissionsGuard} from "./guards/permissions-guard/permissions.guard";
 
 const routes: Routes = [
   {
@@ -27,12 +30,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'usertable',
-        pathMatch: 'full'
+        redirectTo: '',
+        pathMatch: 'full',
       },
       {
         path: 'usertable',
         component: UserTableComponent,
+        canActivate: [UsersGuard],
         children: [
           {
             path: "adduser",
@@ -44,13 +48,15 @@ const routes: Routes = [
           },
           {
             path: "permissions",
-            component: PermissionsComponent
+            component: PermissionsComponent,
+            canActivate: [PermissionsGuard]
           },
         ]
       },
       {
         path: "bugtable",
         component: BugTableComponent,
+        canActivate: [BugGuard],
         children: [
           {
             path: 'addbug',

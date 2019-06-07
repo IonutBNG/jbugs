@@ -62,6 +62,12 @@ public class UserDao {
 
     }
 
+    public String getUsernameByEmail(String email){
+        return this.entityManager.createNamedQuery(UserEntity.GET_USERNAME_BY_EMAIL, String.class)
+                .setParameter(UserEntity.EMAIL, email)
+                .getSingleResult();
+    }
+
     public boolean checkIfUsernameExists(String username) {
         if (entityManager.createNamedQuery(UserEntity.CHECK_IF_USERNAME_EXISTS, UserEntity.class)
                 .setParameter(UserEntity.USERNAME, username)
@@ -77,21 +83,22 @@ public class UserDao {
         entityManager.persist(newUserEntity);
     }
 
-    public void editUser(EditUserDto editUserDto) {
+    public void editUser(UserEntity userEntity) {
         this.entityManager.createNamedQuery(UserEntity.EDIT_USER)
-                .setParameter(UserEntity.USERNAME, editUserDto.getUsername())
-                .setParameter(UserEntity.FIRST_NAME, editUserDto.getFirstName())
-                .setParameter(UserEntity.LAST_NAME, editUserDto.getLastName())
-                .setParameter(UserEntity.EMAIL, editUserDto.getEmail())
-                .setParameter(UserEntity.MOBLE_NUMBER, editUserDto.getMobileNumber())
-                .setParameter(UserEntity.PASSWORD, editUserDto.getPassword())
-                .setParameter(UserEntity.COUNTER, editUserDto.getCounter())
+                .setParameter(UserEntity.USERNAME, userEntity.getUsername())
+                .setParameter(UserEntity.FIRST_NAME, userEntity.getFirstName())
+                .setParameter(UserEntity.LAST_NAME, userEntity.getLastName())
+                .setParameter(UserEntity.EMAIL, userEntity.getEmail())
+                .setParameter(UserEntity.MOBLE_NUMBER, userEntity.getMobileNumber())
+                .setParameter(UserEntity.PASSWORD, userEntity.getPassword())
+                .setParameter(UserEntity.COUNTER, userEntity.getCounter())
                 .executeUpdate();
     }
 
     public List<UserEntity> getAllUsers(){
         return entityManager.createNamedQuery(UserEntity.GET_ALL_USERS, UserEntity.class).getResultList();
     }
+
 
 
 

@@ -23,7 +23,6 @@ export class UserService {
   }
 
 
-
   public addNewUser(newUser: NewUserModel) : Observable<NewUserModel> {
     return this.backendService.post("/jbugs/jbugs-api/user/add-new-user", newUser)
   }

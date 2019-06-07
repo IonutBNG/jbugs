@@ -2,8 +2,6 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
     <a class="nav-link" style="font-size: 15px;" routerLinkActive="active" routerLink="/home/usertable/adduser"
        (click)="addUserPopup()">Add User</a>
-    <a class="nav-link" style="font-size: 15px;" routerLinkActive="active" routerLink="/home/usertable/permissions"
-       (click)="permissionsPopup()">Permissions</a>
   </nav>
 </div>
 
@@ -47,7 +45,7 @@
 
       <mat-cell *matCellDef="let users" >
         <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false"
-                          (change)="onActivate(users.userName)">   </mat-slide-toggle>
+                          (change)="onActivate(users.username)">   </mat-slide-toggle>
         <button mat-raised-button class="editbtn" color="primary" (click)="editUserPopup(myView, users.firstName,
             users.lastName, users.email, users.mobileNumber, users.username, users.counter)">  Edit </button>
         <ng-template #myView >  <app-edit-user *ngIf ="loadComponent" ></app-edit-user> </ng-template>

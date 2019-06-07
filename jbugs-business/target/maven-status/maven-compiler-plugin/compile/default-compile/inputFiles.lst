@@ -2,6 +2,8 @@ C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\role\con
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\security\TokenExpirationManager.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\security\AuthenticationFilter.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\bug\control\bugViewService\BugViewService.java
+C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\bug\validation\BugValidator.java
+C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\bug\control\newBugService\NewBugService.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\bug\converter\BugConverter.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\user\validator\UserValidator.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\user\control\NewUserService\NewUserService.java
@@ -24,4 +26,3 @@ C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\permissi
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\jsonfactory\JsonFactory.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\user\control\editUserService\EditUserService.java
 C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\exeptions\BusinessException.java
-C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-business\src\main\java\bug\control\NewBugService.java

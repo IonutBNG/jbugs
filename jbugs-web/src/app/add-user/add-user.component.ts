@@ -30,6 +30,8 @@ export class AddUserComponent implements OnInit {
   public addedUserSuccesfully:boolean;
 
   ngOnInit() {
+
+
   }
 
   addNewUser(firstname: string,  lastName: string,  mobileNumber: string,  email: string,

@@ -32,6 +32,9 @@ public class EditUserService {
     @EJB
     UserValidator userValidator;
 
+    @EJB
+    private UserConverter userConverter;
+
 
     public JsonObject editUser(EditUserDto editUserDto) throws BusinessException {
 
@@ -45,14 +48,16 @@ public class EditUserService {
         }
 
         //update the user
-        userDao.editUser(editUserDto);
+        userDao.editUser(this.userConverter.convertEditDtoToEntity(editUserDto));
 
         return this.generateJson();
     }
 
-    private void validateIfEmailExists (EditUserDto editUserDto)throws BusinessException {
+    private void validateIfEmailExists (EditUserDto editUserDto) {
         if (userDao.checkIfEmailIsUsed(editUserDto.getEmail())) {
-            throw new BusinessException(ExceptionMessageCatalog.USER_EMAIL_ALREADY_EXISTS);
+            if (!this.userDao.getUsernameByEmail(editUserDto.getEmail()).equals(editUserDto.getUsername())){
+                throw new BusinessException(ExceptionMessageCatalog.USER_EMAIL_ALREADY_EXISTS);
+            }
         }
     }
 

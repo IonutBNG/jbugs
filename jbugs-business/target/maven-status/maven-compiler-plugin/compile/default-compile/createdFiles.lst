@@ -1,5 +1,6 @@
 permission\control\permissionService\PermissionService.class
 bug\bugStatus\BugStatusHandler.class
+bug\control\newBugService\NewBugService.class
 user\control\authenticationUserService\UserAuthenticationService.class
 user\control\editUserService\EditUserService.class
 security\KeyGenerator.class
@@ -10,8 +11,8 @@ exeptions\BusinessException.class
 bug\converter\BugConverter.class
 role\converter\dto\RoleDto.class
 security\AuthenticationFilter$1$1.class
+bug\validation\BugValidator.class
 role\control\manageRolePermissionsService\ManageRolePermissionsService.class
-bug\control\NewBugService.class
 security\Secured.class
 user\control\newUserService\NewUserService.class
 security\SecurityPermission.class
