@@ -1,6 +1,7 @@
 package bug.dto;
 
 import java.sql.Date;
+import java.util.Comparator;
 
 /**
  * Document me.

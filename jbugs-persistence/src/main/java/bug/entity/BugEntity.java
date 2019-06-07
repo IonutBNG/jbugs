@@ -15,6 +15,7 @@ import java.util.Objects;
         @NamedQuery(name = BugEntity.GET_ALL_BUGS, query = "SELECT b FROM BugEntity b"),
         @NamedQuery(name = BugEntity.SET_STATUS, query = "Update BugEntity bug set bug.status = :" + BugEntity.STATUS + " where bug.id = :" + BugEntity.ID)
 })
+
 public class BugEntity extends BaseEntity<Long> {
     public static final String GET_ALL_BUGS = "BugEntity.getAllBugs";
     public static final String ID = "id";

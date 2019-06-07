@@ -3,6 +3,7 @@ package bug.facade;
 import bug.control.newBugService.NewBugService;
 import bug.control.bugStatusService.BugStatusService;
 import bug.control.bugViewService.BugViewService;
+import bug.dto.BugSublistSetterDto;
 import bug.dto.NewBugDto;
 import bug.dto.ViewBugDto;
 
@@ -43,6 +44,15 @@ public class BugFacade {
 
     public List<String> getSeverityValues(){
         return this.newBugService.getSeverityValues();
+    }
+
+    /**
+     * Calls getSublist from BugViewService
+     * @param bugSublistSetterDto used in the method call
+     * @return <list>ViewBugDto</list>
+     */
+    public List<ViewBugDto> getSublist(BugSublistSetterDto bugSublistSetterDto){
+        return this.bugViewService.getSublist(bugSublistSetterDto);
     }
 
 }

@@ -6,6 +6,10 @@ import user.dto.ViewUserDto;
 import user.entity.UserEntity;
 
 import javax.ejb.Stateless;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+
+import static com.google.common.hash.Hashing.sha256;
 
 /**
  * Document me.
@@ -49,6 +53,20 @@ public class UserConverter {
         viewUserDto.setCounter(userEntity.getCounter());
 
         return viewUserDto;
+    }
+
+    public UserEntity convertEditDtoToEntity(EditUserDto editUserDto){
+        return new UserEntity(
+                editUserDto.getFirstName(),
+                editUserDto.getLastName(),
+                editUserDto.getMobileNumber(),
+                editUserDto.getEmail(),
+                editUserDto.getUsername(),
+                sha256()
+                    .hashString(editUserDto.getPassword(), StandardCharsets.UTF_8)
+                    .toString(),
+                editUserDto.getCounter(),
+                Arrays.asList());
     }
 
 }
