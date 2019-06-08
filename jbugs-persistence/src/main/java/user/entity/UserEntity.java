@@ -45,9 +45,13 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String SET_COUNTER = "UserEntity.SetCounter";
     public static final String GET_USERNAME_BY_EMAIL = "UserEntity.getUsernameByEmail";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     public static final String GET_USERS_WITH_BUG_MANAGEMENT = "UserEntity.getUsersWithBugManagement";
 >>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+=======
+    public static final String GET_USERS_WITH_BUG_MANAGEMENT = "UserEntity.getUsersWithBugManagement";
+>>>>>>> vlad
 
     //Parameter names
     public static final String USERNAME = "username";

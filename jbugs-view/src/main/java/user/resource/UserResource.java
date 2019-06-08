@@ -54,7 +54,11 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
     public Response getUsersWithBugManagement(@Context SecurityContext securityContext){
+<<<<<<< HEAD
         return Response.ok(userFacade.getUsersWithBugManagement()).build();
+=======
+        return Response.ok(userFacade.getAllUsers()).build();
+>>>>>>> vlad
     }
 
 

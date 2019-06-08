@@ -8,75 +8,31 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
     <list default="true" id="a0b09c61-291b-4d47-951d-a8344b5b28d1" name="Default Changelist" comment="Login token">
-      <change afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/logoutUserService/UserLogoutService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/UserLogoutDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jbugs-web/src/app/bug-model/bug-sublist.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/newBugService/NewBugService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/newBugService/NewBugService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/jsonfactory/JsonFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/jsonfactory/JsonFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/security/TokenExpirationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/security/TokenExpirationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/NewUserService/NewUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/NewUserService/NewUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/UserViewService/UserViewService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/editUserService/EditUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/editUserService/EditUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/userViewService/UserViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/userViewService/UserViewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/src/main/java/user/converter/UserConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/converter/UserConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/bug/control/newBugService/NewBugService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/bug/control/newBugService/NewBugService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/jsonfactory/JsonFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/jsonfactory/JsonFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/security/TokenExpirationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/security/TokenExpirationManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/UserViewService/UserViewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/UserViewService/UserViewService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/authenticationUserService/UserAuthenticationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/authenticationUserService/UserAuthenticationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/editUserService/EditUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/editUserService/EditUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/newUserService/NewUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/user/control/newUserService/NewUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/classes/user/converter/UserConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/classes/user/converter/UserConverter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT-client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT-client.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/jbugs-business-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-business/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-business/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-business/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-ear/target/jbugs-ear-1.0-SNAPSHOT.ear" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-ear/target/jbugs-ear-1.0-SNAPSHOT.ear" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-ear/target/jbugs-ear-1.0-SNAPSHOT/jbugs-view.war" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-ear/target/jbugs-ear-1.0-SNAPSHOT/jbugs-view.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-ear/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-ear/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/DateValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/DateValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/Title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/TitleValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/TitleValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/Version.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/Version.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/VersionValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/VersionValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/scripts_bd/initializeDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/scripts_bd/initializeDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/EditUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/EditUserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/NewUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/NewUserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/DateValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/DateValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/Title.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/Title.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/TitleValidation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/Version.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/Version.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/bug/validation/VersionValidation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/authentication/TokenDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/authentication/TokenDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/authentication/TokenEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/authentication/TokenEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/dto/EditUserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/dto/EditUserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/dto/NewUserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/dto/NewUserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/META-INF/jbugs-persistence.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/entity/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/classes/user/entity/UserEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/jbugs-persistence-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/jbugs-persistence-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-persistence/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-view/src/main/java/bug/resource/BugResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/src/main/java/bug/resource/BugResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/src/main/java/user/facade/UserFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/src/main/java/user/facade/UserFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-view/target/classes/bug/resource/BugResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/classes/bug/resource/BugResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/classes/user/facade/UserFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/classes/user/facade/UserFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/classes/user/resource/UserResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/classes/user/resource/UserResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/classes/bug/resource/BugResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/classes/bug/resource/BugResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/classes/user/facade/UserFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/classes/user/facade/UserFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/classes/user/resource/UserResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/classes/user/resource/UserResource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-business-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-business-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-persistence-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-view/target/jbugs-view-1.0-SNAPSHOT/WEB-INF/lib/jbugs-persistence-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/add-bug/add-bug.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/add-bug/add-bug.component.html" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/bug-model/bug-table.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/bug-model/bug-table.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.html" afterDir="false" />
@@ -89,6 +45,8 @@
     <list default="true" id="a0b09c61-291b-4d47-951d-a8344b5b28d1" name="Default Changelist" comment="Edit User password is no longer requiered in order to perform an edit&#10;Json Object now better reflect the operations they called">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 >>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+=======
+>>>>>>> vlad
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/jbugs-ear/target/" />
@@ -125,6 +83,7 @@
     <favorites_list name="jbugs" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
@@ -229,6 +188,9 @@
         </entry>
       </file>
     </leaf>
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+>>>>>>> vlad
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -489,6 +451,7 @@
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="add-user" type="462c0819:PsiDirectoryNode" />
 =======
               <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
@@ -555,6 +518,8 @@
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> vlad
               <item name="home" type="462c0819:PsiDirectoryNode" />
 =======
               <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
@@ -969,6 +934,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="217686000" />
 =======
     <task id="LOCAL-00002" summary="Added exceptions, exceptionsmapper,exception catalog, application&#10;Added jackson json provider maven dependency">
@@ -1119,15 +1085,22 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
 >>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+=======
+    <option name="totallyTimeSpent" value="218306000" />
+>>>>>>> vlad
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79960316" visible="true" weight="0.23324397" />
 =======
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6147309" visible="true" weight="0.22214764" />
 >>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+=======
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79960316" visible="true" weight="0.23324397" />
+>>>>>>> vlad
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -1142,7 +1115,7 @@
       <window_info id="Web" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.28712872" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.28712872" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1189,7 +1162,7 @@
       <window_info anchor="right" id="Database" order="6" weight="0.23123324" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Maven" order="9" weight="0.18096514" />
+      <window_info anchor="right" id="Maven" order="9" visible="true" weight="0.18096514" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
 =======
