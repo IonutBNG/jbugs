@@ -6,6 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a0b09c61-291b-4d47-951d-a8344b5b28d1" name="Default Changelist" comment="Login token">
       <change afterPath="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/logoutUserService/UserLogoutService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/UserLogoutDto.java" afterDir="false" />
@@ -84,6 +85,10 @@
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/services/bug-service/bug.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/services/bug-service/bug.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.ts" afterDir="false" />
+=======
+    <list default="true" id="a0b09c61-291b-4d47-951d-a8344b5b28d1" name="Default Changelist" comment="Edit User password is no longer requiered in order to perform an edit&#10;Json Object now better reflect the operations they called">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/jbugs-ear/target/" />
@@ -116,17 +121,74 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="jbugs" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
               <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/entity/Severity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/editUserService/EditUserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/converter/UserConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/role/control/manageRolePermissionsService/ManageRolePermissionsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1037">
+              <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/permission/control/permissionService/PermissionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-867">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/bugStatusService/BugStatusService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-209">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,7 +196,34 @@
               <caret line="47" column="40" lean-forward="true" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#nav#0;n#div#0;n#!!top" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/bug/resource/BugResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="542">
+              <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/newBugService/NewBugService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/jsonfactory/JsonFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -145,6 +234,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+<<<<<<< HEAD
       </list>
     </option>
   </component>
@@ -185,6 +275,14 @@
       <dir>C:\Users\schulcj01\IdeaProjects\BaseProject\jbugs\jbugs-web\src\app\services\user-service</dir>
     </dirStrings>
   </component>
+=======
+        <option value="AnnotationType" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -192,6 +290,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/jbugs-web/src/app/example/example.component.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/services/backend-service/backend.service.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/services/user-emitter-service/user-emitter.service.ts" />
@@ -243,12 +342,69 @@
         <option value="$PROJECT_DIR$/jbugs-web/src/app/bug-table/bug-table.component.ts" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.html" />
         <option value="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.ts" />
+=======
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/dto/ViewBugDto.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/entity/BugEntity.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/bugViewService/BugViewService.java" />
+        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/bug/facade/BugFacade.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/entity/Severity.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/bug/converter/BugConverter.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/dto/NewBugDto.java" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/user-model/deactivate-user.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/services/user-service/user.service.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.html" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.ts" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/exeptions/AuthentificationException.java" />
+        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/exceptionMapper/AuthentificationExceptionMapper.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/CredentialsDto.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/scripts_bd/initializeDB.sql" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/Role.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenDto.java" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/login/login.component.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/services/backend-service/backend.service.ts" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/KeyGenerator.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/exeptions/ExceptionMessageCatalog.java" />
+        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/application/JBugsApplication.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/scrap.txt" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/SecurityRoles.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/SecurityPermission.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/Secured.java" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/AuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/TokenExpirationManager.java" />
+        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/role/resource/RoleResource.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/LogoutUserDto.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenEntity.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenDao.java" />
+        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/user/facade/UserFacade.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserLogoutService.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/newUserService/NewUserService.java" />
+        <option value="$PROJECT_DIR$/jbugs-web/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/security/TokenExpirationManager.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/UserViewService/UserViewService.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/NewUserDto.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/EditUserDto.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/entity/UserEntity.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/control/editUserService/EditUserService.java" />
+        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/user/converter/UserConverter.java" />
+        <option value="$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/jsonfactory/JsonFactory.java" />
+        <option value="$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/newBugService/NewBugService.java" />
+        <option value="$PROJECT_DIR$/jbugs-view/src/main/java/bug/resource/BugResource.java" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       </list>
     </option>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
+<<<<<<< HEAD
     <option name="FILTER_WARNINGS" value="true" />
+=======
+    <option name="FILTER_WARNINGS" value="false" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
@@ -265,6 +421,14 @@
           <item name="JBugs Parent" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
+<<<<<<< HEAD
+=======
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="JBugs Parent" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       </expand>
       <select />
     </treeState>
@@ -289,76 +453,197 @@
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="add-user" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="bug-model" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="bug-table" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="edit-user" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="bugStatusService" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="bugViewService" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="permissions" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+              <item name="newBugService" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
             <path>
               <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
               <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="jbugs-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="user-table" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="jbugs-business" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jbugs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jbugs" type="462c0819:PsiDirectoryNode" />
+              <item name="jbugs-view" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
             </path>
           </expand>
           <select />
@@ -369,21 +654,42 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="ChangesTree.GroupingKeys" value="directory" />
+=======
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/jbugs-web/src/app/login/images" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Ticket/Ticket" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-web\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+=======
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="ts.external.directory.path" value="C:\Users\schulcj01\IdeaProjects\MSG JBugs\jbugs\jbugs-web\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="user.validation" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="user.control.newUserService" />
+      <recent name="" />
+    </key>
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\schulcj01\IdeaProjects\7zip\jbugs\jbugs-web\src\app\login\images" />
       <recent name="C:\Users\schulcj01\IdeaProjects\BaseProject\jbugs\jbugs-persistence\src\main\java\scripts_bd" />
@@ -501,7 +807,10 @@
     <list>
       <item itemvalue="GlassFish Server.Glassfish" />
       <item itemvalue="npm.start" />
+<<<<<<< HEAD
       <item itemvalue="npm.ng" />
+=======
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     </list>
     <recent_temporary>
       <list>
@@ -521,6 +830,7 @@
       <option name="presentableId" value="Default" />
       <updated>1558453440428</updated>
       <workItem from="1558453441595" duration="141000" />
+<<<<<<< HEAD
       <workItem from="1558453615497" duration="1785000" />
       <workItem from="1558455425509" duration="1790000" />
       <workItem from="1558457259233" duration="1777000" />
@@ -585,6 +895,18 @@
       <workItem from="1559912807884" duration="17778000" />
       <workItem from="1559983353267" duration="6849000" />
       <workItem from="1559993595059" duration="16325000" />
+=======
+      <workItem from="1558454370113" duration="28721000" />
+      <workItem from="1558546386355" duration="32023000" />
+      <workItem from="1558961482381" duration="8804000" />
+      <workItem from="1558976023662" duration="19646000" />
+      <workItem from="1559284296137" duration="125000" />
+      <workItem from="1559284427764" duration="640000" />
+      <workItem from="1559298504583" duration="22129000" />
+      <workItem from="1559655001309" duration="13696000" />
+      <workItem from="1559741005964" duration="30846000" />
+      <workItem from="1559924379821" duration="17483000" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     </task>
     <task id="LOCAL-00001" summary="Persistance.xml">
       <created>1558457030578</created>
@@ -593,6 +915,7 @@
       <option name="project" value="LOCAL" />
       <updated>1558457030578</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00002" summary="Persistance.xml">
       <created>1558457333276</created>
       <option name="number" value="00002" />
@@ -647,18 +970,171 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="217686000" />
+=======
+    <task id="LOCAL-00002" summary="Added exceptions, exceptionsmapper,exception catalog, application&#10;Added jackson json provider maven dependency">
+      <created>1558461778757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1558461778757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added NewUserDto&#10;Added custom bean validators for name, email, phonenumber, username&#10;User Dto-s have adnotated fields with the custom validation adnotations&#10;&#10;New maven dependecies in jbugs-persistence pom (for the validation)">
+      <created>1558529538253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558529538253</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed compile error at validation">
+      <created>1558532766153</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558532766153</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed compile error at validation">
+      <created>1558533086587</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558533086587</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added NewUserService with:&#10;-&gt;email validation&#10;-&gt;username generation">
+      <created>1558548479186</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558548479186</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added editUserService&#10;-&gt; new methods in UserDao&#10;-&gt; new queries in UserEntity&#10;-&gt; new validation messages&#10;-&gt; new exception messages&#10;&#10;Added Bean Validators for all DTO-s">
+      <created>1558614878397</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558614878397</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Edited add-user component in web module">
+      <created>1558625990641</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558625990641</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix for count(Users) bug -&gt; named queries affected&#10;Added Front End for adding a new user&#10;refactored userdao checkemail and checkusername functions&#10;refactored generate username function">
+      <created>1558635876407</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1558635876407</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added user frontend form&#10;Refactored Controll layer to return Json Objects inseatd of booleans">
+      <created>1558978149690</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558978149690</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added edit user component&#10; -&gt; form (without roles) for editing a user&#10; -&gt; updated UserFacade, UserResource, EditUserService">
+      <created>1559060471448</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559060471448</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added edit user component&#10; -&gt; form (without roles) for editing a user&#10; -&gt; updated UserFacade, UserResource, EditUserService">
+      <created>1559142663317</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559142663317</updated>
+    </task>
+    <task id="LOCAL-00013" summary="User:&#10;-&gt;Added JsonFactory (without refactoring the service classes)&#10;&#10;Bug:&#10;-&gt; Added Severity Enum for Bug Entity&#10;-&gt; Added ViewBugDto&#10;-&gt; Added GetAll function id BugDao&#10;-&gt; Updated BugEntity Column types and setting for JPA Integration&#10;-&gt; Refactored BugConverter">
+      <created>1559148858168</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1559148858168</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Bug:&#10;-&gt; Added ViewBugService&#10;-&gt; Updated BugFacade and Resource">
+      <created>1559150459735</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1559150459735</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added Deactivate User Functionality&#10;Refactored code for reloading only component not the whole page">
+      <created>1559319317801</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1559319317801</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added Role Based Security&#10;-&gt; secured endpoints&#10;-&gt; database script for token table&#10;-&gt; scheduled ejb for token expiration">
+      <created>1559839434593</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1559839434593</updated>
+    </task>
+    <task id="LOCAL-00017" summary="-&gt;Secured Bug Endpoint&#10;-&gt;Added Permission Information in authentication returned json">
+      <created>1559918295679</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1559918295679</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Refactor Business Module&#10;-&gt; migrated methods that generate json objects in json factory&#10;-&gt; counter now resets when a user logs in succesfully&#10;-&gt; added logout user service, that invalideds session">
+      <created>1559997078648</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1559997078648</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added role functionality when adding or editing a user&#10;(Roles are updated separatly)&#10;Passwords are now encrypted in converter">
+      <created>1560000604291</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1560000604291</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Edit User password is no longer requiered in order to perform an edit&#10;Json Object now better reflect the operations they called">
+      <created>1560010753201</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1560010753201</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="174254000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79960316" visible="true" weight="0.23324397" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6147309" visible="true" weight="0.22214764" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Persistence" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="UI Designer" order="6" />
+<<<<<<< HEAD
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="npm" order="8" sideWeight="0.20039682" side_tool="true" visible="true" weight="0.23324397" />
       <window_info id="EJB" order="9" side_tool="true" />
@@ -680,23 +1156,98 @@
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32956153" />
       <window_info anchor="bottom" id="TypeScript" order="15" weight="0.32956153" />
+=======
+      <window_info id="Favorites" order="7" sideWeight="0.388102" side_tool="true" weight="0.19664429" />
+      <window_info id="npm" order="8" sideWeight="0.38526914" side_tool="true" weight="0.22416107" />
+      <window_info id="EJB" order="9" side_tool="true" />
+      <window_info id="JavaEE:App" order="10" side_tool="true" />
+      <window_info id="Web" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.42351276" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4986577" weight="0.44759208" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.53966004" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013423" side_tool="true" weight="0.7124646" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4986577" weight="0.5963173" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="JSF" order="5" />
+<<<<<<< HEAD
       <window_info anchor="right" id="Database" order="6" weight="0.23123324" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Maven" order="9" weight="0.18096514" />
       <window_info anchor="right" id="CDI" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" />
+=======
+      <window_info anchor="right" id="Database" order="6" weight="0.1147651" />
+      <window_info anchor="right" id="Maven" order="7" visible="true" weight="0.16308725" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="CDI" order="10" weight="0.3295302" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.3295302" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6161473" visible="true" weight="0.2637584" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Persistence" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" sideWeight="0.388102" side_tool="true" weight="0.19664429" />
+      <window_info id="npm" order="8" sideWeight="0.3838527" side_tool="true" weight="0.23691276" />
+      <window_info id="EJB" order="9" side_tool="true" />
+      <window_info id="JavaEE:App" order="10" side_tool="true" />
+      <window_info id="Web" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.53966004" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4986577" weight="0.60339946" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.53966004" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013423" side_tool="true" weight="0.7124646" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4986577" weight="0.5963173" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="JSF" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.1147651" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.23691276" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="CDI" order="10" weight="0.3295302" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.3295302" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Persistance.xml" />
     <MESSAGE value="Login first try" />
@@ -719,10 +1270,107 @@
           <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Clean maven" />
+    <MESSAGE value="Added exceptions, exceptionsmapper,exception catalog, application" />
+    <MESSAGE value="Added exceptions, exceptionsmapper,exception catalog, application&#10;Added jackson json provider maven dependency" />
+    <MESSAGE value="Added NewUserDto&#10;Added custom bean validators for name, email, phonenumber, username&#10;User Dto-s have adnotated fields with the custom validation adnotations&#10;&#10;New maven dependecies in jbugs-persistence pom (for the validation)" />
+    <MESSAGE value="Fixed compile error at validation" />
+    <MESSAGE value="Added NewUserService with:&#10;-&gt;email validation&#10;-&gt;username generation" />
+    <MESSAGE value="Added editUserService&#10;-&gt; new methods in UserDao&#10;-&gt; new queries in UserEntity&#10;-&gt; new validation messages&#10;-&gt; new exception messages&#10;&#10;Added Bean Validators for all DTO-s" />
+    <MESSAGE value="Edited add-user component in web module" />
+    <MESSAGE value="Fix for count(Users) bug -&gt; named queries affected&#10;Added Front End for adding a new user&#10;refactored userdao checkemail and checkusername functions&#10;refactored generate username function" />
+    <MESSAGE value="Added user frontend form&#10;Refactored Controll layer to return Json Objects inseatd of booleans" />
+    <MESSAGE value="Added edit user component&#10; -&gt; form (without roles) for editing a user&#10; -&gt; updated UserFacade, UserResource, EditUserService" />
+    <MESSAGE value="User:&#10;-&gt;Added JsonFactory (without refactoring the service classes)&#10;&#10;Bug:&#10;-&gt; Added Severity Enum for Bug Entity&#10;-&gt; Added ViewBugDto&#10;-&gt; Added GetAll function id BugDao&#10;-&gt; Updated BugEntity Column types and setting for JPA Integration&#10;-&gt; Refactored BugConverter" />
+    <MESSAGE value="Bug:&#10;-&gt; Added ViewBugService&#10;-&gt; Updated BugFacade and Resource" />
+    <MESSAGE value="Added Deactivate User Functionality&#10;Refactored code for reloading only component not the whole page" />
+    <MESSAGE value="Added Role Based Security&#10;-&gt; secured endpoints&#10;-&gt; database script for token table&#10;-&gt; scheduled ejb for token expiration" />
+    <MESSAGE value="-&gt;Secured Bug Endpoint&#10;-&gt;Added Permission Information in authentication returned json" />
+    <MESSAGE value="Refactor Business Module&#10;-&gt; migrated methods that generate json objects in json factory&#10;-&gt; counter now resets when a user logs in succesfully&#10;-&gt; added logout user service, that invalideds session" />
+    <MESSAGE value="Added role functionality when adding or editing a user&#10;(Roles are updated separatly)&#10;Passwords are now encrypted in converter" />
+    <MESSAGE value="Edit User password is no longer requiered in order to perform an edit&#10;Json Object now better reflect the operations they called" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit User password is no longer requiered in order to perform an edit&#10;Json Object now better reflect the operations they called" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java</url>
+          <line>140</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GlassfishConfiguration">
+        <watch expression="this.decodedRelativePath" custom="org.glassfish.jersey.message.internal.InboundMessageContext" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/scrap.txt" />
+    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/application/JBugsApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28.jar!/org/glassfish/jersey/process/internal/RequestScope.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#5883#0" expanded="true" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/user-model/edit-user.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -864,11 +1512,138 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+=======
+    <entry file="jar://$USER_HOME$/.m2/repository/org/glassfish/jersey/core/jersey-common/2.28/jersey-common-2.28.jar!/org/glassfish/jersey/internal/Errors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+          <folding>
+            <element signature="e#8403#8404#0" expanded="true" />
+            <element signature="e#8446#8447#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java">
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/services/backend-service/backend.service.ts">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/services/auth-service/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/security/KeyGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/security/SecurityPermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/security/Secured.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="43" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/role/resource/RoleResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="57" column="75" selection-start-line="57" selection-start-column="75" selection-end-line="57" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/exceptionMapper/AuthentificationExceptionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/scripts_bd/initializeDB.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/security/AuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/UserLogoutDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+          <folding>
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#630#631#0" expanded="true" />
+          </folding>
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="380">
           <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
         </state>
@@ -878,54 +1653,133 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+        <state relative-caret-position="-16">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/guards/permissions-guard/permissions.guard.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/jbugs-web/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="104" column="38" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/guards/users-guard/users-guard.guard.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
           <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/user/authentication/TokenEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#57#1" expanded="true" />
+            <element signature="e#0#66#1" expanded="true" />
+            <element signature="e#0#67#1" expanded="true" />
+            <element signature="e#0#70#1" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
+            <element signature="e#1513#1514#0" expanded="true" />
+            <element signature="e#1547#1548#0" expanded="true" />
+            <element signature="e#1582#1583#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#1653#1654#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="true" />
+            <element signature="e#1753#1754#0" expanded="true" />
+            <element signature="e#1803#1804#0" expanded="true" />
+            <element signature="e#1847#1848#0" expanded="true" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/guards/auth-guard/auth.guard.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/security/TokenExpirationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/authentication-interceptor/authentication-interceptor.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/userViewService/UserViewService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/role/entity/RoleEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#59#1" expanded="true" />
+            <element signature="e#0#32#1" expanded="true" />
+            <element signature="e#0#4#0" expanded="true" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/user-model/perms-assignments.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="40">
           <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
@@ -935,11 +1789,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+=======
+        <state relative-caret-position="255">
+          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#64#1" expanded="true" />
+            <element signature="e#0#49#1" expanded="true" />
+            <element signature="e#0#55#1" expanded="true" />
+            <element signature="e#0#67#1" expanded="true" />
+            <element signature="e#0#82#1" expanded="true" />
+            <element signature="e#0#34#1" expanded="true" />
+            <element signature="e#0#8#0" expanded="true" />
+            <element signature="e#0#5#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#8#0" expanded="true" />
+            <element signature="e#0#7#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#8#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dto/NewUserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/edit-user/edit-user.component.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="336">
           <caret line="44" column="95" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
         </state>
@@ -949,12 +1830,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="45" column="31" lean-forward="true" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+=======
+        <state relative-caret-position="647">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/newUserService/NewUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="68" column="14" lean-forward="true" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/authenticationUserService/UserAuthenticationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="96" column="5" lean-forward="true" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/user/facade/UserFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="61" column="61" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/logoutUserService/UserLogoutService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/permissions/permissions.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1075,13 +1992,163 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+=======
+    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/user/resource/UserResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jbugs-web/src/app/user-table/user-table.component.ts">
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/VersionValidator.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/ValidationMessageCatalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/TitleValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/AssignedToValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/DateValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/validation/SeverityValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/dto/NewBugDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/dto/ViewBugDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/dto/BugSublistSetterDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/bug/entity/Severity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/converter/UserConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/user/control/editUserService/EditUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/role/control/manageRolePermissionsService/ManageRolePermissionsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/permission/control/permissionService/PermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-867">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/bugViewService/BugViewService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/bugStatusService/BugStatusService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-persistence/src/main/java/user/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/jsonfactory/JsonFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-business/src/main/java/bug/control/newBugService/NewBugService.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="205">
           <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+=======
+        <state relative-caret-position="85">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jbugs-view/src/main/java/bug/resource/BugResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="79" column="1" lean-forward="true" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
         </state>
       </provider>
     </entry>
@@ -1135,7 +2202,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
+<<<<<<< HEAD
           <last-edited>jbugs-client</last-edited>
+=======
+          <last-edited>jbugs</last-edited>
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
           <splitter-proportions>
             <option name="proportions">
               <list>

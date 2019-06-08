@@ -47,6 +47,8 @@ public class UserFacade {
         return userViewService.gettAllUsers();
     }
 
+    public List<ViewUserDto> getUsersWithBugManagement() { return userViewService.getUsersWithBugManagement();}
+
     public JsonObject addNewUser(NewUserDto newUserDto) {
         return this.newUserService.addNewUser(newUserDto);
     }

@@ -43,7 +43,11 @@ public class JsonFactory {
         return jsonObject;
     }
 
+<<<<<<< HEAD
     private JsonObject getNewBugJson(){
+=======
+    public JsonObject getNewBugJson(){
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("status", "Bug added succesfully")
                 .build();
@@ -51,4 +55,9 @@ public class JsonFactory {
     }
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 }

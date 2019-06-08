@@ -8,6 +8,7 @@ import {EditUserModel} from "../../user-model/edit-user";
 import {UserActivate} from "../../user-model/activate-user";
 import {User} from "../../user-model/user-table";
 import {UserDeactivate} from "../../user-model/deactivate-user";
+import {Bug} from "../../bug-model/bug-table";
 
 
 @Injectable({
@@ -40,4 +41,10 @@ export class UserService {
     console.log(deactivateUser.username+" User service ");
     return this.backendService.post("/jbugs/jbugs-api/user/deactivate-user", deactivateUser)
   }
+
+
+  public getUsersWithBugManagement(): Observable<User[]>{
+    return this.backendService.get("jbugs/jbugs-api/user/users-with-bug-management");
+  }
+
 }

@@ -2,6 +2,7 @@ package user.entity;
 
 import bug.entity.BugEntity;
 import role.entity.RoleEntity;
+import user.dto.UserLogoutDto;
 import utils.BaseEntity;
 
 import javax.persistence.*;
@@ -30,7 +31,7 @@ import java.util.Objects;
                 ", u.counter=:" + UserEntity.COUNTER +
                 ", u.password=:" + UserEntity.PASSWORD +
                 " WHERE u.username=:" + UserEntity.USERNAME),
-        @NamedQuery(name = UserEntity.GET_ALL_USERS, query = "SELECT users from UserEntity users"),
+        @NamedQuery(name = UserEntity.GET_ALL_USERS, query = "SELECT users from UserEntity users")
 })
 public class UserEntity extends BaseEntity<Long> {
 
@@ -43,6 +44,10 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String GET_USER_ID = "UserEntity.getUserId";
     public static final String SET_COUNTER = "UserEntity.SetCounter";
     public static final String GET_USERNAME_BY_EMAIL = "UserEntity.getUsernameByEmail";
+<<<<<<< HEAD
+=======
+    public static final String GET_USERS_WITH_BUG_MANAGEMENT = "UserEntity.getUsersWithBugManagement";
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 
     //Parameter names
     public static final String USERNAME = "username";

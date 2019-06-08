@@ -1,6 +1,14 @@
-import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {Bug} from "../bug-model/bug-table";
-import {MatDialog, MatDialogConfig, MatPaginator, MatSort, MatTableDataSource, PageEvent} from "@angular/material";
+import {
+  MatButton,
+  MatDialog,
+  MatDialogConfig,
+  MatPaginator,
+  MatSort,
+  MatTableDataSource,
+  PageEvent
+} from "@angular/material";
 import {ViewBugComponent} from "../view-bug/view-bug.component";
 import {BugService} from "../services/bug-service/bug.service";
 import {ViewBugService} from "../services/view-bug-service/view-bug.service";
@@ -24,6 +32,7 @@ export class BugTableComponent implements OnInit {
                private bugService: BugService,
                private viewBugServ: ViewBugService) { }
 
+
   public displayedColumns: string[] = ['title', 'target_date','status','severity', 'createdByUser','assignedTo', 'actions'];
 
   private bugSetter: Bug;
@@ -43,12 +52,23 @@ export class BugTableComponent implements OnInit {
 
   @Output()
   page: EventEmitter<PageEvent>;
+<<<<<<< HEAD
+=======
+
+  @Input()
+  pageSizeOptions: number[];
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 
   public dataSource : any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
 
+<<<<<<< HEAD
+=======
+    this.pageSizeOptions = [5,10, 25];
+
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     this.getAllBugs();
 
     console.log(this.sortedBugs);
@@ -66,6 +86,7 @@ export class BugTableComponent implements OnInit {
     );
 
   }
+<<<<<<< HEAD
 
   getSortedBugsList(newBugSubList : BugSublist){
     this.bugService.getSublist(newBugSubList).subscribe(
@@ -73,6 +94,15 @@ export class BugTableComponent implements OnInit {
         this.bugs = newBugList;
         console.log(this.bugs);
 
+=======
+
+  getSortedBugsList(newBugSubList : BugSublist){
+    this.bugService.getSublist(newBugSubList).subscribe(
+      newBugList => {
+        this.bugs = newBugList;
+        console.log(this.bugs);
+
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
         this.dataSource =  new MatTableDataSource<Bug>(newBugList);
         this.dataSource.paginator = this.paginator;
       }
@@ -121,6 +151,7 @@ export class BugTableComponent implements OnInit {
 
 
   applyChanges(field : string, value : string, pageIndex : number, pageSize : number){
+<<<<<<< HEAD
     var newBugSublist : BugSublist = {field, value, pageNumber: pageIndex, pageSize};
 
     this.sortBy = field;
@@ -132,6 +163,20 @@ export class BugTableComponent implements OnInit {
     this.sortedBugs = true;
   }
 
+=======
+     var newBugSublist : BugSublist = {field, value, pageNumber: pageIndex, pageSize};
+
+     this.sortBy = field;
+     this.filterBy = value;
+     this.pageNumber = pageIndex;
+     this.pageSize = pageSize;
+
+     this.getSortedBugsList(newBugSublist);
+     this.sortedBugs = true;
+  }
+
+
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
   applyChangesNext(){
     this.paginator.nextPage();
 
@@ -150,11 +195,19 @@ export class BugTableComponent implements OnInit {
 
   applyChangesPrev(){
     this.paginator.previousPage();
+<<<<<<< HEAD
 
     var prevPageIndex = this.pageNumber - 1;
 
     (<HTMLInputElement> document.getElementById("nextbtn")).disabled = false;
 
+=======
+
+    var prevPageIndex = this.pageNumber - 1;
+
+    (<HTMLInputElement> document.getElementById("nextbtn")).disabled = false;
+
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     if(prevPageIndex >= 0){
       this.applyChanges(this.sortBy, this.filterBy, prevPageIndex, this.pageSize);
     }else {
@@ -163,7 +216,10 @@ export class BugTableComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
   //get possible transitions
   openMenu(status: string){
     console.log("BUG STATUS"+status);
@@ -176,9 +232,13 @@ export class BugTableComponent implements OnInit {
         console.log(this.transitions);
       }
     );
+<<<<<<< HEAD
 
   }
+=======
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 
+  }
 
   //change bug status
   setTransition(id : number, title: string, description: string, version: string, targetDate: string, status: string,
@@ -199,14 +259,36 @@ export class BugTableComponent implements OnInit {
     }else {
       this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, this.pageSize);
     }
+<<<<<<< HEAD
 
   }
 
+=======
+  }
+
+
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
   keyDownFunction(event, string : string) {
     if(event.keyCode == 13) {
       console.log('you just clicked enter'+string);
       this.applyChanges('title', string, this.pageNumber, this.pageSize);
     }
+<<<<<<< HEAD
+=======
+  }
+
+
+  onPaginateChange(event){
+    console.log(JSON.stringify("Current page index: " + event.pageSize));
+    if(this.sortedBugs == true){
+    this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, event.pageSize);
+    } else {
+      this.getAllBugs();
+    }
+
+
+
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
   }
 
 }

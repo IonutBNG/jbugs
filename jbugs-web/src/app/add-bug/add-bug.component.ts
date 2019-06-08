@@ -18,6 +18,8 @@ export class AddBugComponent implements OnInit {
   public users: User[];
   public bugs : Bug[];
 
+  public counter : number = 0;
+
   public severity : String[];
 
   constructor(private dialogRef: MatDialogRef<AddBugComponent>,
@@ -34,11 +36,19 @@ export class AddBugComponent implements OnInit {
 
   ngOnInit() {
 
+<<<<<<< HEAD
   this.userService.getAllUsers().subscribe(
     users => {
       this.users = users;
     }
   );
+=======
+    this.userService.getUsersWithBugManagement().subscribe(
+      users => {
+        this.users = users;
+      }
+    );
+>>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 
   this.bugService.getAllBugs().subscribe(
     bugs => {
@@ -93,6 +103,13 @@ export class AddBugComponent implements OnInit {
 
   private close(){
     this.dialogRef.close();
+  }
+
+  onSearchChange(searchValue : string) {
+
+    this.counter = searchValue.length + 1;
+
+    console.log(searchValue);
   }
 
 
