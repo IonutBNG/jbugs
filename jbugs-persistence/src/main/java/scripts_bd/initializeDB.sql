@@ -50,9 +50,9 @@ create table bugs
 (
     id bigint auto_increment primary key,
     title varchar(255) not null,
-    description varchar(255) not null,
+    description varchar() not null,
     version varchar(255) not null,
-    target_date datetime not null,
+    target_date date not null,
     status varchar(255) not null,
     fixed_version varchar(255) not null,
     severity varchar(255) CHECK(severity="critical" OR severity="high" OR

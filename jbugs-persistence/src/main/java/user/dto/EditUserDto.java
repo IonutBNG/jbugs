@@ -33,6 +33,8 @@ public class EditUserDto implements BaseDto {
 
     private Integer counter;
 
+    private String[] roles;
+
 
     public EditUserDto() {
     }
@@ -101,4 +103,12 @@ public class EditUserDto implements BaseDto {
     public void setUsername(String username) {
         this.username = username;
     }
+    public String[] getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String[] roles) {
+        this.roles = roles;
+    }
+
 }

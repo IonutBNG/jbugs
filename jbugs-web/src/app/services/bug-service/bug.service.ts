@@ -5,6 +5,7 @@ import {Bug} from "../../bug-model/bug-table";
 import {NewBugModel} from "../../bug-model/new-bug";
 import {ViewBugComponent} from "../../view-bug/view-bug.component";
 import {BugTableComponent} from "../../bug-table/bug-table.component";
+import {BugSublist} from "../../bug-model/bug-sublist";
 
 @Injectable({
   providedIn: 'root'
@@ -25,11 +26,16 @@ export class BugService {
     return this.backendService.get("/jbugs/jbugs-api/bug/status-transition/"+status);
   }
 
-  public setStatus(statusBug : BugTableComponent) : Observable<BugTableComponent> {
+  public setStatus(statusBug : Bug) : Observable<Bug> {
     return this.backendService.put("jbugs/jbugs-api/bug/set-status", statusBug);
   }
 
   public getSeverityValues() : Observable<String[]> {
     return this.backendService.get("jbugs/jbugs-api/bug/get-severity");
   }
+
+  public getSublist(bugsublist: BugSublist): Observable<Bug[]> {
+    return this.backendService.put("jbugs/jbugs-api/bug/filtered", bugsublist);
+  }
+
 }

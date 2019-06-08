@@ -10,7 +10,6 @@ public class DateValidation implements ConstraintValidator<DateV, Date> {
 
     @Override
     public void initialize(DateV dateV) {
-
     }
 
     @Override
@@ -19,9 +18,8 @@ public class DateValidation implements ConstraintValidator<DateV, Date> {
         if (date == null || date.equals("")) {
             return false;
         }
-//
+
 //        Pattern pattern = Pattern.compile(regex);
-//
 //        return pattern.matcher(date.toString()).matches();
 
         return true;

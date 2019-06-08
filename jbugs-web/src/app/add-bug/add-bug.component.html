@@ -9,8 +9,9 @@
 
     <div class="form-group">
       <label> Description: </label>
-      <input class="form-control" type="text" id="description" name="description"
-             required #description="ngModel" ngModel>
+      <textarea auto-resize
+        class="form-control" type="text" id="description" name="description"
+                required #description="ngModel" ngModel></textarea>
     </div>
 
     <div class="form-group">
@@ -28,7 +29,7 @@
     <div class = "form-group">
       <label> Target Date: </label>
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder=" "  name="date" #myDate="ngModel" ngModel>
+      <input matInput [matDatepicker]="picker" readonly placeholder="Introduce target Date " name="date" #myDate="ngModel" ngModel>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>

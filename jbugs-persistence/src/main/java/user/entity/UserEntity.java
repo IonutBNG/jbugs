@@ -41,7 +41,8 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String GET_ALL_USERS = "UserEntity.getAllUsers";
     public static final String EDIT_USER = "UserEntity.editUser";
     public static final String GET_USER_ID = "UserEntity.getUserId";
-    //public static final String MATCH_LOGIN_CREDENTIALS = "UserEntity.matchLoginCredentials";
+    public static final String SET_COUNTER = "UserEntity.SetCounter";
+    public static final String GET_USERNAME_BY_EMAIL = "UserEntity.getUsernameByEmail";
 
     //Parameter names
     public static final String USERNAME = "username";
@@ -51,9 +52,7 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String COUNTER = "counter";
     public static final String MOBLE_NUMBER = "mobileNumber";
     public static final String PASSWORD = "password";
-    public static final String ID = "id";
-    public static final String SET_COUNTER = "UserEntity.SetCounter";
-    public static final String GET_USERNAME_BY_EMAIL = "UserEntity.getUsernameByEmail";
+    public static final String ROLES = "roles";
 
 
     @Column(name = "first_name", nullable = false)

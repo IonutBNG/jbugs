@@ -67,15 +67,6 @@ export class UserTableComponent implements OnInit {
     );
   }
 
-  onActivate(username: string) {
-
-    var newActivateUser: UserActivate = {username: username};
-        this.userService.activateUser(newActivateUser).subscribe( res =>
-        console.log(res));
-
-    window.location.reload();
-  }
-
   private editUserPopup(component: TemplateRef<EditUserComponent>, firstName: string, lastName: string, email: string,
                 mobileNumber: string, userName: string, counter: number) {
     this.loadComponent = true;
@@ -112,11 +103,6 @@ export class UserTableComponent implements OnInit {
   edit() {
     alert('Edit');
   }
-
-  // logout(){
-  //   localStorage.removeItem('token');
-  //   this.router.navigate(['/login']);
-  // }
 
   addUserPopup(){
     this.dialogConfigSetupUser();

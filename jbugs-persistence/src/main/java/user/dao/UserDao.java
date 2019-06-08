@@ -84,6 +84,12 @@ public class UserDao {
     }
 
     public void editUser(UserEntity userEntity) {
+        //treat the case where password is not edited
+        if (userEntity.getPassword() == "") {
+            userEntity.setPassword(this.getUserByUsername(userEntity.getUsername()).getPassword());
+        }
+
+        //updating atomic attributes
         this.entityManager.createNamedQuery(UserEntity.EDIT_USER)
                 .setParameter(UserEntity.USERNAME, userEntity.getUsername())
                 .setParameter(UserEntity.FIRST_NAME, userEntity.getFirstName())
@@ -93,6 +99,10 @@ public class UserDao {
                 .setParameter(UserEntity.PASSWORD, userEntity.getPassword())
                 .setParameter(UserEntity.COUNTER, userEntity.getCounter())
                 .executeUpdate();
+
+        //updating roles
+        UserEntity userEntityUpdated = this.getUserByUsername(userEntity.getUsername());
+        userEntityUpdated.setRoleEntityList(userEntity.getRoleEntityList());
     }
 
     public List<UserEntity> getAllUsers(){

@@ -24,6 +24,7 @@ table{
 .btn-primary {
   margin: 20px 0;
 }
+
 .viewbtn {
   width: 100px;
 }
@@ -41,24 +42,48 @@ table{
 }
 
 
-.search-field {
+.sortheader {
   float: right;
+  padding: 0 10px;
 }
 
-.btnfilter {
-  width: 100px;
-  margin-left: 20px;
+.paginatorbtn {
+  float: right;
+  background-color: #ebebeb;
+  margin-right: 30px;
 }
 
-.class1  .mat-select-placeholder {
-  color:red !important;
+label {
+  display: inline-block;
+  margin-right: 1.0rem;
+  margin-left: 2.0rem;
 }
 
-.class2  .mat-select-placeholder {
-  color:blue !important;
+.btnapply {
+  width: 150px;
+  margin-left: 10px;
 }
 
+.option:disabled {
+  background: rgba(140, 145, 149, 0.6);
+  color: black;
+}
 
+:host ::ng-deep.mat-paginator .mat-paginator-container {
+  justify-content: flex-end;
+}
+
+:host ::ng-deep.mat-paginator .mat-paginator-container .mat-paginator-navigation-previous  {
+  visibility: hidden;
+}
+
+:host ::ng-deep.mat-paginator .mat-paginator-container .mat-paginator-navigation-next  {
+  visibility: hidden;
+}
+
+.searchbox {
+  margin-top: 20px;
+}
 
 //center links in navbar
 .container {

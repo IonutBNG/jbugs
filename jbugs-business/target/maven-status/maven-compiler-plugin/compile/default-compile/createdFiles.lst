@@ -26,5 +26,6 @@ security\AuthenticationFilter$1.class
 security\TokenExpirationManager.class
 permission\coverter\PermissionConverter.class
 user\converter\UserConverter.class
+user\control\logoutUserService\UserLogoutService.class
 user\validator\UserValidator.class
 jsonfactory\JsonFactory.class

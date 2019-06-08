@@ -14,14 +14,16 @@ import javax.ejb.Singleton;
  */
 @Singleton
 public class TokenExpirationManager {
+    public final static String MINUTES_IN_CLEANUP_CYCLE = "*/5";
     @EJB
     TokenDao tokenDao;
 
-    private final static String MINUTES_IN_CLEANUP_CYCLE = "*/5";
+    public TokenExpirationManager() {
+    }
 
     @Schedule(second = "*", minute = MINUTES_IN_CLEANUP_CYCLE, hour = "*", persistent = false)
     public void atSchedule() throws InterruptedException {
-        cleanExpiredTokens();
+//        cleanExpiredTokens();
     }
 
     private void cleanExpiredTokens() {

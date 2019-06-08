@@ -1,12 +1,10 @@
 package user.facade;
 
 import user.control.authenticationUserService.UserAuthenticationService;
+import user.control.logoutUserService.UserLogoutService;
 import user.control.editUserService.EditUserService;
 import user.control.newUserService.NewUserService;
-import user.dto.EditUserDto;
-import user.dto.NewUserDto;
-import user.dto.UserLoginDto;
-import user.dto.ViewUserDto;
+import user.dto.*;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -32,6 +30,9 @@ public class UserFacade {
 
     @EJB
     private EditUserService editUserService;
+
+    @EJB
+    private UserLogoutService userLogoutService;
 
     /**
      * Calls authenticateUser method from UserAuthenticationService
@@ -59,4 +60,8 @@ public class UserFacade {
     }
 
     public JsonObject deactivateUser(EditUserDto editUserDto) { return this.editUserService.deactivateUser(editUserDto);}
+
+    public JsonObject logoutUser(UserLogoutDto userLogoutDto) {
+        return this.userLogoutService.logout(userLogoutDto);
+    }
 }

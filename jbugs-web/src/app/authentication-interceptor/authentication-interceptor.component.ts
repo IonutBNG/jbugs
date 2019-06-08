@@ -25,7 +25,7 @@ export class AuthenticationInterceptorComponent implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log("Interceptor called");
+    // console.log("Interceptor called");
     req = req.clone({
       setHeaders: {
         Authorization: `Bearer ` + localStorage.getItem('token'),

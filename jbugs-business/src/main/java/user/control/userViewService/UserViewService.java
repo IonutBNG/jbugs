@@ -18,6 +18,9 @@ public class UserViewService {
     @EJB
     private UserConverter userConverter;
 
+    public UserViewService() {
+    }
+
     public List<ViewUserDto> gettAllUsers() {
         return userDao.getAllUsers()
                 .stream()
