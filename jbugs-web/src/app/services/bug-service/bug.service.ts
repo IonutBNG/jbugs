@@ -36,4 +36,5 @@ export class BugService {
     return this.backendService.put("jbugs/jbugs-api/bug/filtered", bugsublist);
   }
 
+
 }

@@ -53,7 +53,7 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
     public Response getUsersWithBugManagement(@Context SecurityContext securityContext){
-        return Response.ok(userFacade.getAllUsers()).build();
+        return Response.ok(userFacade.getUsersWithBugManagement()).build();
     }
 
 

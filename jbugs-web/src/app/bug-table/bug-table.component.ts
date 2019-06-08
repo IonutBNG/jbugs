@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnChanges, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {Bug} from "../bug-model/bug-table";
 import {
   MatButton,
@@ -48,12 +48,17 @@ export class BugTableComponent implements OnInit {
   pageSize: number;
 
   @Output()
-  page: EventEmitter<PageEvent>
+  page: EventEmitter<PageEvent>;
+
+  @Input()
+  pageSizeOptions: number[];
 
   public dataSource : any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
+
+    this.pageSizeOptions = [5,10, 25];
 
     this.getAllBugs();
 
@@ -184,7 +189,6 @@ export class BugTableComponent implements OnInit {
     }else {
       this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, this.pageSize);
     }
-
   }
 
 
@@ -193,6 +197,19 @@ export class BugTableComponent implements OnInit {
       console.log('you just clicked enter'+string);
       this.applyChanges('title', string, this.pageNumber, this.pageSize);
     }
+  }
+
+
+  onPaginateChange(event){
+    console.log(JSON.stringify("Current page index: " + event.pageSize));
+    if(this.sortedBugs == true){
+    this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, event.pageSize);
+    } else {
+      this.getAllBugs();
+    }
+
+
+
   }
 
 }

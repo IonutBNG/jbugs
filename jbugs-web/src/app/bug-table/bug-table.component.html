@@ -29,7 +29,7 @@
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef>
         Title
-        <button (click)="applyChanges( 'title', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
+          <span class="arrow" (click)="applyChanges( 'title', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.title}} </td>
     </ng-container>
@@ -37,8 +37,7 @@
     <ng-container matColumnDef="target_date">
       <th mat-header-cell *matHeaderCellDef>
         Date
-
-        <button (click)="applyChanges( 'assignedTo', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
+        <span class="arrow" (click)="applyChanges( 'target_date', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.targetDate}} </td>
     </ng-container>
@@ -46,7 +45,7 @@
     <ng-container  matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>
         Status
-        <button (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
+        <span class="arrow" (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
       </th>
       <td mat-cell *matCellDef="let bugs" >
 <!--        {{bugs.status}}-->
@@ -71,7 +70,7 @@
     <ng-container matColumnDef="severity">
       <th mat-header-cell *matHeaderCellDef>
         Severity
-        <button (click)="applyChanges( 'severity', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
+        <span class="arrow" (click)="applyChanges( 'severity', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
       </th>
       <td mat-cell *matCellDef="let bugs">
         {{bugs.severity}}
@@ -81,7 +80,7 @@
     <ng-container matColumnDef="createdByUser">
       <th mat-header-cell *matHeaderCellDef>
         Created By
-        <button (click)="applyChanges( 'createdByUser', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
+        <span class="arrow" (click)="applyChanges( 'createdByUser', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.createdByUser}} </td>
     </ng-container>
@@ -89,7 +88,7 @@
     <ng-container matColumnDef="assignedTo">
       <th mat-header-cell *matHeaderCellDef>
         Assigned To
-        <button (click)="applyChanges( 'assignedTo', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
+        <span class="arrow" (click)="applyChanges( 'assignedTo', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.assignedTo}} </td>
     </ng-container>
@@ -112,9 +111,12 @@
   <button class = "paginatorbtn"  id="prevbtn" mat-icon-button (click)="applyChangesPrev()"> Prev </button>
 
   <mat-paginator
+                 (page)="onPaginateChange($event)"
                  [length]="pageNumber"
                  [pageSize]="pageSize"
-                 [pageSizeOptions]="[5, 10, 25, 50]"
+                 [pageSizeOptions]="pageSizeOptions"
+
+
   >
   </mat-paginator>
 </div>
