@@ -45,12 +45,7 @@ const routes: Routes = [
           {
             path:"edituser",
             component:EditUserComponent
-          },
-          {
-            path: "permissions",
-            component: PermissionsComponent,
-            canActivate: [PermissionsGuard]
-          },
+          }
         ]
       },
       {
@@ -63,6 +58,11 @@ const routes: Routes = [
             component: AddBugComponent
           }
         ]
+      },
+      {
+        path: "permissions",
+        component: PermissionsComponent,
+        canActivate: [PermissionsGuard]
       },
     ]
   },

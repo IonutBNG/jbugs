@@ -1,5 +1,5 @@
 <div class="container">
-<form>
+<form class="submitted">
   <div class="form-group">
     <label>First Name: </label>
     <input class="form-control" type="text" id="firstName" name="firstName"
@@ -27,7 +27,7 @@
   <div class="form-group">
     <label>Password:</label>
     <input class="form-control" type="password" id="password" name="password"
-           #password="ngModel" placeholder="e.g. MyPassword ..." ngModel>
+           required #password="ngModel" placeholder="e.g. MyPassword ..." ngModel>
   </div>
 
   <div class="bottomButtons">

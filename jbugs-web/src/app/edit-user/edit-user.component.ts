@@ -47,14 +47,23 @@ export class EditUserComponent implements OnInit {
   }
 
   private editNewUser(username: string, firstName: string, lastName: string, mobileNumber: string, email: string,
-                      counter: number, password: string){
-    this.setEditedUser(username, firstName, lastName, mobileNumber, email, counter, password);
-    console.log(this.editedNewUser);
-    this.userService.editUser(this.editedNewUser).subscribe( res => {
-        console.log(res);
-        this.checkResponse(res);
-      },
-      err => { console.log(err) });
+                      counter: number, password: string, confirmPassword: string) {
+    var same = this.checkSamePassword(password, confirmPassword);
+    if (same === false)
+      this.closeDialogError("Please confirm with the same password!");
+    else {
+      this.setEditedUser(username, firstName, lastName, mobileNumber, email, counter, password);
+      console.log(this.editedNewUser);
+      this.userService.editUser(this.editedNewUser).subscribe(res => {
+          this.checkResponse(res);
+        })
+    }
+  }
+
+  private checkSamePassword(password: string, confirmPassword: string): boolean{
+    if (password === confirmPassword)
+      return true;
+    return false;
   }
 
   private setEditedUser(username: string, firstName: string, lastName: string, mobileNumber: string, email: string,

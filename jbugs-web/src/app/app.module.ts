@@ -10,10 +10,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserTableComponent} from "./user-table/user-table.component";
 
 import {
-  MatButtonModule, MatButtonToggleModule,
+  MatButtonModule, MatButtonToggleModule, MatCheckboxModule,
   MatDatepickerModule,
   MatIconModule,
-  MatMenuModule, MatSelectModule,
+  MatMenuModule, MatRadioModule, MatSelectModule,
   MatSidenavModule,
   MatTableModule
 } from "@angular/material";
@@ -81,7 +81,9 @@ import {AddBugComponent} from "./add-bug/add-bug.component";
     MatSelectModule,
     MatButtonToggleModule,
     MatDatepickerModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MatRadioModule,
+    MatCheckboxModule
   ],
   exports: [
     ViewBugComponent,

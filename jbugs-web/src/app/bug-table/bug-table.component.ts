@@ -46,7 +46,6 @@ export class BugTableComponent implements OnInit {
   ngOnInit() {
     this.setAllBugs();
     this.dialogConfig = new MatDialogConfig();
-
   }
 
   private setAllBugs(){

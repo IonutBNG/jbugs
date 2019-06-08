@@ -11,10 +11,10 @@ export class AuthService {
   private loginUrl = "/jbugs/jbugs-api/user/authenticate";
 
   private permsAssignments: PermsAssignments = {
+    isUserM: false,
+    isBugM: false,
     isBugC: false,
     isPermsM: false,
-    isBugM: false,
-    isUserM: false
   };
 
   constructor(private http: HttpClient) { }
@@ -28,14 +28,26 @@ export class AuthService {
     const perms = localStorage.getItem("permissions");
     console.log(perms);
     var array = perms.split(',');
-    if (array.includes('USER_MANAGEMENT'))
+    if (array.includes('USER_MANAGEMENT')) {
       this.permsAssignments.isUserM = true;
-    if (array.includes('BUG_MANAGEMENT'))
+    } else {
+      this.permsAssignments.isUserM = false;
+    }
+    if (array.includes('BUG_MANAGEMENT')) {
       this.permsAssignments.isBugM = true;
-    if (array.includes('PERMISSION_MANAGEMENT'))
+    } else {
+      this.permsAssignments.isBugM = false;
+    }
+    if (array.includes('PERMISSION_MANAGEMENT')) {
       this.permsAssignments.isPermsM = true;
-    if (array.includes('BUG_CLOSE'))
+    } else {
+      this.permsAssignments.isPermsM = false;
+    }
+    if (array.includes('BUG_CLOSE')) {
       this.permsAssignments.isBugC = true;
+    } else {
+      this.permsAssignments.isBugC = false;
+    }
     return this.permsAssignments;
   }
 

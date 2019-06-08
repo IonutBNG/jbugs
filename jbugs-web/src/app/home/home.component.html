@@ -3,10 +3,18 @@
 
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a *ngIf="permsAssignments.isUserM" class="nav-link" routerLinkActive="active" routerLink="/home/usertable">Users</a>
-        <a *ngIf="permsAssignments.isBugM" class="nav-link" routerLinkActive="active" routerLink="/home/bugtable">Bugs</a>
-        <a *ngIf="permsAssignments.isPermsM" class="nav-link" routerLinkActive="active" routerLink="/home/usertable/permissions"
-           (click)="permissionsPopup()">Permissions</a>
+        <div *ngIf="isUserM" >
+          <a class="nav-link" routerLinkActive="active" routerLink="/home/usertable">
+            Users</a>
+        </div>
+        <div *ngIf="isBugM"  >
+          <a class="nav-link" routerLinkActive="active" routerLink="/home/bugtable">
+            Bugs</a>
+        </div>
+        <div *ngIf="isPermsM" >
+          <a class="nav-link" routerLinkActive="active" routerLink="/home/permissions">
+            Permissions</a>
+        </div>
         <a class="nav-link" routerLinkActive="" routerLink="/" (click)="authService.logOut()">Log Out</a>
       </nav>
     </div>

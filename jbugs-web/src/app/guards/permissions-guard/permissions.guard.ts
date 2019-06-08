@@ -14,10 +14,12 @@ export class PermissionsGuard implements CanActivate {
 
   private permsAssignments: PermsAssignments;
 
-canActivate(): boolean {
-  this.permsAssignments = this.authService.setPermissionsRouting();
-  if (!this.permsAssignments.isPermsM)
-    this.router.navigate(['/home']);
-  return true;
-}
+  canActivate(): boolean {
+    this.permsAssignments = this.authService.setPermissionsRouting();
+    if (!this.permsAssignments.isPermsM) {
+      this.router.navigate(['/home']);
+      return false;
+    }
+    return true;
+  }
 }

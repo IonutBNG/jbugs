@@ -18,8 +18,10 @@ export class UsersGuard implements  CanActivate{
 
   canActivate(): boolean {
     this.permsAssignments = this.authService.setPermissionsRouting();
-    if (!this.permsAssignments.isUserM)
+    if (!this.permsAssignments.isUserM) {
       this.router.navigate(['/home']);
+      return false;
+    }
     return true;
   }
 }

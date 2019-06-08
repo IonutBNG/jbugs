@@ -18,8 +18,10 @@ export class BugGuard implements CanActivate{
 
   canActivate(): boolean {
     this.permsAssignments = this.authService.setPermissionsRouting();
-    if (!this.permsAssignments.isBugM)
+    if (!this.permsAssignments.isBugM) {
       this.router.navigate(['/home']);
+      return false;
+    }
     return true;
   }
   
