@@ -47,6 +47,12 @@ table{
   padding: 0 10px;
 }
 
+.paginatorbtn {
+  float: right;
+  background-color: #ebebeb;
+  margin-right: 30px;
+}
+
 label {
   display: inline-block;
   margin-right: 1.0rem;
@@ -54,17 +60,28 @@ label {
 }
 
 .btnapply {
-  width: 100px;
+  width: 150px;
   margin-left: 10px;
 }
 
-.mat-menu-content {
-  background-color: 'red' !important;
-}
 
 .option:disabled {
   background: rgba(140, 145, 149, 0.6);
   color: black;
 }
 
+:host ::ng-deep.mat-paginator .mat-paginator-container {
+  justify-content: flex-end;
+}
 
+:host ::ng-deep.mat-paginator .mat-paginator-container .mat-paginator-navigation-previous  {
+  visibility: hidden;
+}
+
+:host ::ng-deep.mat-paginator .mat-paginator-container .mat-paginator-navigation-next  {
+  visibility: hidden;
+}
+
+.searchbox {
+  margin-top: 20px;
+}

@@ -23,7 +23,7 @@ public class TokenExpirationManager {
 
     @Schedule(second = "*", minute = MINUTES_IN_CLEANUP_CYCLE, hour = "*", persistent = false)
     public void atSchedule() throws InterruptedException {
-        cleanExpiredTokens();
+//        cleanExpiredTokens();
     }
 
     private void cleanExpiredTokens() {
