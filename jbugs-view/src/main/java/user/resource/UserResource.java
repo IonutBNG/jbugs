@@ -49,6 +49,15 @@ public class UserResource {
         return Response.ok(userFacade.getAllUsers()).build();
     }
 
+    @GET
+    @Path("/users-with-bug-management")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
+    public Response getUsersWithBugManagement(@Context SecurityContext securityContext){
+        return Response.ok(userFacade.getAllUsers()).build();
+    }
+
+
     @POST
     @Path("/add-new-user")
     @Consumes(MediaType.APPLICATION_JSON)
