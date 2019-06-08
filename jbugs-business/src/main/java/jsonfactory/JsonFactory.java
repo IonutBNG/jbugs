@@ -12,6 +12,9 @@ import javax.json.JsonObject;
  */
 @Stateless
 public class JsonFactory {
+    public JsonFactory() {
+    }
+
     public JsonObject getEditUserJSON() {
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("status", "OK")
@@ -32,4 +35,13 @@ public class JsonFactory {
                 .build();
         return jsonObject;
     }
+
+    public JsonObject getLogoutUserJSON() {
+        JsonObject jsonObject = Json.createObjectBuilder()
+                .add("status", "OK")
+                .build();
+        return jsonObject;
+    }
+
+
 }

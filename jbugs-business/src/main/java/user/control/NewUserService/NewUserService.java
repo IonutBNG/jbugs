@@ -2,6 +2,7 @@ package user.control.newUserService;
 
 import exeptions.BusinessException;
 import exeptions.ExceptionMessageCatalog;
+import jsonfactory.JsonFactory;
 import user.converter.UserConverter;
 import user.dao.UserDao;
 import user.dto.NewUserDto;
@@ -33,6 +34,9 @@ public class NewUserService {
     @EJB
     private UserValidator userValidator;
 
+    @EJB
+    private JsonFactory jsonFactory;
+
 
     public JsonObject addNewUser(NewUserDto newUserDto) {
         userValidator.validateBean(newUserDto);
@@ -45,15 +49,9 @@ public class NewUserService {
 
         userDao.createUser(userEntity);
 
-        return generateJson();
+        return jsonFactory.getNewUserJSON();
     }
 
-    private JsonObject generateJson(){
-        JsonObject jsonObject = Json.createObjectBuilder()
-                .add("status", "OK")
-                .build();
-        return jsonObject;
-    }
 
 
 

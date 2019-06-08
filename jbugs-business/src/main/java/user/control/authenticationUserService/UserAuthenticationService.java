@@ -32,6 +32,7 @@ import java.util.List;
 
 @Stateless
 public class UserAuthenticationService {
+    private static final int COUNTER_RESET_TRIES = 5;
     private static final int DAYS_UNTIL_TOKEN_INVALIDATION = 1;
 
     @EJB
@@ -57,11 +58,12 @@ public class UserAuthenticationService {
         this.userValidator.validateBean(userLoginDto);
 
         if (validCredentials(userLoginDto)){
+            resetUserCounter(userLoginDto.getUsername());
             String jwt = generateJwtToken(userLoginDto.getUsername());
             persistJwtToken(jwt, userLoginDto.getUsername());
-            return generateJson(jwt, userLoginDto.getUsername());
+            return generateJsonSuccesfulAuthentication(jwt, userLoginDto.getUsername());
         }
-        return generateJson("","");
+        return generateJsonFailedAuthentication();
     }
 
     /**
@@ -114,10 +116,18 @@ public class UserAuthenticationService {
      * @param jwt used in the Json
      * @return JsonObject
      */
-    private JsonObject generateJson(String jwt, String username){
+    private JsonObject generateJsonSuccesfulAuthentication(String jwt, String username){
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("token", jwt)
                 .add("permissions", getPermissionString(username))
+                .build();
+        return jsonObject;
+    }
+
+    private JsonObject generateJsonFailedAuthentication() {
+        JsonObject jsonObject = Json.createObjectBuilder()
+                .add("token", "")
+                .add("permissions", "")
                 .build();
         return jsonObject;
     }
@@ -128,12 +138,12 @@ public class UserAuthenticationService {
         tokenDto.setUsername(username);
 
         //setting expiration date
-        Calendar c = Calendar.getInstance();
-        Date date=new Date(c.getTimeInMillis());
+        Date date = getCurrentDate();
         date = addDays(date, DAYS_UNTIL_TOKEN_INVALIDATION);
         tokenDto.setExpiryDate(date);
 
-        tokenDao.addToken(tokenDto);
+        UserEntity userEntity = userDao.getUserByUsername(username);
+        tokenDao.addToken(tokenDto, userEntity);
 
     }
 
@@ -168,6 +178,16 @@ public class UserAuthenticationService {
         }
 
         return  res;
+    }
+
+    private void resetUserCounter(String username) {
+        userDao.getUserByUsername(username).setCounter(COUNTER_RESET_TRIES);
+    }
+
+    private Date getCurrentDate() {
+        Calendar calendar = Calendar.getInstance();
+        Date date=new Date(calendar.getTimeInMillis());
+        return date;
     }
 
 }

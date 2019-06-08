@@ -41,7 +41,6 @@ public class UserEntity extends BaseEntity<Long> {
     public static final String GET_ALL_USERS = "UserEntity.getAllUsers";
     public static final String EDIT_USER = "UserEntity.editUser";
     public static final String GET_USER_ID = "UserEntity.getUserId";
-    //public static final String MATCH_LOGIN_CREDENTIALS = "UserEntity.matchLoginCredentials";
 
     //Parameter names
     public static final String USERNAME = "username";

@@ -2,6 +2,7 @@ package user.control.editUserService;
 
 import exeptions.BusinessException;
 import exeptions.ExceptionMessageCatalog;
+import jsonfactory.JsonFactory;
 import user.converter.UserConverter;
 import user.dao.UserDao;
 import user.dto.EditUserDto;
@@ -35,6 +36,9 @@ public class EditUserService {
     @EJB
     private UserConverter userConverter;
 
+    @EJB
+    JsonFactory jsonFactory;
+
 
     public JsonObject editUser(EditUserDto editUserDto) throws BusinessException {
 
@@ -50,7 +54,7 @@ public class EditUserService {
         //update the user
         userDao.editUser(this.userConverter.convertEditDtoToEntity(editUserDto));
 
-        return this.generateJson();
+        return jsonFactory.getEditUserJSON();
     }
 
     private void validateIfEmailExists (EditUserDto editUserDto) {
@@ -61,19 +65,13 @@ public class EditUserService {
         }
     }
 
-    private JsonObject generateJson(){
-        JsonObject jsonObject = Json.createObjectBuilder()
-                .add("status", "OK")
-                .build();
-        return jsonObject;
-    }
 
     public JsonObject activateUser(EditUserDto editUserDto){
         UserEntity userEntity = userDao.getUserByUsername(editUserDto.getUsername());
 
         userEntity.setCounter(COUNTER_INIT);
 
-        return generateJson();
+        return jsonFactory.getEditUserJSON();
     }
 
     public JsonObject deactivateUser(EditUserDto editUserDto) {
@@ -81,7 +79,7 @@ public class EditUserService {
 
         userEntity.setCounter(COUNTER_DEACTIVATE);
 
-        return generateJson();
+        return jsonFactory.getEditUserJSON();
 
 
     }
