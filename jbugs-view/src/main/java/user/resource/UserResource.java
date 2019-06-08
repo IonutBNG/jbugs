@@ -5,6 +5,7 @@ import security.SecurityPermission;
 import user.dto.EditUserDto;
 import user.dto.NewUserDto;
 import user.dto.UserLoginDto;
+import user.dto.UserLogoutDto;
 import user.facade.UserFacade;
 
 import javax.ejb.EJB;
@@ -84,5 +85,15 @@ public class UserResource {
     public Response deactivateUser(EditUserDto editUserDto,@Context SecurityContext securityContext){
         return Response.ok(this.userFacade.deactivateUser(editUserDto)).build();
     }
+
+    @POST
+    @Path("/logout")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Secured
+    public Response logoutUser(UserLogoutDto userLogoutDto) {
+        return Response.ok(this.userFacade.logoutUser(userLogoutDto)).build();
+    }
+
 
 }

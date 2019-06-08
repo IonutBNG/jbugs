@@ -3,7 +3,7 @@ package bug.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class TitleValidation implements ConstraintValidator<Title, String> {
+public class TitleValidator implements ConstraintValidator<Title, String> {
     @Override
     public void initialize(Title title) {
 

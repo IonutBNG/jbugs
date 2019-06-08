@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = VersionValidation.class)
+@Constraint(validatedBy = VersionValidator.class)
 public @interface Version {
 
     String message() default ValidationMessageCatalog.INVALID_VERSION;

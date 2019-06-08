@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.regex.Pattern;
 
-public class VersionValidation implements ConstraintValidator<Version, String> {
+public class VersionValidator implements ConstraintValidator<Version, String> {
 
     String regex0 = "^(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)$";
 

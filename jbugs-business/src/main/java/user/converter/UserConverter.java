@@ -65,9 +65,14 @@ public class UserConverter {
         userEntity.setMobileNumber(editUserDto.getMobileNumber());
         userEntity.setEmail( editUserDto.getEmail());
         userEntity.setUsername(editUserDto.getUsername());
-        userEntity.setPassword(sha256()
-                .hashString(editUserDto.getPassword(), StandardCharsets.UTF_8)
-                .toString());
+        if (editUserDto.getPassword() == "") {
+            userEntity.setPassword("");
+        }
+        else {
+            userEntity.setPassword(sha256()
+                    .hashString(editUserDto.getPassword(), StandardCharsets.UTF_8)
+                    .toString());
+        }
         userEntity.setCounter(editUserDto.getCounter());
         userEntity.setRoleEntityList(getRoleEntityListFromStringArray(editUserDto.getRoles()));
 

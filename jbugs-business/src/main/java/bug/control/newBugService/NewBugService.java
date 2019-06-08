@@ -6,6 +6,7 @@ import bug.dto.NewBugDto;
 import bug.entity.BugEntity;
 import bug.entity.Severity;
 import bug.validation.BugValidator;
+import jsonfactory.JsonFactory;
 import user.dao.UserDao;
 import user.entity.UserEntity;
 
@@ -32,6 +33,9 @@ public class NewBugService {
     @EJB
     private BugValidator bugValidator;
 
+    @EJB
+    private JsonFactory jsonFactory;
+
     public JsonObject addNewBug(NewBugDto newBugDto){
 
         bugValidator.validateBean(newBugDto);
@@ -48,16 +52,9 @@ public class NewBugService {
         bugEntity.setAssignedTo(userEntity);
         bugDao.createBug(bugEntity);
 
-        return generateJson();
+        return jsonFactory.getNewUserJSON();
     }
 
-
-    private JsonObject generateJson(){
-        JsonObject jsonObject = Json.createObjectBuilder()
-                .add("status", "OK")
-                .build();
-        return jsonObject;
-    }
 
     public UserEntity findUserByUsername(String username){
         return userDao.getUserByUsername(username);
