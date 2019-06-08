@@ -87,10 +87,12 @@ public class UserAuthenticationService {
                 .hashString(userLoginDto.getPassword(), StandardCharsets.UTF_8)
                 .toString();
 
+
         if (!userEntity.getPassword().equals(encryptedPass)){
             userEntity.setCounter(userEntity.getCounter()-1);
             this.userDao.setCounter(userEntity);
             return false;
+//            throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
         }
 
         return true;

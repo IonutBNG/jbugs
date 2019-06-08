@@ -1,9 +1,19 @@
-import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
+import {Component, EventEmitter, OnChanges, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {Bug} from "../bug-model/bug-table";
-import {MatDialog, MatDialogConfig, MatPaginator, MatSort, MatTableDataSource, PageEvent} from "@angular/material";
+import {
+  MatButton,
+  MatDialog,
+  MatDialogConfig,
+  MatPaginator,
+  MatSort,
+  MatTableDataSource,
+  PageEvent
+} from "@angular/material";
 import {ViewBugComponent} from "../view-bug/view-bug.component";
 import {BugService} from "../services/bug-service/bug.service";
 import {AddBugComponent} from "../add-bug/add-bug.component";
+import {BugSublist} from "../bug-model/bug-sublist";
+
 
 
 @Component({
@@ -20,44 +30,67 @@ export class BugTableComponent implements OnInit {
   constructor( private dialog: MatDialog,
                private bugService: BugService) { }
 
+
   public displayedColumns: string[] = ['title', 'target_date','status','severity', 'createdByUser','assignedTo', 'actions'];
 
   public bugs : Bug[];
+  public sortedBugs : boolean = false;
+
+  changedBug : Bug;
 
   loadComponent = false;
 
-  length: any;
-  pageSize: any;
-
   transitions : String[];
+
+  sortBy : string;
+  filterBy: string;
+  pageNumber : number;
+  pageSize: number;
 
   @Output()
   page: EventEmitter<PageEvent>
 
   public dataSource : any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit() {
 
+    this.getAllBugs();
+
+    console.log(this.sortedBugs);
+
+    this.dialogConfig = new MatDialogConfig();
+  }
+
+  getAllBugs(){
     this.bugService.getAllBugs().subscribe(
       bugs => {
         this.bugs = bugs;
         this.dataSource =  new MatTableDataSource<Bug>(bugs);
         this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-
       }
     );
 
-    console.log(this.page);
-    this.dialogConfig = new MatDialogConfig();
   }
+
+  getSortedBugsList(newBugSubList : BugSublist){
+    this.bugService.getSublist(newBugSubList).subscribe(
+      newBugList => {
+        this.bugs = newBugList;
+        console.log(this.bugs);
+
+        this.dataSource =  new MatTableDataSource<Bug>(newBugList);
+        this.dataSource.paginator = this.paginator;
+      }
+    );
+
+  }
+
 
   addBug(){
     this.dialogConfigSettup();
     this.dialog.open(AddBugComponent, this.dialogConfig);
-    this.ngOnInit();
+    this.getAllBugs();
   }
 
   viewBugPopUp(component: TemplateRef<ViewBugComponent>){
@@ -73,13 +106,54 @@ export class BugTableComponent implements OnInit {
   }
 
 
-  applyChanges(sortvalue : string, filtervalue : string, pageIndex : number, pageSize : number){
-      console.log(sortvalue, filtervalue, pageIndex, pageSize );
+  applyChanges(field : string, value : string, pageIndex : number, pageSize : number){
+     var newBugSublist : BugSublist = {field, value, pageNumber: pageIndex, pageSize};
+
+     this.sortBy = field;
+     this.filterBy = value;
+     this.pageNumber = pageIndex;
+     this.pageSize = pageSize;
+
+     this.getSortedBugsList(newBugSublist);
+     this.sortedBugs = true;
   }
 
 
+  applyChangesNext(){
+    this.paginator.nextPage();
+
+    var nextPageIndex = this.pageNumber + 1;
+    console.log(this.pageNumber+ " "+ nextPageIndex);
+
+    (<HTMLInputElement> document.getElementById("prevbtn")).disabled = false;
+
+    if(this.bugs.length == this.pageSize){
+      this.applyChanges(this.sortBy, this.filterBy, nextPageIndex, this.pageSize);
+    }else {
+      (<HTMLInputElement> document.getElementById("nextbtn")).disabled = true;
+    }
+
+  }
+
+  applyChangesPrev(){
+    this.paginator.previousPage();
+
+    var prevPageIndex = this.pageNumber - 1;
+
+    (<HTMLInputElement> document.getElementById("nextbtn")).disabled = false;
+
+    if(prevPageIndex >= 0){
+      this.applyChanges(this.sortBy, this.filterBy, prevPageIndex, this.pageSize);
+    }else {
+      (<HTMLInputElement> document.getElementById("prevbtn")).disabled = true;
+    }
+
+  }
+
+  //get possible transitions
   openMenu(status: string){
     console.log("BUG STATUS"+status);
+    this.transitions = [];
 
     this.bugService.getPossibleTransitions(status).subscribe(
       res => {
@@ -88,9 +162,10 @@ export class BugTableComponent implements OnInit {
         console.log(this.transitions);
       }
     );
+
   }
 
-
+  //change bug status
   setTransition(id : number, title: string, description: string, version: string, targetDate: string, status: string,
                 fixedVersion: string, severity: string, createdByUser: string, assignedTo: string){
 
@@ -98,12 +173,26 @@ export class BugTableComponent implements OnInit {
 
     this.bugService.setStatus(viewBug).subscribe(
       res => {
-        console.log(res);
+        this.changedBug = res;
         console.log(viewBug);
+        this.transitions = null;
       }
     );
 
-    this.ngOnInit();
+    if(this.sortedBugs == false){
+      this.getAllBugs();
+    }else {
+      this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, this.pageSize);
+    }
+
+  }
+
+
+  keyDownFunction(event, string : string) {
+    if(event.keyCode == 13) {
+      console.log('you just clicked enter'+string);
+      this.applyChanges('title', string, this.pageNumber, this.pageSize);
+    }
   }
 
 }

@@ -39,6 +39,7 @@ import { AddBugComponent } from './add-bug/add-bug.component';
 
 import {MatSelectModule} from '@angular/material/select';
 import {MatSortModule} from '@angular/material/sort';
+import { StatusChangeComponent } from './status-change/status-change.component';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import {MatSortModule} from '@angular/material/sort';
     ViewBugComponent,
     AuthenticationInterceptorComponent,
     ViewBugComponent,
-    AddBugComponent,
+    AddBugComponent, StatusChangeComponent
   ],
   imports: [
     BrowserModule,
@@ -102,7 +103,7 @@ import {MatSortModule} from '@angular/material/sort';
   ],
   bootstrap: [AppComponent],
   entryComponents: [AddUserComponent,
-    ViewBugComponent,BugTableComponent]
+    ViewBugComponent,BugTableComponent, StatusChangeComponent, StatusChangeComponent]
 })
 export class AppModule {
 }
