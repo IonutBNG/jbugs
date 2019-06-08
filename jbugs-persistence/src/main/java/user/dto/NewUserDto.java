@@ -30,8 +30,7 @@ public class NewUserDto implements BaseDto {
     @Password
     private String password;
 
-    //TODO add RoleDTo
-    //private RoleDto[] roles;
+    private String[] roles;
 
     public NewUserDto(String firstName, String lastName, String mobileNumber, String email) {
         this.firstName = firstName;
@@ -91,4 +90,11 @@ public class NewUserDto implements BaseDto {
         this.password = password;
     }
 
+    public String[] getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String[] roles) {
+        this.roles = roles;
+    }
 }

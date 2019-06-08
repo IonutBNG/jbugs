@@ -47,9 +47,9 @@ public class EditUserService {
         validateIfEmailExists(editUserDto);
 
         //handle the activate user
-        if (editUserDto.isActivate()) {
-            editUserDto.setCounter(COUNTER_INIT);
-        }
+//        if (editUserDto.isActivate()) {
+//            editUserDto.setCounter(COUNTER_INIT);
+//        }
 
         //update the user
         userDao.editUser(this.userConverter.convertEditDtoToEntity(editUserDto));

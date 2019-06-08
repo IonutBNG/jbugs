@@ -93,6 +93,10 @@ public class UserDao {
                 .setParameter(UserEntity.PASSWORD, userEntity.getPassword())
                 .setParameter(UserEntity.COUNTER, userEntity.getCounter())
                 .executeUpdate();
+
+        //updating roles
+        UserEntity userEntityUpdated = this.getUserByUsername(userEntity.getUsername());
+        userEntityUpdated.setRoleEntityList(userEntity.getRoleEntityList());
     }
 
     public List<UserEntity> getAllUsers(){
