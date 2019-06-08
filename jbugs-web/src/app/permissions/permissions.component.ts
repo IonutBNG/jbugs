@@ -92,6 +92,7 @@ export class PermissionsComponent implements OnInit {
   private updatePermission(event, permission: string){
     var checked = event.checked;
     this.findRole(checked, this.selectedValuePermission, permission);
+    this.toastMessageSuccess();
   }
 
   private findRole(checked: boolean, roleValue: string, permValue: string) {
