@@ -8,6 +8,8 @@ import bug.entity.Severity;
 import utils.BugStatus;
 
 import javax.ejb.Stateless;
+import java.sql.Date;
+import java.util.Calendar;
 
 @Stateless
 public class BugConverter {
@@ -20,7 +22,11 @@ public class BugConverter {
         bugEntity.setDescription(newBugDto.getDescription());
         bugEntity.setVersion(newBugDto.getVersion());
         bugEntity.setFixedVersion(newBugDto.getFixedVersion());
-        bugEntity.setTargetDate(newBugDto.getTargetDate());
+        //TODO check where the time gets messed up
+        Calendar c = Calendar.getInstance();
+        c.setTime(newBugDto.getTargetDate());
+        c.add(Calendar.DAY_OF_MONTH, 1);
+        bugEntity.setTargetDate(new Date(c.getTimeInMillis()));
         bugEntity.setStatus(BugStatus.getBugStatusByString("Open"));
         bugEntity.setSeverity(Severity.getSeverityByString(newBugDto.getSeverity()));
 
