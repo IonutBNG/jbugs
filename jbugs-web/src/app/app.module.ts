@@ -33,20 +33,17 @@ import { BugTableComponent } from './bug-table/bug-table.component';
 import { ViewBugComponent } from './view-bug/view-bug.component';
 
 import {MatInputModule} from '@angular/material/input';
-<<<<<<< HEAD
+
 import {AuthenticationInterceptorComponent} from "./authentication-interceptor/authentication-interceptor.component";
 import {PermissionsComponent} from "./permissions/permissions.component";
 import {HomeComponent} from "./home/home.component";
 import {AddBugComponent} from "./add-bug/add-bug.component";
-=======
-import { AuthenticationInterceptorComponent } from './authentication-interceptor/authentication-interceptor.component';
-import { AddBugComponent } from './add-bug/add-bug.component';
-
-import {MatSelectModule} from '@angular/material/select';
-import {MatSortModule} from '@angular/material/sort';
 
 
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -61,10 +58,7 @@ import {MatSortModule} from '@angular/material/sort';
     PermissionsComponent,
     HomeComponent,
     AuthenticationInterceptorComponent,
-<<<<<<< HEAD
-=======
     ViewBugComponent,
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
     AddBugComponent
   ],
   imports: [
@@ -112,12 +106,10 @@ import {MatSortModule} from '@angular/material/sort';
     ],
   bootstrap: [AppComponent],
   entryComponents: [AddUserComponent,
-<<<<<<< HEAD
     ViewBugComponent,BugTableComponent, AddBugComponent
   ]
-=======
-    ViewBugComponent,BugTableComponent]
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+
+
 })
 export class AppModule {
 }

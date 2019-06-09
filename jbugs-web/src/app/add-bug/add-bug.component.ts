@@ -16,7 +16,6 @@ import {AuthService} from "../services/auth-service/auth.service";
 export class AddBugComponent implements OnInit {
 
   public users: User[];
-  public bugs : Bug[];
 
   public counter : number = 0;
 
@@ -36,25 +35,12 @@ export class AddBugComponent implements OnInit {
 
   ngOnInit() {
 
-<<<<<<< HEAD
-  this.userService.getAllUsers().subscribe(
-    users => {
-      this.users = users;
-    }
-  );
-=======
     this.userService.getUsersWithBugManagement().subscribe(
       users => {
         this.users = users;
       }
     );
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 
-  this.bugService.getAllBugs().subscribe(
-    bugs => {
-      this.bugs = bugs;
-    }
-  );
 
   this.bugService.getSeverityValues().subscribe(
       severity => {

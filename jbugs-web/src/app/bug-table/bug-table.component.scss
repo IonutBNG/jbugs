@@ -63,11 +63,6 @@ label {
   width: 150px;
   margin-left: 10px;
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 .option:disabled {
   background: rgba(140, 145, 149, 0.6);
   color: black;
@@ -76,8 +71,6 @@ label {
 :host ::ng-deep.mat-paginator .mat-paginator-container {
   justify-content: flex-end;
 }
-<<<<<<< HEAD
-=======
 
 :host ::ng-deep.mat-paginator .mat-paginator-container .mat-paginator-navigation-previous  {
   visibility: hidden;
@@ -90,7 +83,6 @@ label {
 .searchbox {
   margin-top: 20px;
 }
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 
 :host ::ng-deep.mat-paginator .mat-paginator-container .mat-paginator-navigation-previous  {
   visibility: hidden;

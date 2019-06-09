@@ -15,10 +15,6 @@
 <div class = "sortheader form-group">
     <div class="row">
     <div class="col">
-<<<<<<< HEAD
-=======
-<!--      <input class = "form-control searchbox" type="text" id="filter" name="filter"  equired #filtervalue="ngModel" ngModel>-->
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       <form (keydown)="keyDownFunction($event,filtervalue.value)">
         <input class = "form-control searchbox" placeholder="Search by title.." type="text" id="filter" name="filter"  required #filtervalue="ngModel" ngModel>
       </form>
@@ -43,11 +39,7 @@
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef>
         Title
-<<<<<<< HEAD
-        <button (click)="applyChanges( 'title', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
-=======
           <span class="arrow" (click)="applyChanges( 'title', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.title}} </td>
     </ng-container>
@@ -55,12 +47,7 @@
     <ng-container matColumnDef="target_date">
       <th mat-header-cell *matHeaderCellDef>
         Date
-<<<<<<< HEAD
-
-        <button (click)="applyChanges( 'assignedTo', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
-=======
         <span class="arrow" (click)="applyChanges( 'target_date', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.targetDate}} </td>
     </ng-container>
@@ -68,11 +55,7 @@
     <ng-container  matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>
         Status
-<<<<<<< HEAD
-        <button (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
-=======
-        <span class="arrow" (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
+        <span class="arrow" (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>2
       </th>
       <td mat-cell *matCellDef="let bugs" >
 <!--        {{bugs.status}}-->
@@ -97,11 +80,7 @@
     <ng-container matColumnDef="severity">
       <th mat-header-cell *matHeaderCellDef>
         Severity
-<<<<<<< HEAD
-        <button (click)="applyChanges( 'severity', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
-=======
         <span class="arrow" (click)="applyChanges( 'severity', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       </th>
       <td mat-cell *matCellDef="let bugs">
         {{bugs.severity}}
@@ -111,11 +90,7 @@
     <ng-container matColumnDef="createdByUser">
       <th mat-header-cell *matHeaderCellDef>
         Created By
-<<<<<<< HEAD
-        <button (click)="applyChanges( 'createdByUser', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
-=======
         <span class="arrow" (click)="applyChanges( 'createdByUser', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.createdByUser}} </td>
     </ng-container>
@@ -123,11 +98,7 @@
     <ng-container matColumnDef="assignedTo">
       <th mat-header-cell *matHeaderCellDef>
         Assigned To
-<<<<<<< HEAD
-        <button (click)="applyChanges( 'assignedTo', filtervalue.value, paginator.pageIndex, paginator.pageSize)">  <span>&#8595;</span> </button>
-=======
         <span class="arrow" (click)="applyChanges( 'assignedTo', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
       </th>
       <td mat-cell *matCellDef="let bugs"> {{bugs.assignedTo}} </td>
     </ng-container>
@@ -152,14 +123,6 @@
   <button class = "paginatorbtn"  id="prevbtn" mat-icon-button (click)="applyChangesPrev()"> Prev </button>
 
   <mat-paginator
-<<<<<<< HEAD
-                 [length]="pageNumber"
-                 [pageSize]="pageSize"
-                 [pageSizeOptions]="[5, 10, 25, 50]"
-  >
-  </mat-paginator>
-</div>
-=======
                  (page)="onPaginateChange($event)"
                  [length]="pageNumber"
                  [pageSize]="pageSize"
@@ -168,5 +131,4 @@
 
   >
   </mat-paginator>
->>>>>>> 1020c8349eb8d14ececc6f5cac233fb196363d12
 </div>
