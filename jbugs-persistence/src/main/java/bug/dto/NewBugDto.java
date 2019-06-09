@@ -3,6 +3,7 @@ package bug.dto;
 import bug.validation.*;
 import utils.BaseDto;
 
+import java.sql.Blob;
 import java.sql.Date;
 
 public class NewBugDto implements BaseDto {
@@ -32,6 +33,8 @@ public class NewBugDto implements BaseDto {
 
     @AssignedTo
     private String assignedTo;
+
+    private String attachment;
 
     public NewBugDto() {
     }
@@ -116,5 +119,13 @@ public class NewBugDto implements BaseDto {
 
     public void setAssignedTo(String assignedTo) {
         this.assignedTo = assignedTo;
+    }
+
+    public String getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(String attachment) {
+        this.attachment = attachment;
     }
 }

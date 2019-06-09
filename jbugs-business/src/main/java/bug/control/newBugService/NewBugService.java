@@ -6,6 +6,8 @@ import bug.dto.NewBugDto;
 import bug.entity.BugEntity;
 import bug.entity.Severity;
 import bug.validation.BugValidator;
+import exeptions.BusinessException;
+import exeptions.ExceptionMessageCatalog;
 import jsonfactory.JsonFactory;
 import user.dao.UserDao;
 import user.entity.UserEntity;
@@ -13,6 +15,8 @@ import user.entity.UserEntity;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.json.JsonObject;
+import javax.sql.rowset.serial.SerialBlob;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -48,10 +52,15 @@ public class NewBugService {
         userEntity2 = findUserByUsername(newBugDto.getCreatedByUser());
 
         bugEntity.setCreatedByUser(userEntity2);
+
         bugEntity.setAssignedTo(userEntity);
+        bugEntity.setAttachment(newBugDto.getAttachment().getBytes());
+
         bugDao.createBug(bugEntity);
 
         return jsonFactory.getNewUserJSON();
+
+
     }
 
 

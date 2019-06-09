@@ -6,6 +6,7 @@ import utils.BugStatus;
 
 import javax.persistence.*;
 
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -69,6 +70,10 @@ public class BugEntity extends BaseEntity<Long> {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "assignedTo")
     private UserEntity assignedTo;
+
+    @Lob
+    @Column(name = "attachment", nullable = false)
+    private byte[] attachment;
 
 
     public BugEntity() {
@@ -203,5 +208,13 @@ public class BugEntity extends BaseEntity<Long> {
                 ", createdByUser=" + createdByUser +
                 ", assignedTo=" + assignedTo +
                 '}';
+    }
+
+    public byte[] getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(byte[] attachment) {
+        this.attachment = attachment;
     }
 }

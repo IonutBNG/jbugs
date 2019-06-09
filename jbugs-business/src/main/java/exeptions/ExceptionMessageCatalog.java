@@ -51,11 +51,12 @@ public class ExceptionMessageCatalog {
             "Date is in an invalid format!");
 
     public static final ExceptionMessage BUG_INVALID_SEVERITY = new ExceptionMessage("BUG-005",
-            "Severity is in an invalid format!");
+            "Severity is in an invalid format");
 
     public static final ExceptionMessage BUG_INVALID_USER = new ExceptionMessage("BUG-005",
-            "Severity is in an invalid format!");
+            "The assigned user is invalid");
 
 
-
+    public static final ExceptionMessage BUG_INVALID_ATTACHMENT = new ExceptionMessage("BUG-007",
+            "Attachment is in an invalid format");
 }
