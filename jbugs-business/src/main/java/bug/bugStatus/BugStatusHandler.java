@@ -20,10 +20,10 @@ public class BugStatusHandler {
      */
     private static final ImmutableMap<BugStatus, List<BugStatus>> bugMapper =
             ImmutableMap.of(BugStatus.OPEN, Arrays.asList(BugStatus.IN_PROGRESS, BugStatus.REJECTED),
-                            BugStatus.REJECTED, Arrays.asList(BugStatus.CLOSED),
+                            BugStatus.REJECTED, Arrays.asList(),
                             BugStatus.IN_PROGRESS, Arrays.asList(BugStatus.REJECTED, BugStatus.INFO_NEEDED, BugStatus.FIXED),
                             BugStatus.INFO_NEEDED, Arrays.asList(BugStatus.IN_PROGRESS),
-                            BugStatus.FIXED, Arrays.asList(BugStatus.OPEN, BugStatus.CLOSED));
+                            BugStatus.FIXED, Arrays.asList(BugStatus.OPEN));
 
     /**
      * Returns the transitions that can be made from the current busStatus

@@ -4,6 +4,7 @@ import bug.bugStatus.BugStatusHandler;
 import bug.converter.BugConverter;
 import bug.dao.BugDao;
 import bug.dto.ViewBugDto;
+import jsonfactory.JsonFactory;
 import utils.BugStatus;
 
 import javax.ejb.EJB;
@@ -30,6 +31,9 @@ public class BugStatusService {
     @EJB
     private BugConverter bugConverter;
 
+    @EJB
+    private JsonFactory jsonFactory;
+
     /**
      * Calls the getPossibleTransitions method from BugStatusHandler
      * @param bugStatus used as a parameter in the call
@@ -52,15 +56,14 @@ public class BugStatusService {
     }
 
     /**
-     * Generates Json
-     * @param jwt used in the Json
-     * @return JsonObject
+     * Calls the closeBug method from dao
+     * Uses as a parameter for the call its own parameter
+     * Returns a Json with the success message
+     * @param id used in the method call
+     * @return JSonObject
      */
-    private JsonObject generateJson(String jwt){
-        JsonObject jsonObject = Json.createObjectBuilder()
-                .add("status", jwt)
-                .build();
-        return jsonObject;
+    public JsonObject closeBug(Long id) {
+        this.bugDao.closeBug(id);
+        return this.jsonFactory.getCloseBugJSON();
     }
-
 }

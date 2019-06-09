@@ -86,6 +86,13 @@ public class BugResource {
         return Response.ok().entity(this.bugFacade.editBug(editBugDto)).build();
     }
 
+    @PUT
+    @Path("/close-bug/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Secured(permissionsAllowed = SecurityPermission.BUG_CLOSE)
+    public Response closeBug(@PathParam("id")Long id){
+        return Response.ok().entity(this.bugFacade.closeBug(id)).build();
+    }
 
     @GET
     @Path("/get-statistics")

@@ -78,4 +78,14 @@ public class BugDao {
                 .setParameter(BugEntity.ID, bugEntity.getId());
     }
 
+
+    /**
+     * Finds the BugEntity with the id : "id"
+     * Sets the status to CLOSED
+     * @param id used for the entity find
+     */
+    public void closeBug(Long id) {
+        this.entityManager.find(BugEntity.class, id).setStatus(BugStatus.CLOSED);
+
+    }
 }

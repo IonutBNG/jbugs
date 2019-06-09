@@ -80,6 +80,17 @@ public class BugFacade {
         return this.editBugService.editBug(editBugDto);
     }
 
+    /**
+     * Calls the closeBug method from service
+     * Uses as a parameter for the call its own parameter
+     * Returns the result received from the method call
+     * @param id used in the method call
+     * @return JSonObject
+     */
+    public JsonObject closeBug(Long id) {
+        return this.bugStatusService.closeBug(id);
+    }
+
     public BugStatisticsDto getStatistics() {
         return this.bugViewService.getStatistics();
     }

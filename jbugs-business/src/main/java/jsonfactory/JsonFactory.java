@@ -12,6 +12,7 @@ import javax.json.JsonObject;
  */
 @Stateless
 public class JsonFactory {
+
     public JsonFactory() {
     }
 
@@ -55,6 +56,12 @@ public class JsonFactory {
                 .add("status", "Bug edited succesfully")
                 .build();
         return jsonObject;
+    }
+
+    public JsonObject getCloseBugJSON(){
+        return Json.createObjectBuilder()
+                .add("status", "Bug has been successfully closed")
+                .build();
     }
 
 
