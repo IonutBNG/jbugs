@@ -3,6 +3,7 @@ package bug.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.sql.Date;
+import java.util.regex.Pattern;
 
 public class DateValidation implements ConstraintValidator<DateV, Date> {
 
@@ -15,9 +16,9 @@ public class DateValidation implements ConstraintValidator<DateV, Date> {
     @Override
     public boolean isValid(Date date, ConstraintValidatorContext constraintValidatorContext) {
 
-        if (date == null || date.equals("")) {
-            return false;
-        }
+//        if (date == null || date.equals("")) {
+//            return false;
+//        }
 
 //        Pattern pattern = Pattern.compile(regex);
 //        return pattern.matcher(date.toString()).matches();

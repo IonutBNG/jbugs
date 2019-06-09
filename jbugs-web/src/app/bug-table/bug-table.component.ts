@@ -65,7 +65,6 @@ export class BugTableComponent implements OnInit {
 
     this.pageSizeOptions = [5,10, 25];
 
-    this.paginator.pageSizeOptions = [5,10, 25];
     this.getAllBugs();
     this.subscribeEmitter();
 
@@ -92,7 +91,6 @@ export class BugTableComponent implements OnInit {
     this.bugService.getAllBugs().subscribe(
       bugs => {
         this.bugs = bugs;
-
         this.dataSource =  new MatTableDataSource<Bug>(this.bugs);
         this.dataSource.paginator = this.paginator;
       }
@@ -105,7 +103,7 @@ export class BugTableComponent implements OnInit {
       newBugList => {
         this.bugs = newBugList;
         console.log(this.bugs);
-
+        this.paginator.pageSizeOptions = [5,10, 25];
         this.dataSource =  new MatTableDataSource<Bug>(newBugList);
         this.dataSource.paginator = this.paginator;
       }
@@ -156,7 +154,7 @@ export class BugTableComponent implements OnInit {
     var newBugSublist : BugSublist = {field, value, pageNumber: pageIndex, pageSize};
 
     this.sortBy = field;
-    this.filterBy = value;
+    this.filterBy = "";
     this.pageNumber = pageIndex;
     this.pageSize = pageSize;
 
@@ -176,7 +174,7 @@ export class BugTableComponent implements OnInit {
 
     if(this.bugs.length == this.pageSize){
       this.applyChanges(this.sortBy, this.filterBy, nextPageIndex, this.pageSize);
-    }else {
+    }else if(this.sortedBugs == true){
       (<HTMLInputElement> document.getElementById("nextbtn")).disabled = true;
     }
 
@@ -189,13 +187,9 @@ export class BugTableComponent implements OnInit {
 
     (<HTMLInputElement> document.getElementById("nextbtn")).disabled = false;
 
-    var prevPageIndex = this.pageNumber - 1;
-
-    (<HTMLInputElement> document.getElementById("nextbtn")).disabled = false;
-
     if(prevPageIndex >= 0){
       this.applyChanges(this.sortBy, this.filterBy, prevPageIndex, this.pageSize);
-    }else {
+    }else if(this.sortedBugs == true) {
       (<HTMLInputElement> document.getElementById("prevbtn")).disabled = true;
     }
 
@@ -248,12 +242,20 @@ export class BugTableComponent implements OnInit {
 
 
   onPaginateChange(event){
-    console.log(JSON.stringify("Current page index: " + event.pageSize));
     if (this.sortedBugs == true) {
+      console.log(true);
       this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, event.pageSize);
     } else {
       this.getAllBugs();
     }
+  }
+
+  clearFilters(){
+    this.sortedBugs = false;
+    this.filterBy = "";
+    (<HTMLInputElement> document.getElementById("filter")).value = "";
+    this.ngOnInit();
+
   }
 
 

@@ -22,7 +22,6 @@ public class NewBugDto implements BaseDto {
 
     private String status;
 
-    @Version
     private String fixedVersion;
 
     @Severity
@@ -34,7 +33,6 @@ public class NewBugDto implements BaseDto {
     @AssignedTo
     private String assignedTo;
 
-    private String attachment;
 
     public NewBugDto() {
     }
@@ -121,11 +119,5 @@ public class NewBugDto implements BaseDto {
         this.assignedTo = assignedTo;
     }
 
-    public String getAttachment() {
-        return attachment;
-    }
 
-    public void setAttachment(String attachment) {
-        this.attachment = attachment;
-    }
 }

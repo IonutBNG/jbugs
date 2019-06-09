@@ -50,14 +50,14 @@ public class BugEntity extends BaseEntity<Long> {
     @Column(name = "version", nullable = false)
     private String version;
 
-    @Column(name = "target_date", nullable = false)
+    @Column(name = "target_date")
     private Date targetDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private BugStatus status;
 
-    @Column(name = "fixed_version", nullable = true)
+    @Column(name = "fixed_version")
     private String fixedVersion;
 
     @Enumerated(EnumType.STRING)
@@ -72,9 +72,6 @@ public class BugEntity extends BaseEntity<Long> {
     @JoinColumn(name = "assignedTo")
     private UserEntity assignedTo;
 
-    @Lob
-    @Column(name = "attachment", nullable = false)
-    private byte[] attachment;
 
 
     public BugEntity() {
@@ -211,11 +208,5 @@ public class BugEntity extends BaseEntity<Long> {
                 '}';
     }
 
-    public byte[] getAttachment() {
-        return attachment;
-    }
 
-    public void setAttachment(byte[] attachment) {
-        this.attachment = attachment;
-    }
 }

@@ -54,7 +54,7 @@ public class NewBugService {
         bugEntity.setCreatedByUser(userEntity2);
 
         bugEntity.setAssignedTo(userEntity);
-        bugEntity.setAttachment(newBugDto.getAttachment().getBytes());
+
 
         bugDao.createBug(bugEntity);
 
