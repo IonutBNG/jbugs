@@ -63,13 +63,22 @@ export class AddUserComponent implements OnInit {
 
   addNewUser(firstname: string,  lastName: string,  mobileNumber: string,  email: string,
              password: string) {
-    var newUser: AddUserModel ={firstName:firstname, lastName:lastName,mobileNumber:mobileNumber,email:email,
-      password:password, roles: this.selectedRoles};
-    this.userService.addNewUser(newUser).subscribe( res => {
-      console.log(res);
-      this.checkResponse(res);
-    },
-      err => { console.log(err) });
+    if (this.checkRoleValidation()) {
+      var newUser: AddUserModel = {
+        firstName: firstname, lastName: lastName, mobileNumber: mobileNumber, email: email,
+        password: password, roles: this.selectedRoles
+      };
+      this.userService.addNewUser(newUser).subscribe(res => {
+          console.log(res);
+          this.checkResponse(res);
+        })
+    } else
+      this.closeDialogError("No role selected!");
+  }
+
+  private checkRoleValidation(): boolean{
+    return !(this.selectedRoles === undefined || this.selectedRoles.length === 0);
+
   }
 
   private checkResponse(res) {

@@ -37,6 +37,7 @@ import {AuthenticationInterceptorComponent} from "./authentication-interceptor/a
 import {PermissionsComponent} from "./permissions/permissions.component";
 import {HomeComponent} from "./home/home.component";
 import {AddBugComponent} from "./add-bug/add-bug.component";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import {AddBugComponent} from "./add-bug/add-bug.component";
     MatDatepickerModule,
     NgbModule.forRoot(),
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ScrollingModule
   ],
   exports: [
     ViewBugComponent,

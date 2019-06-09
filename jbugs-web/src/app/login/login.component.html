@@ -3,14 +3,13 @@
   <div class="split left">
     <ngb-carousel class="a">
       <ng-template ngbSlide>
-        <img [src]="image1" alt="Not found ...">
-<!--        <div class="carousel-caption">-->
-<!--          <h3>First slide label</h3>-->
-<!--          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>-->
-<!--        </div>-->
+        <img [src]="imagesService.image1" alt="Not found ...">
       </ng-template>
       <ng-template ngbSlide>
-        <img [src]="image2" alt="Not found ...">
+        <img [src]="imagesService.image2" alt="Not found ...">
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="imagesService.image3" alt="Not found ...">
       </ng-template>
     </ngb-carousel>
   </div>
