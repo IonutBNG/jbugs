@@ -67,10 +67,10 @@
                   {{bugs.status}} </button>
           <mat-menu #menu="matMenu" [overlapTrigger]="true">
             <div>
-              <button *ngFor="let tr of transitions" mat-menu-item
-               (click)="setTransition(bugs.id, bugs.title,bugs.description, bugs.version, bugs.targetDate, tr, bugs.fixedVersion, bugs.severity, bugs.createdByUser, bugs.assignedTo)">
-                {{tr}}
-              </button>
+<!--              <button *ngFor="let tr of transitions" mat-menu-item-->
+<!--&lt;!&ndash;               (click)="setTransition(bugs.id, bugs.title,bugs.description, bugs.version, bugs.targetDate, tr, bugs.fixedVersion, bugs.severity, bugs.createdByUser, bugs.assignedTo)">&ndash;&gt;-->
+<!--                {{tr}}-->
+<!--              </button>-->
             </div>
           </mat-menu>
         </ng-template>
