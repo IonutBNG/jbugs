@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Optional} from '@angular/core';
 import {MatDialogRef} from "@angular/material";
 import {User} from "../user-model/user-table";
 import {UserService} from "../services/user-service/user.service";
 import {NewBugModel} from "../bug-model/new-bug";
 import {BugService} from "../services/bug-service/bug.service";
 import {ToastrService} from "ngx-toastr";
-import {Bug} from "../bug-model/bug-table";
 import {AuthService} from "../services/auth-service/auth.service";
+import {BugEmmitterService} from "../services/bug-emitter-service/bug-emmitter.service";
 
 @Component({
   selector: 'app-add-bug',
@@ -21,11 +21,12 @@ export class AddBugComponent implements OnInit {
 
   public severity : String[];
 
-  constructor(private dialogRef: MatDialogRef<AddBugComponent>,
+  constructor(@Optional() private dialogRef: MatDialogRef<AddBugComponent>,
               private userService: UserService,
               private bugService: BugService,
               private toast: ToastrService,
-              private authService : AuthService) { }
+              private authService : AuthService,
+              private bugEmitterService : BugEmmitterService) { }
 
    public bugAddedSucces : boolean;
 
@@ -63,6 +64,8 @@ export class AddBugComponent implements OnInit {
         this.okResponse(res);},
         err => {console.log(err)}
       );
+
+      this.bugService.getAllBugs().subscribe();
   }
 
   okResponse(res) {
@@ -83,6 +86,7 @@ export class AddBugComponent implements OnInit {
 
   private closeDialogSuccess(message){
     this.dialogRef.close();
+    this.bugEmitterService.changeEmmiter();
     this.toast.success(message, "Success");
   }
 
@@ -92,9 +96,7 @@ export class AddBugComponent implements OnInit {
   }
 
   onSearchChange(searchValue : string) {
-
     this.counter = searchValue.length + 1;
-
     console.log(searchValue);
   }
 

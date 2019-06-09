@@ -14,7 +14,7 @@ import {BugService} from "../services/bug-service/bug.service";
 import {ViewBugService} from "../services/view-bug-service/view-bug.service";
 import {AddBugComponent} from "../add-bug/add-bug.component";
 import {BugSublist} from "../bug-model/bug-sublist";
-import {version} from "punycode";
+import {BugEmmitterService} from "../services/bug-emitter-service/bug-emmitter.service";
 
 
 
@@ -31,7 +31,8 @@ export class BugTableComponent implements OnInit {
 
   constructor( private dialog: MatDialog,
                private bugService: BugService,
-               private viewBugServ: ViewBugService) { }
+               private viewBugServ: ViewBugService,
+               private bugEmitterService : BugEmmitterService) { }
 
 
   public displayedColumns: string[] = ['title', 'target_date','status','severity', 'createdByUser','assignedTo', 'actions'];
@@ -62,14 +63,31 @@ export class BugTableComponent implements OnInit {
 
   ngOnInit() {
 
+
     this.pageSizeOptions = [5,10, 25];
 
+    this.paginator.pageSizeOptions = [5,10, 25];
     this.getAllBugs();
+    this.subscribeEmitter();
 
     console.log(this.sortedBugs);
 
     this.dialogConfig = new MatDialogConfig();
   }
+
+
+  private subscribeEmitter() {
+    this.bugEmitterService.changeEmitter.subscribe(value => {
+      if (value == true){
+        this.reloadTable()
+      }
+    });
+  }
+
+  private reloadTable(){
+    this.getAllBugs();
+  }
+
 
   getAllBugs(){
     this.bugService.getAllBugs().subscribe(
@@ -79,7 +97,6 @@ export class BugTableComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
       }
     );
-
   }
 
 
@@ -100,7 +117,6 @@ export class BugTableComponent implements OnInit {
   addBug(){
     this.dialogConfigSetup();
     this.dialog.open(AddBugComponent, this.dialogConfig);
-    this.getAllBugs();
   }
 
   viewBugPopUp(component: TemplateRef<ViewBugComponent>, title: string, descr: string, version: string, targetDate: string,
@@ -201,44 +217,44 @@ export class BugTableComponent implements OnInit {
 
 
 
-  // setTransition(id : number, title: string, description: string, version: string, targetDate: string, status: string,
-  //               fixedVersion: string, severity: string, createdByUser: string, assignedTo: string){
-  //
-  //   var viewBug : Bug = { id, title, description, version , targetDate, status, fixedVersion, severity, createdByUser, assignedTo};
-  //
-  //   this.bugService.setStatus(viewBug).subscribe(
-  //     res => {
-  //       this.changedBug = res;
-  //       console.log(viewBug);
-  //       this.transitions = null;
-  //     }
-  //   );
+  setTransition(id : number, title: string, description: string, version: string, targetDate: string, status: string,
+      fixedVersion: string, severity: string, createdByUser: string, assignedTo: string){
 
-  //   if(this.sortedBugs == false){
-  //     this.getAllBugs();
-  //   }else {
-  //     this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, this.pageSize);
-  //   }
-  //
-  // }
+      var viewBug : Bug = { id, title, description, version , targetDate, status, fixedVersion, severity, createdByUser, assignedTo};
 
+      this.bugService.setStatus(viewBug).subscribe(
+        res => {
+          this.changedBug = res;
+          console.log(viewBug);
+          this.transitions = null;
+        }
+      );
 
-  // keyDownFunction(event, string : string) {
-  //   if(event.keyCode == 13) {
-  //     console.log('you just clicked enter'+string);
-  //     this.applyChanges('title', string, this.pageNumber, this.pageSize);
-  //   }
-  // }
+    if(this.sortedBugs == false){
+      this.getAllBugs();
+    }else {
+      this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, this.pageSize);
+    }
+
+  }
 
 
-  // onPaginateChange(event){
-  //   console.log(JSON.stringify("Current page index: " + event.pageSize));
-  //   if (this.sortedBugs == true) {
-  //     this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, event.pageSize);
-  //   } else {
-  //     this.getAllBugs();
-  //   }
-  // }
+  keyDownFunction(event, string : string) {
+    if(event.keyCode == 13) {
+      console.log('you just clicked enter'+string);
+      this.applyChanges('title', string, this.pageNumber, this.pageSize);
+    }
+  }
+
+
+  onPaginateChange(event){
+    console.log(JSON.stringify("Current page index: " + event.pageSize));
+    if (this.sortedBugs == true) {
+      this.applyChanges(this.sortBy, this.filterBy, this.pageNumber, event.pageSize);
+    } else {
+      this.getAllBugs();
+    }
+  }
 
 
 }

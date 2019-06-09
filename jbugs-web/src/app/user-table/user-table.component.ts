@@ -17,7 +17,6 @@ import {User} from "../user-model/user-table";
 import {UserActivate} from "../user-model/activate-user";
 import {UserDeactivate} from "../user-model/deactivate-user";
 import {EditUserComponent} from "../edit-user/edit-user.component";
-import {PermissionsComponent} from "../permissions/permissions.component";
 import {UserEmitterService} from "../services/user-emitter-service/user-emitter.service";
 import {EditUserService} from "../services/edit-user-service/edit-user.service";
 

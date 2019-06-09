@@ -31,7 +31,6 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit() {
 
-
   }
 
   addNewUser(firstname: string,  lastName: string,  mobileNumber: string,  email: string,

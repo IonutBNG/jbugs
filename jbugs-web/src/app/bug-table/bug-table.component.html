@@ -2,7 +2,6 @@
 
 <div class="back-div">
 
-
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
       <a class="nav-link" style="font-size: 15px;" routerLinkActive="active" routerLink="/home/bugtable/addbug"
@@ -23,7 +22,7 @@
 
     <div class="col">
       <button class="btn btn-primary btnapply" (click)="getAllBugs()">
-        Reset Bugs Table
+        Clear Filters
       </button>
     </div>
 
@@ -55,7 +54,7 @@
     <ng-container  matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>
         Status
-        <span class="arrow" (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>2
+        <span class="arrow" (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
       </th>
       <td mat-cell *matCellDef="let bugs" >
 <!--        {{bugs.status}}-->
@@ -67,10 +66,10 @@
                   {{bugs.status}} </button>
           <mat-menu #menu="matMenu" [overlapTrigger]="true">
             <div>
-<!--              <button *ngFor="let tr of transitions" mat-menu-item-->
-<!--&lt;!&ndash;               (click)="setTransition(bugs.id, bugs.title,bugs.description, bugs.version, bugs.targetDate, tr, bugs.fixedVersion, bugs.severity, bugs.createdByUser, bugs.assignedTo)">&ndash;&gt;-->
-<!--                {{tr}}-->
-<!--              </button>-->
+              <button *ngFor="let tr of transitions" mat-menu-item
+               (click)="setTransition(bugs.id, bugs.title,bugs.description, bugs.version, bugs.targetDate, tr, bugs.fixedVersion, bugs.severity, bugs.createdByUser, bugs.assignedTo)">
+                {{tr}}
+              </button>
             </div>
           </mat-menu>
         </ng-template>
@@ -127,8 +126,6 @@
                  [length]="pageNumber"
                  [pageSize]="pageSize"
                  [pageSizeOptions]="pageSizeOptions"
-
-
   >
   </mat-paginator>
 </div>

@@ -44,7 +44,7 @@ public class JsonFactory {
         return jsonObject;
     }
 
-    private JsonObject getNewBugJson(){
+    public JsonObject getNewBugJson(){
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("status", "Bug added succesfully")
                 .build();

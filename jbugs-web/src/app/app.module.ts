@@ -13,6 +13,7 @@ import {
   MatButtonModule, MatButtonToggleModule, MatCheckboxModule,
   MatDatepickerModule,
   MatIconModule,
+  MatMenuModule, MatNativeDateModule,  MatRadioModule, MatSelectModule,
   MatMenuModule, MatNativeDateModule, MatRadioModule, MatSelectModule,
   MatSidenavModule,
   MatTableModule
@@ -47,7 +48,6 @@ import {AddBugComponent} from "./add-bug/add-bug.component";
 
 @NgModule({
   declarations: [
-
     AppComponent,
     UserComponent,
     LoginComponent,

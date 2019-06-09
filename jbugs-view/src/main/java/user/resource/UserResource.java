@@ -52,7 +52,7 @@ public class UserResource {
     @GET
     @Path("/users-with-bug-management")
     @Produces(MediaType.APPLICATION_JSON)
-    @Secured(permissionsAllowed = SecurityPermission.USER_MANAGEMENT)
+    @Secured(permissionsAllowed = SecurityPermission.BUG_MANAGEMENT)
     public Response getUsersWithBugManagement(@Context SecurityContext securityContext){
         return Response.ok(userFacade.getUsersWithBugManagement()).build();
     }
