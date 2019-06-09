@@ -5,3 +5,13 @@
 .btn {
   margin-right: 20px;
 }
+
+.bottomButtons {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submitted .ng-invalid{
+  border: 1px solid red;
+}
