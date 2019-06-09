@@ -6,5 +6,5 @@ export interface NewBugModel {
   targetDate : Date;
   severity : string;
   createdByUser: string;
-  assignedTo : string
+  assignedTo : string;
 }

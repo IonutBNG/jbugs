@@ -63,7 +63,6 @@ export class BugTableComponent implements OnInit {
 
   ngOnInit() {
 
-
     this.pageSizeOptions = [5,10, 25];
 
     this.paginator.pageSizeOptions = [5,10, 25];
@@ -93,6 +92,7 @@ export class BugTableComponent implements OnInit {
     this.bugService.getAllBugs().subscribe(
       bugs => {
         this.bugs = bugs;
+
         this.dataSource =  new MatTableDataSource<Bug>(this.bugs);
         this.dataSource.paginator = this.paginator;
       }

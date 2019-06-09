@@ -56,7 +56,10 @@ export class AddBugComponent implements OnInit {
   }
 
   addNewBug(title: string, description: string, version: string, fixedVersion: string, targetDate, severity: string, createdByUser : string, assignedTo : string){
-      var newBug : NewBugModel = { title, description, version, fixedVersion, targetDate, severity, createdByUser, assignedTo};
+
+
+    var newBug : NewBugModel = { title, description, version, fixedVersion, targetDate,
+      severity, createdByUser, assignedTo};
       console.log(newBug);
       this.bugService.addNewBug(newBug).subscribe(
         res => { console.log(res);
