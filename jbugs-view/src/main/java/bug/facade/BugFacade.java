@@ -4,10 +4,7 @@ import bug.control.editBugService.EditBugService;
 import bug.control.newBugService.NewBugService;
 import bug.control.bugStatusService.BugStatusService;
 import bug.control.bugViewService.BugViewService;
-import bug.dto.BugSublistSetterDto;
-import bug.dto.EditBugDto;
-import bug.dto.NewBugDto;
-import bug.dto.ViewBugDto;
+import bug.dto.*;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -81,6 +78,10 @@ public class BugFacade {
      */
     public JsonObject editBug(EditBugDto editBugDto){
         return this.editBugService.editBug(editBugDto);
+    }
+
+    public BugStatisticsDto getStatistics() {
+        return this.bugViewService.getStatistics();
     }
 
 }

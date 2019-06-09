@@ -86,4 +86,13 @@ public class BugResource {
         return Response.ok().entity(this.bugFacade.editBug(editBugDto)).build();
     }
 
+
+    @GET
+    @Path("/get-statistics")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Secured
+    public Response getStatistics() {
+        return Response.ok().entity(this.bugFacade.getStatistics()).build();
+    }
+
 }

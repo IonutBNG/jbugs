@@ -2,8 +2,11 @@ package bug.control.bugViewService;
 
 import bug.converter.BugConverter;
 import bug.dao.BugDao;
+import bug.dto.BugStatisticsDto;
 import bug.dto.BugSublistSetterDto;
 import bug.dto.ViewBugDto;
+import bug.entity.BugEntity;
+import utils.BugStatus;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -61,6 +64,33 @@ public class BugViewService {
      */
     private int getStartingItem(int pageNumber, int pageSize){
         return pageNumber*pageSize;
+    }
+    public BugStatisticsDto getStatistics() {
+        BugStatisticsDto bugStatisticsDto = new BugStatisticsDto();
+        List<BugEntity> allBugs = bugDao.getAllBugs();
+
+        bugStatisticsDto.setTotalBugs(allBugs.size());
+
+        bugStatisticsDto.setTotalOpen(Math.toIntExact(
+                allBugs.stream().filter(p -> ( p.getStatus() == BugStatus.OPEN)).count() ));
+
+        bugStatisticsDto.setTotalInProgress(Math.toIntExact(
+                allBugs.stream().filter(p -> ( p.getStatus() == BugStatus.IN_PROGRESS)).count() ));
+
+        bugStatisticsDto.setTotalRejected(Math.toIntExact(
+                allBugs.stream().filter(p -> ( p.getStatus() == BugStatus.REJECTED)).count() ));
+
+        bugStatisticsDto.setTotalInfoNeeded(Math.toIntExact(
+                allBugs.stream().filter(p -> ( p.getStatus() == BugStatus.INFO_NEEDED)).count() ));
+
+        bugStatisticsDto.setTotalFixed(Math.toIntExact(
+                allBugs.stream().filter(p -> ( p.getStatus() == BugStatus.FIXED)).count() ));
+
+        bugStatisticsDto.setTotalClosed(Math.toIntExact(
+                allBugs.stream().filter(p -> ( p.getStatus() == BugStatus.CLOSED)).count() ));
+
+        return bugStatisticsDto;
+
     }
 
 }
