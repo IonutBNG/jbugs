@@ -51,7 +51,7 @@ public class NewBugService {
         bugEntity.setAssignedTo(userEntity);
         bugDao.createBug(bugEntity);
 
-        return jsonFactory.getNewBugJson();
+        return jsonFactory.getNewUserJSON();
     }
 
 

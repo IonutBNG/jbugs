@@ -28,6 +28,7 @@ public class UserResource {
     @EJB
     private UserFacade userFacade;
 
+
     @POST
     @Path("/authenticate")
     @Consumes(MediaType.APPLICATION_JSON)

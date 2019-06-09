@@ -1,0 +1,32 @@
+<div class="main-div">
+
+  <br>
+  <mat-form-field class="fields" appearance="outline">
+    <mat-label>Role</mat-label>
+    <mat-select [(ngModel)]="selectedValuePermission" (selectionChange)="changeRoleHandler($event.value)">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let role of roles"
+                  [value]="role.type" >{{role.type}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="isChecked">
+      <th mat-header-cell *matHeaderCellDef> Checked </th>
+      <td mat-cell *matCellDef="let element">
+          <mat-checkbox [checked]="element.isChecked" (change)="updatePermission($event, element.permission)"></mat-checkbox>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="permission">
+      <th mat-header-cell *matHeaderCellDef> Permission </th>
+      <td mat-cell *matCellDef="let element"> {{element.permission}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+</div>

@@ -1,0 +1,34 @@
+.fields {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+.main-div {
+  margin: auto;
+  max-width: 50%;
+}
+
+table{
+  width:100%;
+}
+.mat-header-row {
+  font-weight: bold;
+}
+
+.mat-header-cell {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mat-row:nth-child(even) {
+  background-color: white;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #ebebeb;
+}
+.mat-cell{
+  //border-right: solid 0.5px black;
+}

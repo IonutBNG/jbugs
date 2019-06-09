@@ -1,13 +1,73 @@
-.container{
-  align-content: center;
-  max-width: 400px;
-  margin-top: 12vw;
+.split {
+  height: 100%;
+  //width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.left {
+  width: 35%;
+  left: 0;
+  background-color: #dbdbdb;
+  margin: 15px 0 15px 15px;
+}
+
+.right {
+  width: 65%;
+  right: 0;
+  background-color: #111;
+  margin: 15px 15px 15px 0;
+}
+
+img {
+  width: 100%;
 }
 
 .alert-danger {
   text-align: center;
+  font-size: 15px;
 }
 
 .login {
+  text-align: center;
+}
+
+p, h1 {
+  color: #ffffff;
+}
+
+hr {
+  background-color: #ffffff;
+}
+
+.example-container {
+  width: 70%;
+  height: 500px;
+  background-color: transparent;
+}
+
+.example-sidenav-content {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.firstLogin {
+  font-size: 20px;
+  background: #5680E9;
+}
+
+.display-4 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.lead {
   text-align: center;
 }

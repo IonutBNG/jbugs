@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, OnInit, Output, TemplateRef, ViewChild} from '@angular/core';
 import {
   MatDialog,
   MatDialogConfig,
@@ -16,6 +16,10 @@ import {AddUserComponent} from "../add-user/add-user.component";
 import {User} from "../user-model/user-table";
 import {UserActivate} from "../user-model/activate-user";
 import {UserDeactivate} from "../user-model/deactivate-user";
+import {EditUserComponent} from "../edit-user/edit-user.component";
+import {PermissionsComponent} from "../permissions/permissions.component";
+import {UserEmitterService} from "../services/user-emitter-service/user-emitter.service";
+import {EditUserService} from "../services/edit-user-service/edit-user.service";
 
 
 @Component({
@@ -26,23 +30,34 @@ import {UserDeactivate} from "../user-model/deactivate-user";
 export class UserTableComponent implements OnInit {
 
 
-  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'userName', 'counter', 'actions'];
+  public displayedColumns: string[] = ['firstName', 'lastName', 'email', 'mobileNumber', 'username', 'counter', 'actions'];
 
   public users : User[];
   private dialogConfig;
+
+  public dataSource: any;
+  loadComponent = false;
+  private editedUser: User;
 
   constructor(private backendService: BackendService,
               private authService: AuthService,
               private userService: UserService,
               private router: Router,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              private userEmitter: UserEmitterService,
+              private editUserService: EditUserService) { }
 
-   public dataSource: any;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit() {
 
+    this.getAllUsers();
+    this.subscribeEmitter();
+    this.dialogConfig = new MatDialogConfig();
+  }
+
+  public getAllUsers() {
     this.userService.getAllUsers().subscribe(
       (users) => {
         this.users = users as User[];
@@ -50,29 +65,58 @@ export class UserTableComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
       }
     );
+  }
 
-    this.dialogConfig = new MatDialogConfig();
+  private editUserPopup(component: TemplateRef<EditUserComponent>, firstName: string, lastName: string, email: string,
+                mobileNumber: string, userName: string, counter: number) {
+    this.loadComponent = true;
+    this.dialogConfigSetupUser();
+    this.dialog.open(EditUserComponent, this.dialogConfig);
+    this.setUser(firstName, lastName, email, mobileNumber, userName, counter);
+    this.editUserService.viewEditedUser(this.editedUser);
+  }
+
+  private setUser(firstName: string, lastName: string, email: string,
+                  mobileNumber: string, userName: string, counter: number) {
+    this.editedUser = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      mobileNumber: mobileNumber,
+      username: userName,
+      counter: counter
+    };
+  }
+
+  private subscribeEmitter() {
+    this.userEmitter.changeEmitter.subscribe(value => {
+      if (value == true){
+        this.reloadTable()
+      }
+    });
+  }
+
+  private reloadTable(){
+    this.getAllUsers();
   }
 
   edit() {
     alert('Edit');
   }
 
-  logout(){
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
-  }
-
   addUserPopup(){
-    this.dialogConfigSettup();
+    this.dialogConfigSetupUser();
     this.dialog.open(AddUserComponent, this.dialogConfig);
   }
 
-  private dialogConfigSettup(){
-    this.dialogConfig.disableClose= true;
+
+  private dialogConfigSetupUser(){
+    this.dialogConfig.disableClose= false;
     this.dialogConfig.autoFocus = true;
-    this.dialogConfig.width = "50%";
+    this.dialogConfig.width = "40%";
   }
+
+
 
   onChange(username: string, counter: number) {
     //if user is active, deactivate it

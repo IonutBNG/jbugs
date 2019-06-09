@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Input, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {UserModel} from "../../user-model/user-model";
@@ -16,7 +16,6 @@ export class BackendService {
   constructor(private http: HttpClient) {
 
   }
-
 
   /**
    *

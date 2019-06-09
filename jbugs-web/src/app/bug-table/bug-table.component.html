@@ -1,10 +1,20 @@
-<div>
-<button class="btn btn-primary"  (click)="addBug()"> Add Bug </button>
+<div class="container first-back-div">
+
+<div class="back-div">
+
+
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="nav-link" style="font-size: 15px;" routerLinkActive="active" routerLink="/home/bugtable/addbug"
+         (click)="addBug()"> Add Bug </a>
+    </nav>
+  </div>
+
+  <br>
 
 <div class = "sortheader form-group">
     <div class="row">
     <div class="col">
-<!--      <input class = "form-control searchbox" type="text" id="filter" name="filter"  equired #filtervalue="ngModel" ngModel>-->
       <form (keydown)="keyDownFunction($event,filtervalue.value)">
         <input class = "form-control searchbox" placeholder="Search by title.." type="text" id="filter" name="filter"  required #filtervalue="ngModel" ngModel>
       </form>
@@ -45,7 +55,7 @@
     <ng-container  matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef>
         Status
-        <span class="arrow" (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>
+        <span class="arrow" (click)="applyChanges( 'status', filtervalue.value, paginator.pageIndex, paginator.pageSize)">&#9660;</span>2
       </th>
       <td mat-cell *matCellDef="let bugs" >
 <!--        {{bugs.status}}-->
@@ -57,10 +67,10 @@
                   {{bugs.status}} </button>
           <mat-menu #menu="matMenu" [overlapTrigger]="true">
             <div>
-              <button *ngFor="let tr of transitions" mat-menu-item
-               (click)="setTransition(bugs.id, bugs.title,bugs.description, bugs.version, bugs.targetDate, tr, bugs.fixedVersion, bugs.severity, bugs.createdByUser, bugs.assignedTo)">
-                {{tr}}
-              </button>
+<!--              <button *ngFor="let tr of transitions" mat-menu-item-->
+<!--&lt;!&ndash;               (click)="setTransition(bugs.id, bugs.title,bugs.description, bugs.version, bugs.targetDate, tr, bugs.fixedVersion, bugs.severity, bugs.createdByUser, bugs.assignedTo)">&ndash;&gt;-->
+<!--                {{tr}}-->
+<!--              </button>-->
             </div>
           </mat-menu>
         </ng-template>
@@ -96,7 +106,9 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell  *matHeaderCellDef > Details </th>
       <mat-cell *matCellDef="let bugs">
-        <button mat-raised-button class="viewbtn" color="primary" (click)="viewBugPopUp(myView)" >
+        <button mat-raised-button class="viewbtn" color="primary" (click)="viewBugPopUp(myView, bugs.title,
+                    bugs.description, bugs.version, bugs.targetDate, bugs.status, bugs.fixedVersion, bugs.severity,
+                    bugs.createdByUser, bugs.assignedTo)" >
            View
         </button>
        <ng-template #myView> <app-view-bug *ngIf ="loadComponent" ></app-view-bug> </ng-template>
@@ -120,7 +132,3 @@
   >
   </mat-paginator>
 </div>
-
-
-
-

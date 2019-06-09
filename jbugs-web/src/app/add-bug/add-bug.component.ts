@@ -16,7 +16,6 @@ import {AuthService} from "../services/auth-service/auth.service";
 export class AddBugComponent implements OnInit {
 
   public users: User[];
-  public bugs : Bug[];
 
   public counter : number = 0;
 
@@ -30,7 +29,7 @@ export class AddBugComponent implements OnInit {
 
    public bugAddedSucces : boolean;
 
-   token = this.authService.getDecodedToken();
+  token = this.authService.getDecodedToken();
 
   loggedUser : string;
 
@@ -42,20 +41,16 @@ export class AddBugComponent implements OnInit {
       }
     );
 
-    this.bugService.getAllBugs().subscribe(
-      bugs => {
-        this.bugs = bugs;
+
+  this.bugService.getSeverityValues().subscribe(
+      severity => {
+        this.severity = severity;
+        console.log(severity);
       }
-    );
+  );
 
-    this.bugService.getSeverityValues().subscribe(
-        severity => {
-          this.severity = severity;
-        }
-    );
-
-    this.loggedUser = this.token;
-    console.log('User '+ this.loggedUser);
+  this.loggedUser = this.token;
+  console.log('User '+ this.loggedUser);
 
   }
 

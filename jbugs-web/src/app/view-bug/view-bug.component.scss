@@ -1,5 +1,7 @@
 .container{
   max-width: 400px;
+  overflow: scroll;
+  max-height: 600px;
 }
 
 .view-bug-form {
@@ -10,4 +12,10 @@
 
 .example-full-width {
   width: 100%;
+}
+
+.btn-danger {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
 }

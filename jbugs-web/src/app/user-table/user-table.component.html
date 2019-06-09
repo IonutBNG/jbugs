@@ -1,4 +1,10 @@
-<button class="btn btn-primary"  (click)="addUserPopup()"> Add User </button>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <a class="nav-link" style="font-size: 15px;" routerLinkActive="active" routerLink="/home/usertable/adduser"
+       (click)="addUserPopup()">Add User</a>
+  </nav>
+</div>
+
 
 <div class="mat-elevation-z8">
 
@@ -24,7 +30,7 @@
       <td mat-cell *matCellDef="let users"> {{users.mobileNumber}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="userName">
+    <ng-container matColumnDef="username">
       <th mat-header-cell *matHeaderCellDef> Username </th>
       <td mat-cell *matCellDef="let users"> {{users.username}} </td>
     </ng-container>
@@ -38,8 +44,11 @@
       <th mat-header-cell  *matHeaderCellDef > Activate </th>
 
       <mat-cell *matCellDef="let users" >
-        <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false" (change)="onChange(users.username, users.counter)">  </mat-slide-toggle>
-        <button mat-raised-button class="editbtn" color="primary" (click)="edit(users)">  Edit </button>
+        <mat-slide-toggle color="primary" [checked]="users.counter > 0 ? true : false"
+                          (change)="onChange(users.username, users.counter)">  </mat-slide-toggle>
+        <button mat-raised-button class="editbtn" color="primary" (click)="editUserPopup(myView, users.firstName,
+            users.lastName, users.email, users.mobileNumber, users.username, users.counter)">  Edit </button>
+        <ng-template #myView >  <app-edit-user *ngIf ="loadComponent" ></app-edit-user> </ng-template>
       </mat-cell>
     </ng-container>
 
@@ -49,6 +58,9 @@
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
 
-
 </div>
-<button class="btn btn-primary" (click)="authService.logOut()">Log Out</button>
+
+
+
+
+

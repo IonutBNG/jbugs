@@ -3,6 +3,7 @@ import {BackendService} from "../backend-service/backend.service";
 import {Observable} from "rxjs";
 import {Bug} from "../../bug-model/bug-table";
 import {NewBugModel} from "../../bug-model/new-bug";
+
 import {BugSublist} from "../../bug-model/bug-sublist";
 
 @Injectable({
@@ -35,6 +36,5 @@ export class BugService {
   public getSublist(bugsublist: BugSublist): Observable<Bug[]> {
     return this.backendService.put("jbugs/jbugs-api/bug/filtered", bugsublist);
   }
-
 
 }

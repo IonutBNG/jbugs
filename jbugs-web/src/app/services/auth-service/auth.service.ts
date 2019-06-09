@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {PermsAssignments} from "../../user-model/perms-assignments";
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,45 @@ export class AuthService {
 
   private loginUrl = "/jbugs/jbugs-api/user/authenticate";
 
+  private permsAssignments: PermsAssignments = {
+    isUserM: false,
+    isBugM: false,
+    isBugC: false,
+    isPermsM: false,
+  };
 
-  constructor(private http: HttpClient,
-              private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   loginUser(user){
     console.log(this.loginUrl);
     return this.http.post<any>(this.loginUrl, user);
+  }
+
+  public setPermissionsRouting(): PermsAssignments{
+    const perms = localStorage.getItem("permissions");
+    console.log(perms);
+    var array = perms.split(',');
+    if (array.includes('USER_MANAGEMENT')) {
+      this.permsAssignments.isUserM = true;
+    } else {
+      this.permsAssignments.isUserM = false;
+    }
+    if (array.includes('BUG_MANAGEMENT')) {
+      this.permsAssignments.isBugM = true;
+    } else {
+      this.permsAssignments.isBugM = false;
+    }
+    if (array.includes('PERMISSION_MANAGEMENT')) {
+      this.permsAssignments.isPermsM = true;
+    } else {
+      this.permsAssignments.isPermsM = false;
+    }
+    if (array.includes('BUG_CLOSE')) {
+      this.permsAssignments.isBugC = true;
+    } else {
+      this.permsAssignments.isBugC = false;
+    }
+    return this.permsAssignments;
   }
 
   getDecodedToken(){
@@ -29,7 +62,7 @@ export class AuthService {
 
   logOut(){
     localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    localStorage.removeItem('permissions');
   }
 
   parseJwt (token) {

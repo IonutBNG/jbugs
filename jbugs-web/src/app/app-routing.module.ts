@@ -3,10 +3,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {UserTableComponent} from "./user-table/user-table.component";
 import {AddUserComponent} from "./add-user/add-user.component";
+import {AuthGuard} from "./guards/auth-guard/auth.guard";
+import {HomeComponent} from "./home/home.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {BugTableComponent} from "./bug-table/bug-table.component";
+import {PermissionsComponent} from "./permissions/permissions.component";
 import {AddBugComponent} from "./add-bug/add-bug.component";
-import {AuthGuard} from "./auth-guard/auth.guard";
+import {UsersGuard} from "./guards/users-guard/users-guard.guard";
+import {BugGuard} from "./guards/bug-guard/bug.guard";
+import {PermissionsGuard} from "./guards/permissions-guard/permissions.guard";
 
 const routes: Routes = [
   {
@@ -15,30 +20,55 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'usertable',
-    component: UserTableComponent,
-    // canActivate: [AuthGuard]
-  },
-  {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: "adduser",
-    component: AddUserComponent,
-    // canActivate: [AuthGuard]
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: '',
+        pathMatch: 'full',
+      },
+      {
+        path: 'usertable',
+        component: UserTableComponent,
+        canActivate: [UsersGuard],
+        children: [
+          {
+            path: "adduser",
+            component: AddUserComponent,
+          },
+          {
+            path:"edituser",
+            component:EditUserComponent
+          }
+        ]
+      },
+      {
+        path: "bugtable",
+        component: BugTableComponent,
+        canActivate: [BugGuard],
+        children: [
+          {
+            path: 'addbug',
+            component: AddBugComponent
+          }
+        ]
+      },
+      {
+        path: "permissions",
+        component: PermissionsComponent,
+        canActivate: [PermissionsGuard]
+      },
+    ]
   },
   {
-    path:"edituser",
-    component:EditUserComponent
-  },
-  {
-    path: "bugtable",
-    component: BugTableComponent
-  },
-  {
-    path: "addbug",
-    component: AddBugComponent
+    path: "**",
+    redirectTo: "/login"
   }
 ];
 

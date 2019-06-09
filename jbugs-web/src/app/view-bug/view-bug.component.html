@@ -1,16 +1,110 @@
 <div class="container">
 
-  <form class="view-bug-form" *ngFor="let bug of bugs">
-    <mat-form-field class="example-full-width" >
-      <input matInput  placeholder="Description" value="{{bug.description}}} ">
-    </mat-form-field>
+  <div class="list-group-flush">
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Title</h5>
+          <small><i class="fa fa-header fa-2x mr-4 mr-4 grey p-1 white-text rounded-circle" aria-hidden="true"></i></small>
+        </div>
+        <p class="mb-1">
+          {{title}}U
+        </p>
+      </div>
+    </div>
 
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Version" value=""></textarea>
-    </mat-form-field>
-  </form>
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Description</h5>
+        </div>
+        <p class="mb-1">
+          {{description}}
+        </p>
+      </div>
+    </div>
 
-<button mat-raised-button mat-dialog-close> Close </button>
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Version</h5>
+        </div>
+        <p class="mb-1">
+          {{version}}
+        </p>
+      </div>
+    </div>
+
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Target date</h5>
+        </div>
+        <p class="mb-1">
+          {{targetDate}}
+        </p>
+      </div>
+    </div>
+
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Status</h5>
+        </div>
+        <p class="mb-1">
+          {{status}}
+        </p>
+      </div>
+    </div>
+
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Fixed version</h5>
+        </div>
+        <p class="mb-1">
+          {{fixedVersion}}
+        </p>
+      </div>
+    </div>
+
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Severity</h5>
+        </div>
+        <p class="mb-1">
+          {{severity}}
+        </p>
+      </div>
+    </div>
+
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Created by</h5>
+        </div>
+        <p class="mb-1">
+          {{createdBy}}
+        </p>
+      </div>
+    </div>
+
+    <div class="list-group-item">
+      <div class="mb-0">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Assigned to</h5>
+        </div>
+        <p class="mb-1">
+          {{assignedTo}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <button mat-raised-button mat-dialog-close class="btn btn-danger"> Close </button>
 
 </div>
 
