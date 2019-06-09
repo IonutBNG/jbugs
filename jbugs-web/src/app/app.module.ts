@@ -13,7 +13,7 @@ import {
   MatButtonModule, MatButtonToggleModule, MatCheckboxModule,
   MatDatepickerModule,
   MatIconModule,
-  MatMenuModule, MatRadioModule, MatSelectModule,
+  MatMenuModule, MatNativeDateModule, MatRadioModule, MatSelectModule,
   MatSidenavModule,
   MatTableModule
 } from "@angular/material";
@@ -47,6 +47,7 @@ import {AddBugComponent} from "./add-bug/add-bug.component";
 
 @NgModule({
   declarations: [
+
     AppComponent,
     UserComponent,
     LoginComponent,
@@ -62,6 +63,7 @@ import {AddBugComponent} from "./add-bug/add-bug.component";
     AddBugComponent
   ],
   imports: [
+    MatNativeDateModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
