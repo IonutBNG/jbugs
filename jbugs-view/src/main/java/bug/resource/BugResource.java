@@ -81,7 +81,7 @@ public class BugResource {
     @Path("/edit-bug")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-//    @Secured(permissionsAllowed = SecurityPermission.BUG_MANAGEMENT)
+    @Secured(permissionsAllowed = SecurityPermission.BUG_MANAGEMENT)
     public Response editBug(EditBugDto editBugDto){
         return Response.ok().entity(this.bugFacade.editBug(editBugDto)).build();
     }
