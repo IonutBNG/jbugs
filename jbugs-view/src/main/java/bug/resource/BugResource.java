@@ -1,6 +1,7 @@
 package bug.resource;
 
 import bug.dto.BugSublistSetterDto;
+import bug.dto.EditBugDto;
 import bug.dto.NewBugDto;
 import bug.dto.ViewBugDto;
 import bug.facade.BugFacade;
@@ -66,6 +67,7 @@ public class BugResource {
     public Response getSeverityValues(@Context SecurityContext securityContext){
         return Response.ok(this.bugFacade.getSeverityValues()).build();
     }
+
     @PUT
     @Path("/filtered")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -75,6 +77,13 @@ public class BugResource {
         return Response.ok().entity(this.bugFacade.getSublist(bugSublistSetterDto)).build();
     }
 
-
+    @PUT
+    @Path("/edit-bug")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+//    @Secured(permissionsAllowed = SecurityPermission.BUG_MANAGEMENT)
+    public Response editBug(EditBugDto editBugDto){
+        return Response.ok().entity(this.bugFacade.editBug(editBugDto)).build();
+    }
 
 }

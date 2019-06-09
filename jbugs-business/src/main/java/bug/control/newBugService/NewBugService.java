@@ -12,7 +12,6 @@ import user.entity.UserEntity;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.json.Json;
 import javax.json.JsonObject;
 import java.util.List;
 import java.util.stream.Collectors;

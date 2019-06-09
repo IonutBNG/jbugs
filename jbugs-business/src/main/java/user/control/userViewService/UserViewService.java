@@ -53,4 +53,15 @@ public class UserViewService {
     }
 
 
+    /**
+     * Calls the getUserByUsername method from dao
+     * Returns the found UserEntity
+     * @param username used for the method call
+     * @return the found UserEntity
+     */
+    public UserEntity getUserByUsername(String username){
+        return this.userDao.getUserByUsername(username);
+    }
+
+
 }

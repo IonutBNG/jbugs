@@ -50,7 +50,12 @@ public class JsonFactory {
         return jsonObject;
     }
 
-
+    public JsonObject getEditBugJSON() {
+        JsonObject jsonObject = Json.createObjectBuilder()
+                .add("status", "Bug edited succesfully")
+                .build();
+        return jsonObject;
+    }
 
 
 }

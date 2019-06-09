@@ -1,5 +1,6 @@
 package bug.converter;
 
+import bug.dto.EditBugDto;
 import bug.dto.NewBugDto;
 import bug.dto.ViewBugDto;
 import bug.entity.BugEntity;
@@ -7,7 +8,6 @@ import bug.entity.Severity;
 import utils.BugStatus;
 
 import javax.ejb.Stateless;
-import java.sql.Date;
 
 @Stateless
 public class BugConverter {
@@ -59,6 +59,27 @@ public class BugConverter {
                 null,
                 null
                 );
+    }
+
+
+    /*
+    Unused or yet unknown attributes' values are set to null
+     */
+    public BugEntity convertEditBugDtoToBugEntity(EditBugDto editBugDto){
+        return new BugEntity(
+                editBugDto.getId(),
+                editBugDto.getTitle(),
+                editBugDto.getDescription(),
+                editBugDto.getVersion(),
+                null,                       //targetDate
+                BugStatus.getBugStatusByString(editBugDto.getStatus()),
+                editBugDto.getFixedVersion(),
+                Severity.getSeverityByString(editBugDto.getSeverity()),
+                null,                    //createdByUser
+                null                       //assignedTo
+        );
+
+
     }
 
 

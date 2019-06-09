@@ -7,9 +7,6 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-
-import static com.google.common.base.Predicates.not;
 
 /**
  * @author Bungardean Tudor-Ionut
@@ -69,10 +66,10 @@ public class RoleEntity extends BaseEntity<Long> {
 
     /**
      * Adds to the current permissions list new permissions
-     * @param permissions added to the object's permission list
+     * @param permissionEntityList added to the object's permission list
      */
-    public void addPermissionEntityList(List<PermissionEntity> permissions) {
-        this.permissionEntityList.addAll(permissions);
+    public void addPermissionEntityList(List<PermissionEntity> permissionEntityList) {
+        this.permissionEntityList = permissionEntityList;
     }
 
     /**

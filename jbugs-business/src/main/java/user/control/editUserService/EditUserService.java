@@ -40,7 +40,8 @@ public class EditUserService {
     JsonFactory jsonFactory;
 
 
-    public JsonObject editUser(EditUserDto editUserDto) throws BusinessException {
+    public JsonObject
+    editUser(EditUserDto editUserDto) throws BusinessException {
 
         //exception will be thrown here
         userValidator.validateBean(editUserDto);

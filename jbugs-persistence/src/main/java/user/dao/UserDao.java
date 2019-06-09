@@ -1,16 +1,12 @@
 package user.dao;
 
-import bug.dto.NewBugDto;
+
 import com.google.common.collect.Iterables;
-import user.dto.EditUserDto;
 import user.entity.UserEntity;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
-import java.io.Console;
-import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -27,7 +23,7 @@ public class UserDao {
 
     /**
      * Extracts from the database the UserEntity that corresponds to the username
-     * @param username
+     * @param username used in the query
      * @return UserEntity
      */
     public UserEntity getUserByUsername(String username){

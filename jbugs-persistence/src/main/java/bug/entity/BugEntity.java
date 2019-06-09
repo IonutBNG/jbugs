@@ -13,7 +13,16 @@ import java.util.Objects;
 @Table(name = "bugs")
 @NamedQueries({
         @NamedQuery(name = BugEntity.GET_ALL_BUGS, query = "SELECT b FROM BugEntity b"),
-        @NamedQuery(name = BugEntity.SET_STATUS, query = "Update BugEntity bug set bug.status = :" + BugEntity.STATUS + " where bug.id = :" + BugEntity.ID)
+        @NamedQuery(name = BugEntity.SET_STATUS, query = "Update BugEntity bug set bug.status = :" + BugEntity.STATUS + " where bug.id = :" + BugEntity.ID),
+        @NamedQuery(name = BugEntity.EDIT_BUG, query = "Update BugEntity bug set " +
+                "bug.title = :" + BugEntity.TITLE + ", " +
+                "bug.description = :" + BugEntity.DESCRIPTION + ", " +
+                "bug.version = :" + BugEntity.VERSION + ", " +
+                "bug.fixedVersion = :" + BugEntity.FIXED_IN_VERSION + ", " +
+                "bug.severity = :" + BugEntity.SEVERITY + ", " +
+                "bug.status = :" + BugEntity.STATUS + ", " +
+                "bug.assignedTo = :" + BugEntity.ASSIGNED_TO + " " +
+                "where bug.id = :"+BugEntity.ID)
 })
 
 public class BugEntity extends BaseEntity<Long> {
@@ -21,6 +30,13 @@ public class BugEntity extends BaseEntity<Long> {
     public static final String ID = "id";
     public static final String STATUS = "status";
     public static final String SET_STATUS = "BugEntity.setStatus";
+    public static final String TITLE = "title";
+    public static final String DESCRIPTION = "description";
+    public static final String VERSION = "version";
+    public static final String FIXED_IN_VERSION = "fixedInVersion";
+    public static final String SEVERITY = "severity";
+    public static final String ASSIGNED_TO = "assignedTo";
+    public static final String EDIT_BUG = "BugEntity.editBug";
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -143,6 +159,16 @@ public class BugEntity extends BaseEntity<Long> {
         this.assignedTo = assignedTo;
     }
 
+    /**
+     * Assigns to the assignedTo attribute the new value and returns the object
+     * @param userEntity used in the assignment
+     * @return (BugEntity)this
+     */
+    public BugEntity setAssignedToReturnEntity(UserEntity userEntity) {
+        this.assignedTo = userEntity;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -178,5 +204,4 @@ public class BugEntity extends BaseEntity<Long> {
                 ", assignedTo=" + assignedTo +
                 '}';
     }
-
 }

@@ -23,6 +23,10 @@ public class BugDao {
         entityManager.persist(newBugEntity);
     }
 
+    /**
+     * Extracts all of the bugs from the database
+     * @return <list>BugEntity</list>
+     */
     public List<BugEntity> getAllBugs() {
         return this.entityManager.createNamedQuery(BugEntity.GET_ALL_BUGS, BugEntity.class).getResultList();
     }
@@ -54,6 +58,24 @@ public class BugDao {
                 .setFirstResult(startingItem)
                 .setMaxResults(numberOfItems)
                 .getResultList();
+    }
+
+
+    /**
+     * Edits the bug that is persisted in the databased using the new values based on his id
+     * @param bugEntity used in the query
+     */
+    public void editBug(BugEntity bugEntity){
+        this.entityManager
+                .createNamedQuery(BugEntity.EDIT_BUG)
+                .setParameter(BugEntity.TITLE, bugEntity.getTitle())
+                .setParameter(BugEntity.DESCRIPTION, bugEntity.getDescription())
+                .setParameter(BugEntity.VERSION, bugEntity.getVersion())
+                .setParameter(BugEntity.FIXED_IN_VERSION, bugEntity.getFixedVersion())
+                .setParameter(BugEntity.SEVERITY, bugEntity.getSeverity())
+                .setParameter(BugEntity.STATUS, bugEntity.getStatus())
+                .setParameter(BugEntity.ASSIGNED_TO, bugEntity.getAssignedTo())
+                .setParameter(BugEntity.ID, bugEntity.getId());
     }
 
 }
