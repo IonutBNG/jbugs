@@ -24,6 +24,19 @@
            required #email="ngModel" placeholder="e.g. mark@msggroup.com" ngModel>
   </div>
 
+  <mat-form-field color="warn">
+    <mat-select placeholder="Roles" [formControl]="rolesControl" multiple (selectionChange)="changeRole($event.value)">
+      <mat-select-trigger>
+        {{rolesControl.value ? rolesControl.value[0] : ''}}
+        <span *ngIf="rolesControl.value?.length > 1" class="example-additional-selection">
+        (+{{rolesControl.value.length - 1}} {{rolesControl.value?.length === 2 ? 'other' : 'others'}})
+      </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let role of allRoles" [value]="role"
+        >{{role}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <div class="form-group">
     <label>Password:</label>
     <input class="form-control" type="password" id="password" name="password"

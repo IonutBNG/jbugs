@@ -76,14 +76,16 @@ export class PermissionsComponent implements OnInit {
     this.addedRolesArray.forEach(function (permissionType) {
       if (event == permissionType.type)
         permissionType.permissionDtoList.forEach(function(value){
-          findPermissions.push({permission: value.type, isChecked: true});
+          var mappedValue = value.type.split("_").join(" ");
+          findPermissions.push({permission: mappedValue, isChecked: true});
         });
     });
 
     this.deletedRolesArray.forEach(function (permissionType) {
       if (event == permissionType.type)
         permissionType.permissionDtoList.forEach(function(value){
-          findPermissions.push({permission: value.type, isChecked: false});
+          var mappedValue = value.type.split("_").join(" ");
+          findPermissions.push({permission: mappedValue, isChecked: false});
         });
     });
     return findPermissions;
@@ -114,9 +116,9 @@ export class PermissionsComponent implements OnInit {
   private findPermissionsDelete(roleValue: string, permValue: string): Permission[]{
     var perms: Permission[] = [];
     this.deletedRolesArray.forEach(function(role){
-      if (role.type == roleValue) {
+      if (role.type === roleValue) {
         role.permissionDtoList.forEach(function (perm) {
-          if (perm.type == permValue) {
+          if (perm.type.split("_").join(" ") === permValue) {
             perms.push(perm);
           }
         })
@@ -128,9 +130,9 @@ export class PermissionsComponent implements OnInit {
   private findPermissionsAdd(roleValue: string, permValue: string) {
     var perms: Permission[] = [];
     this.addedRolesArray.forEach(function(role){
-      if (role.type == roleValue) {
+      if (role.type === roleValue) {
         role.permissionDtoList.forEach(function (perm) {
-          if (perm.type == permValue) {
+          if (perm.type.split("_").join(" ") === permValue) {
             perms.push(perm);
           }
         })

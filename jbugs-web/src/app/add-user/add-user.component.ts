@@ -1,16 +1,17 @@
 import {
   Component,
-  EventEmitter,
-  Input,
   OnInit,
   Optional,
-  Output,
 } from '@angular/core';
 import {UserService} from "../services/user-service/user.service";
-import {NewUserModel} from "../user-model/new-user-model";
 import {MatDialogRef} from "@angular/material";
 import {ToastrService} from "ngx-toastr";
 import {UserEmitterService} from "../services/user-emitter-service/user-emitter.service";
+import {FormControl} from "@angular/forms";
+import {AddUserModel} from "../user-model/add-user-model";
+import {PermissionsService} from "../services/permissions-service/permissions.service";
+import {Role} from "../services/permissions-service/role-model";
+
 
 @Component({
   selector: 'add-user',
@@ -23,20 +24,47 @@ export class AddUserComponent implements OnInit {
   constructor(private userService: UserService,
               private toast: ToastrService,
               private userEmitter: UserEmitterService,
+              private permissionService: PermissionsService,
               @Optional() private dialogRef: MatDialogRef<AddUserComponent>) {
 
   }
 
   public addedUserSuccesfully:boolean;
+  private rolesControl = new FormControl();
+  private selectedRoles: string[];
+
+  private roles: Role[];
+  private allRoles: string[];
 
   ngOnInit() {
+    this.getAllRoles();
+  }
 
+  private getAllRoles() {
+    this.permissionService
+      .getAllDeletePermissions()
+      .subscribe((roles) => {
+        this.roles = roles as Role[];
+        this.setRoles(this.roles);
+      });
+  }
 
+  private setRoles(roles: Role[]){
+    let rolesType: string[] = [];
+    roles.forEach(function(role){
+      rolesType.push(role.type);
+    });
+    this.allRoles = rolesType;
+  }
+
+  private changeRole(event){
+    this.selectedRoles = event;
   }
 
   addNewUser(firstname: string,  lastName: string,  mobileNumber: string,  email: string,
              password: string) {
-    var newUser: NewUserModel ={firstName:firstname, lastName:lastName,mobileNumber:mobileNumber,email:email, password:password}
+    var newUser: AddUserModel ={firstName:firstname, lastName:lastName,mobileNumber:mobileNumber,email:email,
+      password:password, roles: this.selectedRoles};
     this.userService.addNewUser(newUser).subscribe( res => {
       console.log(res);
       this.checkResponse(res);
