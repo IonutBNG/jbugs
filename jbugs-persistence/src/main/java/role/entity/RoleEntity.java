@@ -69,7 +69,7 @@ public class RoleEntity extends BaseEntity<Long> {
      * @param permissionEntityList added to the object's permission list
      */
     public void addPermissionEntityList(List<PermissionEntity> permissionEntityList) {
-        this.permissionEntityList = permissionEntityList;
+        this.permissionEntityList.addAll(permissionEntityList);
     }
 
     /**
