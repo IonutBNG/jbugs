@@ -23,7 +23,7 @@ import java.util.Objects;
                 "bug.severity = :" + BugEntity.SEVERITY + ", " +
                 "bug.status = :" + BugEntity.STATUS + ", " +
                 "bug.assignedTo = :" + BugEntity.ASSIGNED_TO + " " +
-                "where bug.id = :"+BugEntity.ID)
+                "where bug.id = :"+BugEntity.ID),
 })
 
 public class BugEntity extends BaseEntity<Long> {
@@ -38,6 +38,7 @@ public class BugEntity extends BaseEntity<Long> {
     public static final String SEVERITY = "severity";
     public static final String ASSIGNED_TO = "assignedTo";
     public static final String EDIT_BUG = "BugEntity.editBug";
+    public static final String CLOSE_BUG = "BugEntity.closeBug";
 
     @Column(name = "title", nullable = false)
     private String title;
