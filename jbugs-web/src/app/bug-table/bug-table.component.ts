@@ -24,7 +24,7 @@ export class BugTableComponent implements OnInit {
                private bugService: BugService,
                private viewBugServ: ViewBugService) { }
 
-  public displayedColumns: string[] = ['title', 'target_date','status','severity', 'createdByUser','assignedTo', 'actions'];
+  public displayedColumns: string[] = ['isChecked', 'title', 'target_date','status','severity', 'createdByUser','assignedTo', 'actions'];
 
   private bugSetter: Bug;
   public bugs : Bug[];
@@ -46,6 +46,8 @@ export class BugTableComponent implements OnInit {
 
   public dataSource : any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  private exportedBugs: Bug[] = [];
 
   ngOnInit() {
 
@@ -207,6 +209,15 @@ export class BugTableComponent implements OnInit {
       console.log('you just clicked enter'+string);
       this.applyChanges('title', string, this.pageNumber, this.pageSize);
     }
+  }
+
+  private exportBug(event, bug: Bug) {
+    if (event.checked)
+      this.exportedBugs.push(bug);
+    else
+      this.exportedBugs = this.exportedBugs.filter(item => item !== bug);
+
+    console.log(this.exportedBugs);
   }
 
 }

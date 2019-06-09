@@ -63,7 +63,8 @@ public class UserAuthenticationService {
             persistJwtToken(jwt, userLoginDto.getUsername());
             return generateJsonSuccesfulAuthentication(jwt, userLoginDto.getUsername());
         }
-        return generateJsonFailedAuthentication();
+        throw new BusinessException(ExceptionMessageCatalog.USER_INVALID_LOGIN_CREDENTIALS);
+        //return generateJsonFailedAuthentication();
     }
 
     /**

@@ -9,7 +9,7 @@ package exeptions;
 public class ExceptionMessageCatalog {
 
     public static final ExceptionMessage USER_INVALID_LOGIN_CREDENTIALS = new ExceptionMessage("USER-001"
-            ,"Invalid username");
+            ,"Invalid username or password");
 
     public static final ExceptionMessage USER_EMAIL_ALREADY_EXISTS = new ExceptionMessage("USER-002"
             ,"The email is already used by another user");

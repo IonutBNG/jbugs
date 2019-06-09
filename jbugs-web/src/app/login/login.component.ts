@@ -32,25 +32,27 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
-    if (this.captchaResponse != null && this.loginUserData["username"] && this.loginUserData["password"]) {
+    if (!this.loginUserData['username'])
+      this.showToastError("Please enter a username");
+    else if (!this.loginUserData['password'])
+      this.showToastError("Please enter a password");
+    else if (this.captchaResponse === null)
+      this.showToastError("Please complete the captcha");
+    else {
       this.auth.loginUser(this.loginUserData)
         .subscribe(
           res => {
             console.log(res);
             this.checkToken(res);
-          },
-          err => {
-            console.log(err);
-          }
-        )
+          });
     }
   }
 
   private checkToken(res){
     if (res.token == undefined){
-      this.showToast(res.message);
+      this.showToastError(res.message);
     } else if (res.token == ""){
-      this.showToast("Invalid username or password !");
+      this.showToastError("Invalid username or password !");
     } else {
       console.log("[Login Comp] TOKEN " + res.token);
       localStorage.setItem('token', res.token);
@@ -59,7 +61,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private showToast(message){
+  private showToastError(message){
     this.toast.error(message, "Error");
   }
 
